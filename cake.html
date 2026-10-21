@@ -1,0 +1,848 @@
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#190d24">
+<title>عملیات کیک و شمع 🎂 | تولد نینی</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --pink: #ff8eb8;
+  --gold: #ffd77c;
+  --cream: #fff4dc;
+  --purple: #c7a5ff;
+  --dark: #190d24;
+  --panel: rgba(255,255,255,.075);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Vazirmatn', sans-serif;
+  color: var(--cream);
+  background:
+    radial-gradient(ellipse at 50% 0%, #53244e 0%, transparent 55%),
+    radial-gradient(ellipse at 0% 55%, #342044 0%, transparent 45%),
+    var(--dark);
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+button {
+  font-family: inherit;
+}
+
+.stars {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.star {
+  position: absolute;
+  color: var(--gold);
+  opacity: .6;
+  animation: twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle {
+  from { opacity: .15; transform: scale(.7) rotate(0); }
+  to { opacity: .9; transform: scale(1.25) rotate(30deg); }
+}
+
+.page {
+  position: relative;
+  z-index: 1;
+  width: min(100% - 28px, 760px);
+  margin: auto;
+  padding: 30px 0 38px;
+}
+
+.top-label {
+  width: fit-content;
+  margin: 0 auto 18px;
+  border: 1px solid #ffd77c65;
+  background: #ffd77c10;
+  border-radius: 50px;
+  padding: 8px 16px;
+  color: var(--gold);
+  font-size: .82rem;
+  letter-spacing: .2px;
+}
+
+h1 {
+  font-size: clamp(2rem, 8vw, 3.5rem);
+  text-align: center;
+  line-height: 1.5;
+  font-weight: 900;
+  background: linear-gradient(110deg, #fff1bf, #ff8eb8, #ffe7a3);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 0 22px #ff8eb82b);
+}
+
+.subtitle {
+  text-align: center;
+  color: #ead7f3;
+  line-height: 2.1;
+  margin: 8px auto 25px;
+  max-width: 540px;
+  font-size: .96rem;
+}
+
+.intro-card {
+  background: var(--panel);
+  border: 1px solid #ffffff16;
+  border-radius: 25px;
+  padding: 19px 20px;
+  line-height: 2.15;
+  text-align: center;
+  color: #f8eaf7;
+  margin-bottom: 27px;
+  box-shadow: 0 12px 45px #00000012;
+}
+
+.intro-card strong {
+  color: var(--pink);
+}
+
+.section-label {
+  text-align: center;
+  font-size: 1.05rem;
+  color: var(--gold);
+  margin-bottom: 15px;
+  font-weight: 800;
+}
+
+.cake-stage {
+  position: relative;
+  padding: 22px 10px 25px;
+  border: 1px solid #ffdf9b35;
+  background:
+    radial-gradient(ellipse at 50% 75%, #ffb7cc18, transparent 58%),
+    linear-gradient(145deg, #ffffff08, #ffffff02);
+  border-radius: 30px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.cake-stage::before,
+.cake-stage::after {
+  content: "✦";
+  position: absolute;
+  color: #ffd77c70;
+  font-size: 1.8rem;
+}
+
+.cake-stage::before { top: 20px; right: 20px; }
+.cake-stage::after { bottom: 18px; left: 20px; }
+
+.cake {
+  position: relative;
+  width: min(100%, 320px);
+  margin: 12px auto 0;
+  padding-top: 65px;
+}
+
+.candles {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 13px;
+  height: 82px;
+  position: relative;
+  z-index: 3;
+}
+
+.candle {
+  width: 13px;
+  height: 57px;
+  border-radius: 5px 5px 2px 2px;
+  position: relative;
+  cursor: pointer;
+  border: none;
+  background: repeating-linear-gradient(
+    135deg,
+    #fff3d8 0 5px,
+    #ff8eb8 5px 10px
+  );
+  transition: transform .2s;
+  box-shadow: inset -3px 0 4px #00000018;
+}
+
+.candle:nth-child(2n) {
+  background: repeating-linear-gradient(
+    135deg,
+    #fff3d8 0 5px,
+    #bba0ff 5px 10px
+  );
+}
+
+.candle:hover {
+  transform: translateY(-4px);
+}
+
+.flame {
+  position: absolute;
+  width: 14px;
+  height: 22px;
+  background: radial-gradient(ellipse at 50% 70%, #fffde0 0 15%, #ffe28a 35%, #ff9c44 70%, transparent 75%);
+  border-radius: 50% 50% 45% 45%;
+  top: -24px;
+  left: 50%;
+  transform: translateX(-50%);
+  transform-origin: center bottom;
+  filter: drop-shadow(0 0 8px #ffc85d);
+  animation: flameDance .65s ease-in-out infinite alternate;
+}
+
+@keyframes flameDance {
+  from { transform: translateX(-50%) rotate(-5deg) scale(.94); }
+  to { transform: translateX(-50%) rotate(6deg) scale(1.08); }
+}
+
+.candle.off .flame {
+  display: none;
+}
+
+.candle.off::after {
+  content: "♡";
+  position: absolute;
+  top: -22px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--pink);
+  font-size: 17px;
+}
+
+.cake-top {
+  position: relative;
+  z-index: 2;
+  height: 43px;
+  width: 100%;
+  border-radius: 50%;
+  background: linear-gradient(180deg, #fff0dd, #ffb8d0);
+  border: 4px solid #ffdfec;
+  box-shadow: 0 0 24px #ff9fcb24;
+}
+
+.cake-top::before {
+  content: "♥  ✦  ♥  ✦  ♥";
+  color: #b24c7a;
+  font-size: 14px;
+  position: absolute;
+  top: 9px;
+  left: 0;
+  right: 0;
+  letter-spacing: 4px;
+}
+
+.cake-body {
+  position: relative;
+  margin-top: -4px;
+  height: 95px;
+  border-radius: 0 0 24px 24px;
+  background: linear-gradient(90deg, #ffb1c9, #ffe1e7 45%, #ffb5cf);
+  box-shadow: inset 0 -12px 0 #ef8fb3, 0 12px 20px #00000025;
+  overflow: hidden;
+}
+
+.cake-body::before {
+  content: "نینیِ قشنگم";
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  color: #8e3763;
+  font-size: 1.15rem;
+  font-weight: 900;
+}
+
+.cake-body::after {
+  content: "♥  ·  ✧  ·  ♥  ·  ✧  ·  ♥";
+  position: absolute;
+  bottom: 12px;
+  width: 100%;
+  text-align: center;
+  color: #b9547f;
+  font-size: .75rem;
+}
+
+.plate {
+  width: 112%;
+  height: 21px;
+  background: linear-gradient(#fff2df, #d9c3ef);
+  border-radius: 50%;
+  margin: -1px 0 0 -6%;
+  box-shadow: 0 9px 22px #00000030;
+}
+
+.cake-hint {
+  color: #d8c4e7;
+  font-size: .82rem;
+  margin: 19px 0 0;
+  line-height: 2;
+}
+
+.action-button {
+  border: 0;
+  border-radius: 50px;
+  background: linear-gradient(110deg, #ffd77c, #ffb5c9);
+  color: #3a1b36;
+  padding: 13px 22px;
+  margin: 18px 5px 0;
+  font-size: .92rem;
+  font-weight: 900;
+  cursor: pointer;
+  box-shadow: 0 8px 25px #ffb5c922;
+  transition: transform .2s, box-shadow .2s;
+}
+
+.action-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px #ffb5c944;
+}
+
+.action-button:active {
+  transform: scale(.97);
+}
+
+.message-box {
+  display: none;
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 22px;
+  background: #ffb5c90d;
+  border: 1px solid #ffb5c94c;
+  line-height: 2.15;
+  text-align: center;
+  animation: appear .6s ease both;
+}
+
+.message-box.show {
+  display: block;
+}
+
+.message-box h3 {
+  color: var(--pink);
+  margin-bottom: 9px;
+  font-size: 1.15rem;
+}
+
+@keyframes appear {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.dreams {
+  margin-top: 38px;
+}
+
+.dreams-intro {
+  text-align: center;
+  line-height: 2;
+  color: #e8d7ef;
+  font-size: .92rem;
+  margin: 0 auto 17px;
+}
+
+.dream-list {
+  display: grid;
+  gap: 12px;
+}
+
+.dream {
+  display: flex;
+  gap: 13px;
+  align-items: flex-start;
+  padding: 16px;
+  border-radius: 20px;
+  background: var(--panel);
+  border: 1px solid #ffffff10;
+  line-height: 2;
+  transition: transform .25s, border-color .25s;
+}
+
+.dream:hover {
+  transform: translateY(-3px);
+  border-color: #ffd77c65;
+}
+
+.dream-icon {
+  flex-shrink: 0;
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  background: #ffd77c17;
+  font-size: 1.3rem;
+}
+
+.dream strong {
+  color: var(--gold);
+  display: block;
+  margin-bottom: 2px;
+}
+
+.dream p {
+  font-size: .88rem;
+  color: #e4d3e9;
+}
+
+.promise {
+  margin-top: 28px;
+  text-align: center;
+  border-radius: 26px;
+  padding: 23px 18px;
+  background: linear-gradient(145deg, #ff8eb817, #c7a5ff12);
+  border: 1px solid #ffb5c92e;
+  line-height: 2.2;
+}
+
+.promise .big-heart {
+  font-size: 2.5rem;
+  display: inline-block;
+  animation: heartbeat 1.3s infinite;
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  15% { transform: scale(1.17); }
+  30% { transform: scale(1); }
+  45% { transform: scale(1.12); }
+}
+
+.promise h2 {
+  font-size: 1.3rem;
+  color: var(--pink);
+  margin: 5px 0 10px;
+}
+
+.promise p {
+  color: #f3e5f1;
+  font-size: .92rem;
+}
+
+.final-note {
+  margin: 23px 0 28px;
+  text-align: center;
+  color: var(--gold);
+  font-size: .91rem;
+  line-height: 2.1;
+}
+
+.navigation {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 11px;
+  margin-top: 25px;
+}
+
+.nav-btn {
+  min-height: 88px;
+  border: 1px solid #ffffff20;
+  border-radius: 21px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  text-decoration: none;
+  color: var(--cream);
+  padding: 12px 8px;
+  background: #ffffff08;
+  transition: transform .2s, background .2s;
+  gap: 5px;
+}
+
+.nav-btn:hover {
+  transform: translateY(-4px);
+  background: #ffffff12;
+}
+
+.nav-btn .icon {
+  font-size: 1.35rem;
+}
+
+.nav-btn strong {
+  font-size: .9rem;
+}
+
+.nav-btn small {
+  font-size: .73rem;
+  color: #d9c9e6;
+}
+
+.nav-back { border-color: #c7a5ff52; }
+.nav-start { border-color: #ff8eb852; }
+.nav-museum { border-color: #9be5c652; }
+.nav-next {
+  background: linear-gradient(135deg, #ffd77c20, #ff8eb820);
+  border-color: #ffd77c7a;
+}
+
+.footer {
+  text-align: center;
+  margin-top: 25px;
+  color: #bca9c8;
+  font-size: .77rem;
+  line-height: 2;
+}
+
+.floating {
+  position: fixed;
+  bottom: -30px;
+  pointer-events: none;
+  z-index: 5;
+  animation: floatUp 3.5s ease-in forwards;
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(0) rotate(0); opacity: 0; }
+  15% { opacity: .9; }
+  100% { transform: translateY(-110vh) rotate(35deg); opacity: 0; }
+}
+
+.confetti {
+  position: fixed;
+  z-index: 10;
+  top: -20px;
+  pointer-events: none;
+  animation: fall 3s linear forwards;
+}
+
+@keyframes fall {
+  to { transform: translateY(110vh) rotate(720deg); opacity: 0; }
+}
+
+@media (min-width: 600px) {
+  .page { padding-top: 45px; }
+  .dream-list { grid-template-columns: 1fr 1fr; }
+  .navigation { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .nav-btn { min-height: 115px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="stars" id="stars"></div>
+
+<main class="page">
+
+  <div class="top-label">🎂 مرحله‌ی ویژه‌ی تولد نینی · عملیات شماره‌ی ۰۱</div>
+
+  <h1>عملیات کیک و شمع! 🎉</h1>
+
+  <p class="subtitle">
+    مأموریت امروز: یه عالمه آرزوی قشنگ، چندتا شمع کوچولو،
+    و یه نینی که قراره کلی اتفاق قشنگ توی زندگیش تجربه کنه! 💗
+  </p>
+
+  <div class="intro-card">
+    خب خب خب! توجه توجه! 📢😂<br>
+    سرکار آقای <strong>نینیِ دوست‌داشتنی</strong>،
+    شما به بخش فوق‌محرمانه‌ی تولدت دعوت شدی!<br>
+    اینجا هر شمع، نماد یه آرزوئه؛
+    هر لبخند، شروع یه خاطره‌ی تازه،
+    و هر سالی که می‌گذره، یه فرصت جدید برای ساختن زندگی‌ای که عاشقشیم. ✨
+    <br><strong>آماده‌ای عملیات رو شروع کنیم؟</strong>
+  </div>
+
+  <section class="cake-stage">
+    <div class="section-label">🎂 کیک اختصاصی جناب نینی!</div>
+
+    <div class="cake">
+      <div class="candles" id="candles">
+        <button class="candle" aria-label="شمع اول"><span class="flame"></span></button>
+        <button class="candle" aria-label="شمع دوم"><span class="flame"></span></button>
+        <button class="candle" aria-label="شمع سوم"><span class="flame"></span></button>
+        <button class="candle" aria-label="شمع چهارم"><span class="flame"></span></button>
+        <button class="candle" aria-label="شمع پنجم"><span class="flame"></span></button>
+        <button class="candle" aria-label="شمع ششم"><span class="flame"></span></button>
+        <button class="candle" aria-label="شمع هفتم"><span class="flame"></span></button>
+      </div>
+
+      <div class="cake-top"></div>
+      <div class="cake-body"></div>
+      <div class="plate"></div>
+    </div>
+
+    <p class="cake-hint">
+      روی شمع‌ها بزن تا خاموش بشن! 🥹<br>
+      هر شمع یه آرزوی قشنگ برای آینده‌مونه.
+    </p>
+
+    <button class="action-button" id="wishButton">
+      ✨ ثبت آرزوهای نینی ✨
+    </button>
+
+    <div class="message-box" id="wishMessage" aria-live="polite">
+      <h3>آرزوها ثبت شدن! 🥹💗</h3>
+      <p>
+        نینی جان، حالا نوبت ماست که با تلاش، یاد گرفتن،
+        خندیدن و قدم‌های کوچولو و بزرگمون، آرزوهامونو یکی‌یکی به واقعیت تبدیل کنیم.
+        <br>
+        منم با اون همه ذوق و انرژیِ دخترت، اینجام که برای روزهای قشنگت
+        دست بزنم و بهت افتخار کنم! 😂💖
+        <br><strong>حالا یه نفس عمیق بکش و برای یه سال فوق‌العاده آماده شو!</strong>
+      </p>
+    </div>
+  </section>
+
+  <section class="dreams">
+    <div class="section-label">🌱 آرزوهایی برای فصل‌های بعدی زندگی‌مون</div>
+
+    <p class="dreams-intro">
+      این شمع‌ها فقط برای امروز نیستن؛ هر کدومشون یه یادآوری کوچولوان
+      که آینده رو می‌شه با امید، مهربونی و تلاش ساخت. ✨
+    </p>
+
+    <div class="dream-list">
+
+      <article class="dream">
+        <div class="dream-icon">🚀</div>
+        <div>
+          <strong>برای رویاهای بزرگت</strong>
+          <p>
+            امیدوارم هر روز یه قدم به چیزهایی که از ته دل می‌خوای نزدیک‌تر بشی
+            و یه روز به خودت نگاه کنی و بگی: «دیدی تونستم؟!» 😎
+          </p>
+        </div>
+      </article>
+
+      <article class="dream">
+        <div class="dream-icon">🧠</div>
+        <div>
+          <strong>برای رشد و موفقیتت</strong>
+          <p>
+            برای مهارت‌هایی که یاد می‌گیری، تجربه‌هایی که به دست میاری
+            و فرصت‌های تازه‌ای که با تلاش خودت می‌سازی. 🌟
+          </p>
+        </div>
+      </article>
+
+      <article class="dream">
+        <div class="dream-icon">🏡</div>
+        <div>
+          <strong>برای روزهای قشنگ پیش رومون</strong>
+          <p>
+            برای خاطره‌هایی که هنوز نساختیم، خنده‌هایی که هنوز نکردیم،
+            عکس‌هایی که هنوز نگرفتیم و لحظه‌هایی که قراره به قصه‌مون اضافه بشن. 💞
+          </p>
+        </div>
+      </article>
+
+      <article class="dream">
+        <div class="dream-icon">👨‍👧</div>
+        <div>
+          <strong>برای نینی و دخترش! 😂💗</strong>
+          <p>
+            برای تمام وقت‌هایی که دخترت با هزار تا سؤال و شیطنت میاد سراغت
+            و بابایی باید هم قهرمان باشه، هم مشاور، هم مسئول خنده‌های روزانه! 😂
+          </p>
+        </div>
+      </article>
+
+      <article class="dream">
+        <div class="dream-icon">💼</div>
+        <div>
+          <strong>برای استقلال و آرامشت</strong>
+          <p>
+            امیدوارم حاصل تلاش‌هات رو ببینی، به توانایی‌هات افتخار کنی
+            و زندگی‌ای بسازی که توش برای خواسته‌های قشنگت جا باشه. 🌿
+          </p>
+        </div>
+      </article>
+
+      <article class="dream">
+        <div class="dream-icon">🌈</div>
+        <div>
+          <strong>برای هزاران شروع تازه</strong>
+          <p>
+            برای ایده‌های تازه، سفرهای قشنگ، تجربه‌های هیجان‌انگیز
+            و سال‌هایی که هر کدومشون یه داستان دوست‌داشتنی دارن.
+          </p>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="promise">
+    <div class="big-heart">💗</div>
+    <h2>یه قول کوچولو از طرف دخترت...</h2>
+    <p>
+      نینیِ من، من برای آینده‌مون کلی خیال قشنگ دارم!
+      دلم می‌خواد خودمون رو ببینیم که بزرگ‌تر شدیم،
+      چیزهای زیادی یاد گرفتیم، برای آرزوهامون تلاش کردیم
+      و با ذوق برای هم تعریف می‌کنیم که چقدر راه اومدیم.
+      <br><br>
+      دلم می‌خواد هر کدوممون به خودمون افتخار کنیم؛
+      به تلاش‌هامون، به رشد کردنمون و به تمام قدم‌هایی که برای زندگی دلخواهمون برمی‌داریم.
+      <br><br>
+      <strong style="color:#ffd77c">
+        چون قصه‌ی ما فقط یه عالمه خاطره‌ی قشنگ نیست؛
+        یه عالمه آینده‌ی قشنگ هم برای نوشتن داره! 🥹💖
+      </strong>
+    </p>
+  </section>
+
+  <div class="final-note">
+    🎂 عملیات کیک و شمع با موفقیت انجام شد!<br>
+    گزارش مأموریت: نینی یک سال بزرگ‌تر، کلی آرزو روشن‌تر،
+    و دخترش همچنان رئیس بخش شیطنت‌هاست! 😂👑
+    <br><br>
+    حالا بیا بریم سراغ یه جای پر از آرزوهای کوچولوی قشنگمون... 🌷
+  </div>
+
+  <nav class="navigation" aria-label="مسیرهای قصه">
+    <a class="nav-btn nav-back" href="voice.html">
+      <span class="icon">🎧</span>
+      <strong>برگشت به دنیای قبلی</strong>
+      <small>صدای دخترت 💗</small>
+    </a>
+
+    <a class="nav-btn nav-start" href="../index.html">
+      <span class="icon">🔄</span>
+      <strong>شروع قصه‌مون از اول</strong>
+      <small>یه دور دیگه از اول! 😂</small>
+    </a>
+
+    <a class="nav-btn nav-museum" href="museum.html">
+      <span class="icon">🏛️</span>
+      <strong>برگشت به دنیاهامون</strong>
+      <small>سایت موزه ✨</small>
+    </a>
+
+    <a class="nav-btn nav-next" href="dream-garden.html">
+      <span class="icon">🌷</span>
+      <strong>ادامه‌ی قصه‌ی ما</strong>
+      <small>باغچه‌ی آرزوهای ما 💫</small>
+    </a>
+  </nav>
+
+  <footer class="footer">
+    ساخته‌شده با کلی ذوق، یه عالمه عشق و مقدار غیرقابل‌اندازه‌گیری شیطنت! 😂💗
+    <br>
+    از طرف دخترت، برای نینیِ همیشه دوست‌داشتنی‌اش.
+  </footer>
+
+</main>
+
+<script>
+const stars = document.getElementById('stars');
+
+for (let i = 0; i < 55; i++) {
+  const star = document.createElement('span');
+  star.className = 'star';
+  star.textContent = Math.random() > .5 ? '✦' : '·';
+  star.style.left = Math.random() * 100 + '%';
+  star.style.top = Math.random() * 100 + '%';
+  star.style.fontSize = (8 + Math.random() * 17) + 'px';
+  star.style.animationDelay = Math.random() * 3 + 's';
+  star.style.animationDuration = (1.5 + Math.random() * 3) + 's';
+  stars.appendChild(star);
+}
+
+const candles = [...document.querySelectorAll('.candle')];
+const wishButton = document.getElementById('wishButton');
+const wishMessage = document.getElementById('wishMessage');
+
+candles.forEach((candle, index) => {
+  candle.addEventListener('click', () => {
+    candle.classList.toggle('off');
+
+    if (candle.classList.contains('off')) {
+      popHeart(candle);
+    }
+
+    if (candles.every(item => item.classList.contains('off'))) {
+      setTimeout(() => {
+        showConfetti();
+        wishMessage.classList.add('show');
+        wishMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }, 350);
+    }
+  });
+});
+
+wishButton.addEventListener('click', () => {
+  wishMessage.classList.add('show');
+  showConfetti();
+  wishMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+});
+
+function popHeart(element) {
+  const rect = element.getBoundingClientRect();
+  const heart = document.createElement('span');
+
+  heart.className = 'floating';
+  heart.textContent = ['💗', '✨', '💕', '🌟'][Math.floor(Math.random() * 4)];
+  heart.style.left = (rect.left + rect.width / 2) + 'px';
+  heart.style.bottom = (window.innerHeight - rect.top) + 'px';
+  heart.style.fontSize = (17 + Math.random() * 12) + 'px';
+
+  document.body.appendChild(heart);
+  setTimeout(() => heart.remove(), 3600);
+}
+
+function showConfetti() {
+  const symbols = ['💗', '✨', '🎉', '🌸', '⭐', '💛'];
+
+  for (let i = 0; i < 38; i++) {
+    const item = document.createElement('span');
+    item.className = 'confetti';
+    item.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+    item.style.left = Math.random() * 100 + 'vw';
+    item.style.fontSize = (13 + Math.random() * 17) + 'px';
+    item.style.animationDelay = Math.random() * 1.2 + 's';
+
+    document.body.appendChild(item);
+    setTimeout(() => item.remove(), 4500);
+  }
+}
+
+// چند قلب کوچولو هر چند لحظه از پایین صفحه بالا می‌رن
+setInterval(() => {
+  if (document.hidden) return;
+
+  const heart = document.createElement('span');
+  heart.className = 'floating';
+  heart.textContent = ['♡', '💗', '✦', '✨'][Math.floor(Math.random() * 4)];
+  heart.style.left = Math.random() * 95 + 'vw';
+  heart.style.fontSize = (13 + Math.random() * 13) + 'px';
+  heart.style.color = ['#ff8eb8', '#ffd77c', '#c7a5ff'][Math.floor(Math.random() * 3)];
+
+  document.body.appendChild(heart);
+  setTimeout(() => heart.remove(), 3600);
+}, 1500);
+</script>
+
+</body>
+</html>

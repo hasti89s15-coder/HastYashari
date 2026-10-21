@@ -1,0 +1,1126 @@
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#19152d">
+<title>جعبه‌ی مرموز ما 🎁</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --night: #19152d;
+  --pink: #ffb6d5;
+  --gold: #ffe5a3;
+  --lilac: #d9c4ff;
+  --cream: #fff8ef;
+  --mint: #b8f1d5;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  font-family: 'Vazirmatn', sans-serif;
+  color: var(--cream);
+  background:
+    radial-gradient(ellipse at 50% 0%, #67426e 0%, transparent 48%),
+    radial-gradient(ellipse at 100% 50%, #392b58 0%, transparent 42%),
+    linear-gradient(180deg, #19152d, #29213d 60%, #1d2035);
+}
+
+button, textarea {
+  font-family: inherit;
+}
+
+button, a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  cursor: pointer;
+}
+
+.sky {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.star {
+  position: absolute;
+  color: #fff0bc;
+  animation: twinkle var(--duration, 3s) ease-in-out infinite alternate;
+  animation-delay: var(--delay, 0s);
+}
+
+@keyframes twinkle {
+  from { opacity: .2; transform: scale(.7); }
+  to { opacity: 1; transform: scale(1.2); }
+}
+
+.moon {
+  position: fixed;
+  top: 35px;
+  left: 7%;
+  z-index: 0;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: #fff0bd;
+  box-shadow: 0 0 40px #ffe5a355;
+  pointer-events: none;
+}
+
+.moon::after {
+  content: "";
+  position: absolute;
+  top: -7px;
+  right: -8px;
+  width: 53px;
+  height: 53px;
+  border-radius: 50%;
+  background: #30213f;
+}
+
+.page {
+  position: relative;
+  z-index: 1;
+  width: min(100% - 28px, 760px);
+  margin: auto;
+  padding: 35px 0 35px;
+}
+
+.badge {
+  display: block;
+  width: fit-content;
+  margin: 0 auto 15px;
+  padding: 8px 15px;
+  border: 1px solid #ffe5a355;
+  border-radius: 50px;
+  background: #ffe5a30b;
+  color: var(--gold);
+  font-size: .8rem;
+}
+
+h1 {
+  text-align: center;
+  font-size: clamp(2rem, 8vw, 3.5rem);
+  font-weight: 900;
+  line-height: 1.6;
+  color: var(--pink);
+  text-shadow: 0 0 35px #ffb6d52c;
+}
+
+.subtitle {
+  max-width: 560px;
+  margin: 8px auto 24px;
+  text-align: center;
+  font-size: .93rem;
+  line-height: 2.3;
+  color: #eee4ff;
+}
+
+.glass {
+  background: #ffffff09;
+  border: 1px solid #ffffff1b;
+  border-radius: 26px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 15px 45px #00000016;
+}
+
+.intro {
+  padding: 20px 17px;
+  text-align: center;
+  line-height: 2.2;
+}
+
+.intro strong {
+  color: var(--pink);
+}
+
+.primary {
+  display: block;
+  width: fit-content;
+  max-width: 100%;
+  margin: 17px auto 0;
+  padding: 13px 22px;
+  border: none;
+  border-radius: 50px;
+  background: linear-gradient(110deg, var(--gold), var(--pink));
+  color: #35233e;
+  font-size: .91rem;
+  font-weight: 900;
+  box-shadow: 0 8px 25px #ffb6d523;
+  transition: transform .2s, box-shadow .2s;
+}
+
+.primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px #ffb6d53b;
+}
+
+.primary:active {
+  transform: scale(.97);
+}
+
+.box-scene {
+  position: relative;
+  margin-top: 28px;
+  padding: 28px 12px;
+  text-align: center;
+  overflow: hidden;
+  border: 1px solid #ffe5a333;
+  border-radius: 30px;
+  background:
+    radial-gradient(ellipse at 50% 70%, #ffb6d514, transparent 55%),
+    #ffffff05;
+}
+
+.box-hint {
+  position: relative;
+  z-index: 1;
+  color: var(--gold);
+  font-size: .85rem;
+  line-height: 2;
+}
+
+.gift-button {
+  position: relative;
+  display: block;
+  width: min(100%, 310px);
+  margin: 15px auto 8px;
+  padding: 10px;
+  border: 0;
+  border-radius: 25px;
+  color: var(--cream);
+  background: transparent;
+}
+
+.gift {
+  display: block;
+  position: relative;
+  font-size: clamp(7rem, 32vw, 11rem);
+  line-height: 1.35;
+  filter: drop-shadow(0 0 30px #ffb6d53b);
+  animation: giftFloat 3s ease-in-out infinite;
+  transform-origin: center bottom;
+}
+
+@keyframes giftFloat {
+  0%, 100% { transform: translateY(0) rotate(-2deg); }
+  50% { transform: translateY(-9px) rotate(2deg); }
+}
+
+.gift-button strong {
+  display: block;
+  color: var(--pink);
+  font-size: 1rem;
+}
+
+.gift-button small {
+  display: block;
+  margin-top: 7px;
+  color: #e1d6ef;
+  line-height: 2;
+}
+
+.box-scene.opened .gift {
+  animation: boxOpen .75s ease both;
+}
+
+@keyframes boxOpen {
+  0% { transform: scale(1) rotate(0); }
+  25% { transform: scale(1.12) rotate(-8deg); }
+  50% { transform: scale(1.2) rotate(8deg); }
+  100% { transform: scale(1.05); }
+}
+
+.envelope {
+  display: none;
+  margin-top: 20px;
+  padding: 20px 17px;
+  border: 1px solid #ffb6d55c;
+  border-radius: 23px;
+  background: linear-gradient(145deg, #4a3458, #2d2846);
+  line-height: 2.3;
+  text-align: right;
+}
+
+.envelope.show {
+  display: block;
+  animation: appear .55s ease both;
+}
+
+.envelope h2 {
+  color: var(--gold);
+  font-size: 1.15rem;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.envelope p {
+  font-size: .91rem;
+}
+
+.envelope .primary {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@keyframes appear {
+  from { opacity: 0; transform: translateY(14px) scale(.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.section {
+  margin-top: 37px;
+}
+
+.section-title {
+  color: var(--pink);
+  font-size: 1.35rem;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.section-description {
+  color: #e5dced;
+  font-size: .87rem;
+  line-height: 2.2;
+  text-align: center;
+  margin-bottom: 17px;
+}
+
+.hidden-until-open {
+  display: none;
+}
+
+.hidden-until-open.show {
+  display: block;
+  animation: appear .6s ease both;
+}
+
+.envelopes {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.envelope-card {
+  position: relative;
+  min-height: 168px;
+  padding: 16px 8px;
+  border-radius: 22px;
+  border: 1px solid #ffffff1c;
+  background: #ffffff08;
+  color: var(--cream);
+  transition: transform .2s, border-color .2s, background .2s;
+}
+
+.envelope-card:hover {
+  transform: translateY(-4px);
+  border-color: #ffe5a388;
+  background: #ffffff10;
+}
+
+.envelope-card:active {
+  transform: scale(.97);
+}
+
+.envelope-card.opened {
+  border-color: #b8f1d580;
+  background: #b8f1d50b;
+}
+
+.envelope-icon {
+  display: block;
+  font-size: 3rem;
+  margin-bottom: 7px;
+  animation: sway 3s ease-in-out infinite;
+}
+
+@keyframes sway {
+  0%, 100% { transform: rotate(-4deg); }
+  50% { transform: rotate(4deg); }
+}
+
+.envelope-card strong {
+  display: block;
+  color: var(--gold);
+  font-size: .86rem;
+  line-height: 1.8;
+}
+
+.envelope-card small {
+  display: block;
+  color: #e0d7e9;
+  margin-top: 6px;
+  font-size: .72rem;
+  line-height: 1.8;
+}
+
+.envelope-card .opened-tag {
+  display: none;
+  margin-top: 8px;
+  color: var(--mint);
+  font-size: .7rem;
+}
+
+.envelope-card.opened .opened-tag {
+  display: block;
+}
+
+.progress {
+  margin-top: 15px;
+  padding: 15px;
+  border-radius: 20px;
+  border: 1px solid #ffffff19;
+  background: #ffffff07;
+  text-align: center;
+  line-height: 2;
+}
+
+.progress strong {
+  color: var(--gold);
+}
+
+.track {
+  height: 9px;
+  margin: 10px 0 5px;
+  background: #ffffff15;
+  border-radius: 50px;
+  overflow: hidden;
+}
+
+.fill {
+  width: 0;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--lilac), var(--pink), var(--gold));
+  transition: width .5s;
+}
+
+.progress small {
+  color: #e2d7e8;
+  font-size: .75rem;
+}
+
+.letter {
+  padding: 23px 18px;
+  border: 1px solid #ffe5a33b;
+  border-radius: 26px;
+  background: linear-gradient(145deg, #ffe5a30c, #ffb6d50c);
+  line-height: 2.4;
+  text-align: right;
+}
+
+.letter h3 {
+  color: var(--gold);
+  font-size: 1.25rem;
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.letter p {
+  color: #f5eaf3;
+  font-size: .92rem;
+}
+
+.letter strong {
+  color: var(--pink);
+}
+
+.promise-card {
+  padding: 20px 15px;
+  text-align: center;
+}
+
+.promise-card .promise-icon {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.promise-options {
+  display: grid;
+  gap: 10px;
+  margin-top: 17px;
+}
+
+.promise-option {
+  width: 100%;
+  padding: 13px 12px;
+  border: 1px solid #ffffff20;
+  border-radius: 17px;
+  background: #ffffff08;
+  color: var(--cream);
+  line-height: 1.9;
+  font-size: .87rem;
+  transition: .2s;
+}
+
+.promise-option:hover {
+  border-color: #ffb6d577;
+  background: #ffb6d50d;
+}
+
+.promise-option.chosen {
+  border-color: var(--mint);
+  background: #b8f1d511;
+}
+
+.promise-result {
+  display: none;
+  margin-top: 15px;
+  padding: 15px;
+  border: 1px solid #b8f1d544;
+  border-radius: 18px;
+  color: var(--mint);
+  line-height: 2.2;
+  background: #b8f1d509;
+}
+
+.promise-result.show {
+  display: block;
+  animation: appear .5s ease both;
+}
+
+.last-secret {
+  padding: 23px 17px;
+  text-align: center;
+  background:
+    radial-gradient(ellipse at 50% 0%, #ffe5a313, transparent 60%),
+    #ffffff06;
+  border: 1px solid #ffb6d544;
+  border-radius: 28px;
+}
+
+.heart-button {
+  display: block;
+  margin: 8px auto 12px;
+  padding: 8px;
+  border: 0;
+  background: transparent;
+  color: var(--cream);
+}
+
+.heart {
+  display: block;
+  font-size: 5rem;
+  animation: heartbeat 1.6s infinite;
+  filter: drop-shadow(0 0 20px #ff7caf6b);
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  15% { transform: scale(1.15); }
+  30% { transform: scale(1); }
+  45% { transform: scale(1.1); }
+}
+
+.heart-button strong {
+  display: block;
+  color: var(--gold);
+  font-size: .95rem;
+}
+
+.final-message {
+  display: none;
+  margin-top: 15px;
+  padding: 18px;
+  border-radius: 22px;
+  background: #ffb6d50b;
+  border: 1px solid #ffb6d54d;
+  line-height: 2.3;
+  text-align: right;
+}
+
+.final-message.show {
+  display: block;
+  animation: appear .7s ease both;
+}
+
+.final-message strong {
+  color: var(--pink);
+}
+
+.final-message .primary {
+  margin-top: 20px;
+}
+
+.footer-note {
+  text-align: center;
+  margin-top: 30px;
+  color: var(--mint);
+  font-size: .9rem;
+  line-height: 2.2;
+}
+
+.navigation {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 11px;
+  margin-top: 23px;
+}
+
+.nav-button {
+  min-height: 92px;
+  padding: 12px 7px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  border-radius: 21px;
+  text-align: center;
+  text-decoration: none;
+  color: var(--cream);
+  background: #ffffff08;
+  border: 1px solid #ffffff20;
+  transition: transform .2s, background .2s;
+}
+
+.nav-button:hover {
+  transform: translateY(-4px);
+  background: #ffffff12;
+}
+
+.nav-icon {
+  font-size: 1.4rem;
+}
+
+.nav-button strong {
+  font-size: .84rem;
+}
+
+.nav-button small {
+  color: #d9cce3;
+  font-size: .72rem;
+}
+
+.nav-prev { border-color: #b8f1d555; }
+.nav-home { border-color: #d9c4ff66; }
+.nav-museum { border-color: #b8f1d566; }
+.nav-next {
+  border-color: #ffe5a388;
+  background: linear-gradient(135deg, #ffe5a315, #ffb6d511);
+}
+
+.footer {
+  text-align: center;
+  margin-top: 20px;
+  color: #c7b9d3;
+  font-size: .76rem;
+  line-height: 2;
+}
+
+.particle {
+  position: fixed;
+  top: -30px;
+  z-index: 100;
+  pointer-events: none;
+  animation: fall var(--fall, 4s) linear forwards;
+}
+
+@keyframes fall {
+  0% { transform: translateY(0) rotate(0); opacity: 0; }
+  15% { opacity: 1; }
+  100% { transform: translate(var(--drift, 30px),110vh) rotate(500deg); opacity: 0; }
+}
+
+@media (min-width: 560px) {
+  .page { padding-top: 48px; }
+  .envelopes { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .envelope-card { min-height: 185px; }
+  .navigation { grid-template-columns: repeat(4, minmax(0,1fr)); }
+  .nav-button { min-height: 118px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="sky" id="sky"></div>
+<div class="moon" aria-hidden="true"></div>
+
+<main class="page">
+
+  <span class="badge">🎁 پرونده‌ی فوق‌محرمانه‌ی نینی</span>
+
+  <h1>جعبه‌ی مرموز ما 💌</h1>
+
+  <p class="subtitle">
+    نینی جان، این جعبه با کلی ذوق آماده شده؛
+    چندتا پاکت، چندتا راز کوچولو و یه عالمه حرف از قصه‌ی قشنگ خودمون! 🥹💗
+  </p>
+
+  <section class="intro glass">
+    <div style="font-size:2.5rem;margin-bottom:8px">👑🎁</div>
+
+    <p>
+      جناب نینی! به بخش محرمانه‌ی قصه‌مون خوش اومدی! 😂
+      <br>
+      طبق قوانین این بخش، باز کردن جعبه مستلزم داشتن
+      <strong>یک قلب مهربون، کمی کنجکاوی و آمادگی برای دریافت حجم بالای ذوق دخترت</strong> است! 💗
+      <br><br>
+      آیا با شرایط فوق موافقی؟
+    </p>
+
+    <button class="primary" id="startButton">
+      آرههههه، بزن بریم! 🎁
+    </button>
+  </section>
+
+  <section class="box-scene" id="boxScene">
+    <p class="box-hint" id="boxHint">
+      این جعبه یه چیزی می‌خواد بهت بگه... 👀
+    </p>
+
+    <button class="gift-button" id="giftButton">
+      <span class="gift" id="gift">🎁</span>
+      <strong>جعبه رو لمس کن، نینی!</strong>
+      <small>قول می‌دم کنجکاوی‌ات بی‌دلیل نیست! 😂</small>
+    </button>
+
+    <div class="envelope" id="welcomeLetter">
+      <h2>💌 نامه‌ی شماره‌ی صفر</h2>
+      <p>
+        نینی جان!
+        <br><br>
+        این جعبه برای این ساخته شده که یه گوشه از قصه‌مون رو
+        با هم دوباره کشف کنیم؛ از خاطره‌های قشنگ گرفته تا
+        آرزوهایی که دوست داریم برای رسیدن بهشون تلاش کنیم.
+        <br><br>
+        هر پاکت یه تکه از قصه‌ی ماست.
+        آماده‌ای اولین راز رو باز کنیم؟ 🥹🌷
+      </p>
+      <button class="primary" id="openEnvelopes">
+        پاکت‌ها رو نشونم بده! 💗
+      </button>
+    </div>
+  </section>
+
+  <section class="section hidden-until-open" id="envelopeSection">
+    <h2 class="section-title">💌 چهار پاکت، چهار تکه از قصه‌ی ما</h2>
+    <p class="section-description">
+      نینی، هر کدوم رو لمس کن تا پیام مخفی‌ش رو ببینی!
+    </p>
+
+    <div class="envelopes">
+
+      <button class="envelope-card" data-envelope="first">
+        <span class="envelope-icon">💌</span>
+        <strong>راز اولین‌ها</strong>
+        <small>از شروع یه قصه‌ی خاص...</small>
+        <span class="opened-tag">باز شد! ✨</span>
+      </button>
+
+      <button class="envelope-card" data-envelope="family">
+        <span class="envelope-icon">👑</span>
+        <strong>راز بابایی و دخترش</strong>
+        <small>پرونده‌ی رسمی شیطنت‌ها! 😂</small>
+        <span class="opened-tag">باز شد! ✨</span>
+      </button>
+
+      <button class="envelope-card" data-envelope="future">
+        <span class="envelope-icon">🌱</span>
+        <strong>راز فردای ما</strong>
+        <small>برای آرزوهای مشترکمون</small>
+        <span class="opened-tag">باز شد! ✨</span>
+      </button>
+
+      <button class="envelope-card" data-envelope="promise">
+        <span class="envelope-icon">🎀</span>
+        <strong>قول کوچولومون</strong>
+        <small>یه انتخاب از ته دل...</small>
+        <span class="opened-tag">باز شد! ✨</span>
+      </button>
+
+    </div>
+
+    <div class="progress">
+      <strong>🌟 میزان کشف رازها</strong>
+      <div class="track">
+        <div class="fill" id="progressFill"></div>
+      </div>
+      <small id="progressText">هنوز چهار راز منتظر نینی هستن! 👀</small>
+    </div>
+  </section>
+
+  <section class="section hidden-until-open" id="promiseSection">
+    <h2 class="section-title">🎀 حالا نوبت انتخاب نینیه!</h2>
+    <p class="section-description">
+      اگه بخوایم برای آینده‌مون یه قول کوچولو انتخاب کنیم، کدوم رو دوست داری؟
+    </p>
+
+    <div class="promise-card glass">
+      <span class="promise-icon">💗</span>
+      <h3 style="color:var(--gold);font-size:1.05rem">
+        قول تیم نینی و دخترش!
+      </h3>
+
+      <div class="promise-options">
+        <button class="promise-option" data-promise="growth">
+          🌱 برای رشد کردنمون تلاش کنیم و هر روز چیزهای تازه یاد بگیریم.
+        </button>
+
+        <button class="promise-option" data-promise="dreams">
+          ✨ برای آرزوهامون قدم برداریم و به همدیگه انگیزه بدیم.
+        </button>
+
+        <button class="promise-option" data-promise="joy">
+          😂 وسط تمام برنامه‌هامون، برای ذوق و خنده هم وقت بذاریم!
+        </button>
+      </div>
+
+      <div class="promise-result" id="promiseResult" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <section class="section hidden-until-open" id="letterSection">
+    <h2 class="section-title">🥹 نامه‌ای که توی هیچ پاکتی نبود...</h2>
+
+    <div class="letter glass">
+      <h3>برای نینیِ عزیزم 💗</h3>
+
+      <p>
+        نینی جان...
+        <br><br>
+        می‌دونی چرا این جعبه رو ساختم؟
+        <br><br>
+        چون بعضی آدم‌ها کم‌کم تبدیل می‌شن به بخشی از قصه‌ی زندگی آدم؛
+        آدم‌هایی که دوست داری از اتفاق‌های روزت براشون بگی،
+        از چیزهایی که یاد گرفتی حرف بزنی و برای قدم‌های بعدی باهاشون ذوق کنی.
+        <br><br>
+        تو برای من همون نینیِ عزیز و باباییِ مهربونی هستی
+        که دلم می‌خواد کلی خبر قشنگ براش داشته باشم؛
+        از چیزهایی که یاد گرفتم، کارهایی که انجام دادم
+        و آرزوهایی که برای آینده‌مون داریم.
+        <br><br>
+        من دلم می‌خواد رشد کنم، چیزهای بیشتری یاد بگیرم
+        و برای آرزوهامون با تمام ذوقم تلاش کنم.
+        امیدوارم به آرزوهامون با همدیگه برسیم
+        و یه روز با لبخند به مسیری که طی کردیم نگاه کنیم.
+        <br><br>
+        <strong>
+          تصور کن با هم بگیم: «نینیییی! ببین چقدر چیز قشنگ ساختیم!»
+        </strong> 😭💗
+        <br><br>
+        راستی، اگه تا اینجا همه‌ی رازها رو کشف کردی،
+        لطفاً به زنبور باغچه هم خبر بده که عملیات موفقیت‌آمیز بوده!
+        هنوز فکر می‌کنه رئیس پروژه‌ست! 😂🐝
+      </p>
+    </div>
+  </section>
+
+  <section class="section hidden-until-open" id="finalSection">
+    <h2 class="section-title">💖 آخرین راز این جعبه...</h2>
+
+    <div class="last-secret glass">
+      <p style="color:#eee2f0;line-height:2.2">
+        نینی جان، یه چیز کوچولو هنوز داخل جعبه مونده...
+        <br>
+        برای کشفش روی قلب کلیک کن. 🥹
+      </p>
+
+      <button class="heart-button" id="heartButton">
+        <span class="heart">💖</span>
+        <strong>راز آخر رو بهم نشون بده!</strong>
+      </button>
+
+      <div class="final-message" id="finalMessage" aria-live="polite">
+        <strong>نینیِ قشنگم، رسیدیم به آخرین صفحه‌ی این جعبه! 💗</strong>
+        <br><br>
+        اما قصه‌ی ما هنوز کلی صفحه‌ی قشنگ برای نوشتن داره.
+        ما می‌تونیم یاد بگیریم، رشد کنیم، برای آرزوهامون تلاش کنیم
+        و هر روز یه خاطره‌ی تازه به زندگی‌مون اضافه کنیم.
+        <br><br>
+        من برای تمام قدم‌هایی که قراره برداریم ذوق دارم؛
+        برای چیزهایی که قراره یاد بگیریم، هدف‌هایی که براشون تلاش می‌کنیم
+        و روزهایی که با لبخند به خودمون افتخار می‌کنیم.
+        <br><br>
+        <strong>
+          به سلامتی قصه‌ای که با یه تولد شروع شد و قراره
+          با کلی رؤیا، تلاش و خاطره ادامه پیدا کنه! 🎂🌷
+        </strong>
+        <br><br>
+        حالا نینی جان، آماده‌ای راز آخر قصه رو ببینی؟ 👀
+
+        <a class="primary" href="final-surprise.html"
+           style="text-decoration:none;text-align:center">
+          ✨ بریم راز آخر قصه!
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <div class="footer-note hidden-until-open" id="footerNote">
+    🎁 این جعبه با عشق باز شد؛ ادامه‌ی قصه‌مون هنوز پر از شگفتیه! 💗
+  </div>
+
+  <nav class="navigation" aria-label="مسیرهای قصه">
+    <a class="nav-button nav-prev" href="dream-garden.html">
+      <span class="nav-icon">🌷</span>
+      <strong>برگشت به دنیای قبلی</strong>
+      <small>باغچه‌ی آرزوهای ما</small>
+    </a>
+
+    <a class="nav-button nav-home" href="../index.html">
+      <span class="nav-icon">🔄</span>
+      <strong>شروع قصه‌مون از اول</strong>
+      <small>بریم اول قصه! 💗</small>
+    </a>
+
+    <a class="nav-button nav-museum" href="museum.html">
+      <span class="nav-icon">🏛️</span>
+      <strong>برگشت به دنیاهامون </strong>
+      <small>سایت موزه ✨</small>
+    </a>
+
+    <a class="nav-button nav-next" href="final-surprise.html">
+      <span class="nav-icon">✨</span>
+      <strong>ادامه‌ی قصه‌ی ما</strong>
+      <small>راز آخر قصه 👀</small>
+    </a>
+  </nav>
+
+  <footer class="footer">
+    ساخته‌شده با عشق، مقدار زیادی ذوق و نظارت بسیار جدی زنبور باغچه! 😂🐝
+  </footer>
+
+</main>
+
+<script>
+const sky = document.getElementById('sky');
+
+for (let i = 0; i < 75; i++) {
+  const star = document.createElement('span');
+  star.className = 'star';
+  star.textContent = Math.random() > .5 ? '✦' : '·';
+  star.style.left = Math.random() * 100 + '%';
+  star.style.top = Math.random() * 100 + '%';
+  star.style.fontSize = (8 + Math.random() * 14) + 'px';
+  star.style.setProperty('--duration', (1.5 + Math.random() * 3) + 's');
+  star.style.setProperty('--delay', (Math.random() * 3) + 's');
+  sky.appendChild(star);
+}
+
+function shower(symbols, amount = 25) {
+  for (let i = 0; i < amount; i++) {
+    const particle = document.createElement('span');
+    particle.className = 'particle';
+    particle.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+    particle.style.left = Math.random() * 100 + 'vw';
+    particle.style.fontSize = (12 + Math.random() * 19) + 'px';
+    particle.style.setProperty('--fall', (3 + Math.random() * 3) + 's');
+    particle.style.setProperty('--drift', (-90 + Math.random() * 180) + 'px');
+    particle.style.animationDelay = Math.random() * .8 + 's';
+    document.body.appendChild(particle);
+    setTimeout(() => particle.remove(), 7500);
+  }
+}
+
+document.getElementById('startButton').addEventListener('click', () => {
+  document.getElementById('boxScene').scrollIntoView({
+    behavior: 'smooth',
+    block: 'center'
+  });
+  shower(['💗', '✨', '🎀'], 15);
+});
+
+let boxOpened = false;
+
+document.getElementById('giftButton').addEventListener('click', () => {
+  const scene = document.getElementById('boxScene');
+  const letter = document.getElementById('welcomeLetter');
+
+  if (!boxOpened) {
+    boxOpened = true;
+    scene.classList.add('opened');
+    document.getElementById('boxHint').textContent =
+      'واااای! جعبه داره باز می‌شه! نینی آماده‌ای؟ 😭🎁';
+
+    document.getElementById('gift').textContent = '🎀';
+    letter.classList.add('show');
+    shower(['💗', '🌸', '✨', '🎁'], 35);
+
+    setTimeout(() => {
+      letter.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }, 250);
+  } else {
+    shower(['💗', '✨'], 12);
+    letter.classList.add('show');
+  }
+});
+
+document.getElementById('openEnvelopes').addEventListener('click', () => {
+  document.getElementById('envelopeSection').classList.add('show');
+  document.getElementById('promiseSection').classList.add('show');
+  document.getElementById('envelopeSection').scrollIntoView({
+    behavior: 'smooth',
+    block: 'start'
+  });
+});
+
+const envelopeData = {
+  first: {
+    title: '💌 راز اولین‌ها',
+    message: 'بعضی قصه‌ها با یه اتفاق کوچولو شروع می‌شن و کم‌کم پر از معنا می‌شن. برای من قشنگه که قصه‌مون کلی خاطره، حرف، خنده و فرصت برای ساختن روزهای تازه داره. هر بار که به شروعش فکر می‌کنم، یادم میاد چقدر اتفاق‌های قشنگ می‌تونن از لحظه‌های ساده شروع بشن. 💗'
+  },
+
+  family: {
+    title: '👑 راز بابایی و دخترش',
+    message: 'طبق بررسی‌های رسمی آزمایشگاه عشق، جناب نینی به عنوان باباییِ نازنین و دریافت‌کننده‌ی حجم نامحدود ذوق و سؤال انتخاب شده‌اند! 😂💗 دختر ایشون هم متعهد شده به رشد کردن، یاد گرفتن، تلاش برای آرزوها و تعریف کردن تمام اتفاق‌های مهم با هیجان ۴۰۰۰ درصدی ادامه بده! امضای مدیرعامل: دخترت! 👑'
+  },
+
+  future: {
+    title: '🌱 راز فردای ما',
+    message: 'نینی جان، امیدوارم به آرزوهامون با همدیگه برسیم؛ برای چیزهایی که دوست داریم تلاش کنیم، چیزهای تازه یاد بگیریم و قدم‌به‌قدم به زندگی دلخواهمون نزدیک‌تر بشیم. تصور کن یه روز به مسیرمون نگاه کنیم و با لبخند بگیم: چقدر چیزهای تازه یاد گرفتیم و چقدر خاطره ساختیم! 🥹🌷'
+  },
+
+  promise: {
+    title: '🎀 راز قول کوچولومون',
+    message: 'یه قول کوچولو می‌تونه یادآوری قشنگی باشه برای چیزهایی که برامون مهمن؛ رشد کردن، تلاش کردن برای آرزوهامون و ساختن لحظه‌هایی که ارزش به خاطر سپردن دارن. حالا نوبت توئه، نینی! بیا قول موردعلاقه‌مون رو انتخاب کنیم. 💗'
+  }
+};
+
+const cards = [...document.querySelectorAll('.envelope-card')];
+const opened = new Set();
+
+cards.forEach(card => {
+  card.addEventListener('click', () => {
+    const key = card.dataset.envelope;
+    const data = envelopeData[key];
+
+    card.classList.add('opened');
+    opened.add(key);
+
+    document.getElementById('progressFill').style.width =
+      (opened.size / cards.length * 100) + '%';
+
+    document.getElementById('progressText').textContent =
+      opened.size === cards.length
+        ? 'هر چهار راز کشف شدن! نینی در عملیات موفق بود! 😂🎉'
+        : `${opened.size} راز از ${cards.length} راز کشف شد! بریم سراغ بعدی! ✨`;
+
+    showEnvelopeModal(data.title, data.message);
+
+    if (opened.size === cards.length) {
+      document.getElementById('letterSection').classList.add('show');
+      document.getElementById('finalSection').classList.add('show');
+      document.getElementById('footerNote').classList.add('show');
+      shower(['💗', '🌸', '✨', '🎀'], 30);
+    }
+  });
+});
+
+function showEnvelopeModal(title, message) {
+  let modal = document.getElementById('messageModal');
+
+  if (!modal) {
+    modal = document.createElement('div');
+    modal.id = 'messageModal';
+
+    modal.style.cssText = `
+      position:fixed;inset:0;z-index:200;
+      display:flex;align-items:center;justify-content:center;
+      padding:18px;background:#100d20dd;backdrop-filter:blur(8px);
+    `;
+
+    modal.innerHTML = `
+      <div style="
+        width:min(100%,470px);max-height:85vh;overflow:auto;
+        padding:24px 19px;border-radius:26px;
+        border:1px solid #ffb6d56b;
+        background:linear-gradient(145deg,#483252,#292640);
+        box-shadow:0 20px 80px #0005;
+        text-align:center;animation:appear .4s ease both;
+      ">
+        <div style="font-size:2.3rem;margin-bottom:10px">💌</div>
+        <h2 id="messageTitle" style="color:#ffe5a3;font-size:1.15rem;line-height:1.8"></h2>
+        <p id="messageBody" style="color:#fff8ef;line-height:2.3;margin-top:12px;font-size:.92rem"></p>
+        <button id="closeMessage" class="primary">اینم از راز کوچولومون! 💗</button>
+      </div>
+    `;
+
+    document.body.appendChild(modal);
+
+    modal.addEventListener('click', event => {
+      if (event.target === modal || event.target.id === 'closeMessage') {
+        modal.remove();
+      }
+    });
+  }
+
+  document.getElementById('messageTitle').textContent = title;
+  document.getElementById('messageBody').textContent = message;
+}
+
+const promiseMessages = {
+  growth: '🌱 قول قشنگمون: با هم رشد کنیم، چیزهای تازه یاد بگیریم و برای تبدیل شدن به آدم‌هایی که دوست داریم، قدم برداریم! 💗',
+
+  dreams: '✨ قول قشنگمون: برای آرزوهامون قدم برداریم، به همدیگه انگیزه بدیم و از هر پیشرفت کوچولو خوشحال بشیم!',
+
+  joy: '😂 قول قشنگمون: کنار تلاش و برنامه‌هامون، برای خنده، ذوق و ساختن خاطره‌های بامزه هم وقت بذاریم! تیم نینی و دخترش همیشه آماده‌ی عملیات شادیه!'
+};
+
+document.querySelectorAll('.promise-option').forEach(button => {
+  button.addEventListener('click', () => {
+    document.querySelectorAll('.promise-option').forEach(item => {
+      item.classList.remove('chosen');
+    });
+
+    button.classList.add('chosen');
+
+    const result = document.getElementById('promiseResult');
+    result.textContent = promiseMessages[button.dataset.promise];
+    result.classList.add('show');
+
+    shower(['💗', '✨'], 12);
+  });
+});
+
+let lastSecretOpened = false;
+
+document.getElementById('heartButton').addEventListener('click', () => {
+  const message = document.getElementById('finalMessage');
+
+  if (!lastSecretOpened) {
+    lastSecretOpened = true;
+    message.classList.add('show');
+    shower(['💗', '💖', '✨', '🌸'], 45);
+
+    setTimeout(() => {
+      message.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }, 200);
+  } else {
+    shower(['💗', '✨'], 15);
+  }
+});
+</script>
+
+</body>
+</html>
