@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#fff4e8">
+<title>نامه‌ای برای نینیِ من 💌</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+    --rose: #e96e91;
+    --deep-rose: #c94f78;
+    --gold: #d7a74f;
+    --ink: #694553;
+    --paper: #fffaf0;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    font-family: 'Vazirmatn', Tahoma, sans-serif;
+    color: var(--ink);
+    background:
+        radial-gradient(ellipse at top left, #ffe3ed, transparent 40%),
+        radial-gradient(ellipse at bottom right, #f9e7cb, transparent 42%),
+        #fff9f5;
+}
+
+button, a {
+    font-family: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+.page {
+    width: min(100% - 28px, 760px);
+    margin: auto;
+    padding: 25px 0 42px;
+}
+
+/* ذرات نور */
+
+.ambient {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.sparkle {
+    position: absolute;
+    color: #d6a44c;
+    opacity: 0;
+    animation: sparkle 4s ease-in-out infinite;
+}
+
+@keyframes sparkle {
+    0%, 100% {
+        opacity: 0;
+        transform: scale(.5) rotate(0);
+    }
+    50% {
+        opacity: .7;
+        transform: scale(1.2) rotate(45deg);
+    }
+}
+
+main, header, footer {
+    position: relative;
+    z-index: 1;
+}
+
+/* سربرگ */
+
+.hero {
+    text-align: center;
+    padding: 27px 18px 24px;
+}
+
+.eyebrow {
+    display: inline-block;
+    border: 1px solid #f0d6bd;
+    border-radius: 50px;
+    padding: 7px 13px;
+    color: #ae7b42;
+    background: #ffffffb8;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.hero h1 {
+    margin: 18px 0 10px;
+    color: #c85c7e;
+    font-size: clamp(29px, 7vw, 42px);
+    line-height: 1.7;
+    font-weight: 900;
+}
+
+.hero h1 span {
+    color: #b48a4c;
+}
+
+.hero p {
+    max-width: 540px;
+    margin: auto;
+    font-size: 13px;
+    line-height: 2.4;
+    color: #8a6873;
+}
+
+/* مرحله اول: پاکت نامه */
+
+.envelope-stage {
+    margin: 12px auto 25px;
+    text-align: center;
+}
+
+.instruction {
+    font-size: 13px;
+    line-height: 2.3;
+    color: #946d79;
+    margin-bottom: 25px;
+}
+
+.envelope-button {
+    display: block;
+    width: min(100%, 410px);
+    margin: auto;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: inherit;
+    perspective: 1000px;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.envelope {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1.32 / 1;
+    max-height: 300px;
+    margin: auto;
+    filter: drop-shadow(0 15px 18px #b96e812b);
+    transition: transform .4s ease;
+}
+
+.envelope-button:hover .envelope {
+    transform: translateY(-5px) rotate(-1deg);
+}
+
+.envelope-back {
+    position: absolute;
+    inset: 8% 4% 4%;
+    background: linear-gradient(140deg, #f6d9a7, #e7b969);
+    border-radius: 14px;
+    border: 2px solid #d3a456;
+}
+
+.envelope-front {
+    position: absolute;
+    inset: 8% 4% 4%;
+    overflow: hidden;
+    border-radius: 14px;
+    background: linear-gradient(140deg, #fbe9cb, #f1ce94);
+    border: 2px solid #d3a456;
+    clip-path: polygon(0 0, 50% 59%, 100% 0, 100% 100%, 0 100%);
+}
+
+.envelope-flap {
+    position: absolute;
+    top: 8%;
+    left: 4%;
+    width: 92%;
+    height: 63%;
+    transform-origin: top center;
+    background: linear-gradient(160deg, #ffe9c4, #e5b765);
+    clip-path: polygon(0 0, 100% 0, 50% 100%);
+    border-radius: 12px;
+    z-index: 4;
+    transition: transform .8s cubic-bezier(.2,.8,.2,1);
+}
+
+.envelope-letter {
+    position: absolute;
+    left: 13%;
+    top: 17%;
+    width: 74%;
+    height: 68%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    background: #fffdf7;
+    border: 1px solid #e9d7b8;
+    border-radius: 6px;
+    transition: transform .9s cubic-bezier(.2,.8,.2,1);
+    z-index: 2;
+}
+
+.envelope-letter .tiny-heart {
+    font-size: 27px;
+}
+
+.envelope-letter strong {
+    margin-top: 7px;
+    color: #c85c7e;
+    font-size: clamp(12px, 3.5vw, 16px);
+    line-height: 1.9;
+}
+
+.envelope-letter small {
+    margin-top: 4px;
+    color: #ad8a61;
+    font-size: 10px;
+}
+
+.seal {
+    position: absolute;
+    z-index: 5;
+    left: 50%;
+    top: 59%;
+    transform: translate(-50%, -50%);
+    width: 63px;
+    height: 63px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    color: #fff5e6;
+    font-size: 29px;
+    background: radial-gradient(circle at 35% 25%, #e991a9, #b94c70);
+    border: 3px solid #f8dca5;
+    box-shadow: 0 4px 10px #96506c30;
+    transition: opacity .35s ease, transform .35s ease;
+}
+
+.envelope-button.opened .envelope-flap {
+    transform: rotateX(180deg);
+    z-index: 1;
+}
+
+.envelope-button.opened .envelope-letter {
+    transform: translateY(-44%);
+    z-index: 6;
+}
+
+.envelope-button.opened .seal {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(.3);
+}
+
+.tap-label {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 9px 15px;
+    border-radius: 50px;
+    background: #fff;
+    color: #bf6280;
+    border: 1px solid #f2d4df;
+    font-size: 12px;
+    font-weight: 900;
+    box-shadow: 0 5px 14px #c78a9d17;
+}
+
+.envelope-button.opened .tap-label {
+    color: #a17b40;
+}
+
+/* نامه بازشده */
+
+.letter-wrap {
+    display: none;
+    margin-top: 25px;
+    animation: letterAppear 1s ease both;
+}
+
+.letter-wrap.visible {
+    display: block;
+}
+
+@keyframes letterAppear {
+    from {
+        opacity: 0;
+        transform: translateY(24px) scale(.98);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.letter-paper {
+    position: relative;
+    overflow: hidden;
+    padding: 29px 20px 26px;
+    background:
+        repeating-linear-gradient(
+            to bottom,
+            transparent 0,
+            transparent 36px,
+            #ead8c84c 37px,
+            transparent 38px
+        ),
+        var(--paper);
+    border: 1px solid #eed9bd;
+    border-radius: 8px 8px 22px 22px;
+    box-shadow: 0 15px 35px #a16e7620;
+}
+
+.letter-paper::before {
+    content: "♡";
+    position: absolute;
+    top: -18px;
+    left: -5px;
+    font-size: 115px;
+    color: #e6a8b02c;
+    transform: rotate(-15deg);
+}
+
+.paper-top {
+    position: relative;
+    text-align: center;
+    padding-bottom: 19px;
+    border-bottom: 1px dashed #dcbf9d;
+    margin-bottom: 23px;
+}
+
+.paper-top .flower {
+    font-size: 30px;
+}
+
+.paper-top h2 {
+    margin-top: 8px;
+    color: #bd5979;
+    font-size: 21px;
+    line-height: 1.8;
+    font-weight: 900;
+}
+
+.paper-top p {
+    margin-top: 5px;
+    font-size: 11px;
+    color: #a88b6b;
+}
+
+.letter-body {
+    position: relative;
+    font-size: 13px;
+    line-height: 2.9;
+    color: #71505b;
+    white-space: pre-line;
+    min-height: 150px;
+    overflow-wrap: anywhere;
+}
+
+.letter-body strong {
+    color: #c6547b;
+}
+
+.type-cursor::after {
+    content: "▍";
+    display: inline-block;
+    color: #c6547b;
+    animation: blink .8s step-end infinite;
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
+.letter-signature {
+    display: none;
+    margin-top: 23px;
+    padding-top: 19px;
+    border-top: 1px dashed #dcbf9d;
+    text-align: center;
+    animation: letterAppear .8s ease both;
+}
+
+.letter-signature.visible {
+    display: block;
+}
+
+.letter-signature .kiss {
+    font-size: 30px;
+}
+
+.letter-signature p {
+    margin-top: 8px;
+    color: #c6547b;
+    font-size: 15px;
+    font-weight: 900;
+    line-height: 2.2;
+}
+
+.letter-signature small {
+    display: block;
+    margin-top: 8px;
+    color: #9b7b68;
+    font-size: 11px;
+}
+
+/* دکمه بازخوانی */
+
+.read-again {
+    display: none;
+    margin: 18px auto 0;
+    border: 1px solid #edc9d7;
+    border-radius: 50px;
+    padding: 11px 17px;
+    background: #fff;
+    color: #bf6280;
+    font-size: 12px;
+    font-weight: 900;
+}
+
+.read-again.visible {
+    display: block;
+}
+
+/* پیام کوچک */
+
+.little-message {
+    margin-top: 25px;
+    padding: 20px 16px;
+    border-radius: 22px;
+    background: linear-gradient(135deg, #fff0f4, #fff7e9);
+    border: 1px solid #f4e0d5;
+    text-align: center;
+}
+
+.little-message .icon {
+    font-size: 29px;
+}
+
+.little-message h2 {
+    margin: 8px 0;
+    font-size: 17px;
+    color: #c65b7c;
+}
+
+.little-message p {
+    font-size: 12px;
+    line-height: 2.4;
+    color: #8c6972;
+}
+
+/* دکمه‌های پایین */
+
+.navigation {
+    display: grid;
+    gap: 11px;
+    margin-top: 28px;
+}
+
+.nav-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 52px;
+    padding: 13px 14px;
+    border-radius: 16px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 900;
+    transition: transform .2s ease;
+}
+
+.nav-btn:active {
+    transform: scale(.98);
+}
+
+.primary {
+    color: white;
+    background: linear-gradient(110deg, #ed789a, #d3a35a);
+    box-shadow: 0 8px 19px #c9849b35;
+}
+
+.secondary {
+    color: #ae5c7b;
+    background: #fff;
+    border: 1px solid #f1d2dc;
+}
+
+.third {
+    color: #9c7745;
+    background: #fff4df;
+    border: 1px solid #efd8ae;
+}
+
+.fourth {
+    color: #fff;
+    background: #866579;
+}
+
+footer {
+    margin-top: 24px;
+    text-align: center;
+    font-size: 11px;
+    color: #aa8791;
+    line-height: 2.3;
+}
+
+footer .hearts {
+    font-size: 25px;
+    margin-bottom: 5px;
+}
+
+@media (min-width: 620px) {
+    .page {
+        padding-top: 35px;
+    }
+
+    .hero {
+        padding-top: 35px;
+    }
+
+    .letter-paper {
+        padding: 38px 35px;
+    }
+
+    .letter-body {
+        font-size: 14px;
+    }
+
+    .navigation {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="ambient" id="ambient" aria-hidden="true"></div>
+
+<div class="page">
+
+<header class="hero">
+    <div class="eyebrow">💌 نامه‌ای که با عشق نوشته شده</div>
+
+    <h1>
+        برای نینیِ من،<br>
+        <span>از طرف دخترت</span> 💗
+    </h1>
+
+    <p>
+        یه نامه هست که قرار نیست فقط خونده بشه...
+        قراره آروم‌آروم بازش کنی، لبخند بزنی و بدونی
+        یه دختر کوچولو با چه قلب بزرگی دوستت داره. 🥹
+    </p>
+</header>
+
+<main>
+
+<section class="envelope-stage">
+
+    <p class="instruction">
+        نینی جان، این پاکت مخصوص خودته! 💌<br>
+        روی پاکت بزن تا نامه‌ی دخترت برات باز بشه...
+    </p>
+
+    <button class="envelope-button" id="envelopeButton"
+        type="button" aria-label="باز کردن نامه عاشقانه">
+
+        <div class="envelope">
+
+            <div class="envelope-back"></div>
+
+            <div class="envelope-letter">
+                <div class="tiny-heart">💗</div>
+                <strong>برای نینیِ خودم</strong>
+                <small>از طرف دخترِ کوچولوت</small>
+            </div>
+
+            <div class="envelope-front"></div>
+            <div class="envelope-flap"></div>
+
+            <div class="seal">♥</div>
+        </div>
+
+        <span class="tap-label" id="tapLabel">💌 برای باز کردن نامه لمس کن</span>
+    </button>
+
+</section>
+
+<section class="letter-wrap" id="letterWrap" aria-live="polite">
+
+    <article class="letter-paper">
+
+        <div class="paper-top">
+            <div class="flower">🌷💌🌷</div>
+            <h2>چند خط برای قشنگ‌ترین نینیِ دنیا</h2>
+            <p>از قلب دخترت، با کلی بوس و یه عالمه عشق 💗</p>
+        </div>
+
+        <div class="letter-body type-cursor" id="letterBody"></div>
+
+        <div class="letter-signature" id="letterSignature">
+            <div class="kiss">💋💗🫂</div>
+
+            <p>
+                نینیِ من، باباییِ قشنگم...<br>
+                دوستت دارم؛ به اندازه‌ی تمام رؤیاهایی که<br>
+                دلم می‌خواد با لبخند بهشون برسیم!
+            </p>
+
+            <small>
+                با عشق، از طرف دخترت؛ همون فسقلیِ پرحرف و رؤیاپردازت 😂💕
+            </small>
+        </div>
+
+    </article>
+
+    <button class="read-again" id="readAgain" type="button">
+        💌 دوباره نامه‌ی دخترت رو بخون
+    </button>
+
+</section>
+
+<section class="little-message">
+    <div class="icon">🧸💗</div>
+
+    <h2>یه راز کوچولو از دخترت!</h2>
+
+    <p>
+        نینی، تو باعث شدی بفهمم داشتن یه آدم عزیز توی زندگی،
+        چقدر می‌تونه به دل آدم حس امنیت و آرامش بده.
+        <br>
+        حالا دخترت می‌خواد با همون قلب پر از عشق،
+        برای رؤیاهاش تلاش کنه و کلی اتفاق قشنگ بسازه! 🌱✨
+    </p>
+</section>
+
+<nav class="navigation" aria-label="پیمایش بین بخش‌های سایت">
+
+    <a class="nav-btn primary" href="voice.html">
+        🎙️ ادامه قصه ما؛ صدای دخترت
+    </a>
+
+    <a class="nav-btn secondary" href="museum.html">
+        🏡 برگشت به دنیا هامون
+    </a>
+
+    <a class="nav-btn third" href="../index.html">
+        💗 شروع قصه‌مون از اول
+    </a>
+
+    <a class="nav-btn fourth" href="judy-nick.html">
+        🦊🐰 برگشت به دنیای قبلی؛ جودی و نیک
+    </a>
+
+</nav>
+
+</main>
+
+<footer>
+    <div class="hearts">💗 💌 💗</div>
+    این نامه فقط چند خطه؛<br>
+    ولی پشت هر خطش، یه دنیا دوست داشتن خوابیده.
+</footer>
+
+</div>
+
+<script>
+const envelopeButton = document.getElementById('envelopeButton');
+const tapLabel = document.getElementById('tapLabel');
+const letterWrap = document.getElementById('letterWrap');
+const letterBody = document.getElementById('letterBody');
+const letterSignature = document.getElementById('letterSignature');
+const readAgain = document.getElementById('readAgain');
+
+const letterText = `سلام نینیِ قشنگم... 💗
+
+سلام به یاشاری که برای من فقط یه اسم نیست؛
+به آدمی که اومد و یه حس خیلی قشنگ رو به قلبم هدیه داد...
+حسِ امنیت، حسِ تکیه‌گاه داشتن، حسِ اینکه می‌تونم یه گوشه از دنیام رو با خیال راحت بهش نشون بدم و خودِ خودم باشم. 🥹🫂
+
+نینی جانم، می‌دونی قشنگ‌ترین قسمتِ دوست داشتنت برای من چیه؟
+اینه که کنار تو، دخترِ کوچولوی درونم می‌تونه با خیال راحت ذوق کنه؛
+می‌تونه شیطنت کنه، بخنده، لوس بشه، از چیزای کوچولو خوشحال بشه و با هیجان از هزار تا رؤیایی حرف بزنه که توی سرشه! 😂💗
+
+گاهی دلم می‌خواد بیام کنارت، دستاتو بگیرم و با اون لحن دخترونه‌ی خودم بگم:
+«باباییییی! بیا ببین امروز دخترت چه فکری کرده!» 😭😂💋
+
+بعد تو هم بشینی به حرفای این فسقلی گوش بدی؛
+همون فسقلی‌ای که ممکنه وسط یه حرف خیلی جدی یهو یه چیز بامزه بگه و خودش قبل از همه از خنده منفجر بشه! 😂
+
+یاشارِ من...
+تو بهم حس قشنگی از بابایی بودن دادی؛
+حسی که توش می‌تونم همون دختر کوچولوی ناز باشم،
+با کلی ذوق و احساس و حرفای ریز و درشت.
+و در کنارش، می‌خوام دختری باشم که برای خودش آینده می‌سازه،
+یاد می‌گیره، بزرگ می‌شه، تلاش می‌کنه و هر روز یه قدم به آرزوهاش نزدیک‌تر می‌شه. 🌱✨
+
+دلم می‌خواد بهت افتخار کنم و تو هم به دخترت افتخار کنی.
+دلم می‌خواد روزی که از موفقیت‌هامون حرف می‌زنیم،
+با خنده یادمون بیاد که چقدر رؤیا توی سرمون داشتیم و چطور قدم‌به‌قدم براشون تلاش کردیم.
+
+می‌خوام وقتی از آینده حرف می‌زنیم، چشم‌هامون برق بزنه!
+از خونه‌ای که با سلیقه‌هامون قشنگش می‌کنیم،
+از آهنگ‌هایی که باهاشون می‌رقصیم،
+از غذاهایی که شاید یکیشون رو بسوزونیم و بعد کلی بهش بخندیم! 😂🍳
+از عکس‌هایی که می‌گیریم،
+از سفرهایی که درباره‌شون خیال‌بافی می‌کنیم،
+از جشن گرفتن موفقیت‌های کوچیک و بزرگمون...
+و از هزار تا خاطره‌ای که هنوز نساختیم و قراره هر کدومشون یه گوشه‌ی قشنگ از قصه‌مون بشن. 💗
+
+نینیییی! یه چیزی بگم؟
+من هنوزم همون دخترم که جودی و نیک رو برای خودمون انتخاب کرد!
+همون دخترِ رؤیاپردازی که وقتی به قصه‌ی ما فکر می‌کنه،
+توی ذهنش کلی صحنه‌ی قشنگ می‌سازه و برای فرداهاش ذوق می‌کنه. 🦊🐰
+
+می‌دونی؟ من دوست دارم مثل جودی برای هدف‌هام تلاش کنم،
+مثل نیک هوشمندانه فکر کنم و مثل یه تیم واقعی،
+یاد بگیریم چطور بهتر همدیگه رو بفهمیم و کنار هم رشد کنیم.
+نه فقط برای رسیدن به یه رؤیای قشنگ؛
+برای اینکه خودمون هم آدم‌هایی بشیم که بهشون افتخار می‌کنیم. 🌷
+
+من می‌خوام عشق توی قصه‌مون فقط یه جمله‌ی قشنگ نباشه؛
+توی مهربونی‌هامون باشه،
+توی احترام گذاشتن به همدیگه باشه،
+توی حرف زدن و گوش دادن باشه،
+توی تشویق کردن همدیگه باشه،
+و توی قدم‌هایی که برای آینده‌مون برمی‌داریم. 💞
+
+و حالا یه اعتراف خیلی مهم از طرف دخترت:
+من ممکنه کلی حرف برای گفتن داشته باشم،
+ممکنه وقتی ذوق می‌کنم هزار تا پیام پشت سر هم بفرستم،
+ممکنه از شدت ناز کردن خودم هم نفهمم چی دارم می‌گم...
+ولی یه چیز رو خیلی خوب می‌دونم:
+تو برای قلب من خیلی عزیزی، نینیِ من! 😭💗💋
+
+ممنونم که بهم این حس قشنگ رو دادی که می‌تونم کنار یه آدم عزیز،
+هم دخترِ ناز و کوچولوی خودم باشم،
+هم برای رؤیاهای بزرگم تلاش کنم.
+دلم می‌خواد منم با عشق، مهربونی، خنده و همراهی‌م،
+یه عالمه حس قشنگ به زندگی تو اضافه کنم. 🫂💗
+
+و درباره‌ی آینده‌مون...
+من به رؤیاهای قشنگمون امید دارم.
+به روزهایی که با تلاش و صبر می‌سازیم،
+به آرزوهایی که یکی‌یکی براشون قدم برمی‌داریم،
+به لبخندهایی که بعد از رسیدن به هر کدومشون روی صورتمون می‌شینه.
+می‌خوام هر دومون رشد کنیم، بدرخشیم و به خودمون افتخار کنیم. ✨
+
+و نینیِ من، اینو از ته قلبت بشنو:
+من دلم می‌خواد یه روز به این صفحه برگردیم،
+این نامه رو دوباره بخونیم،
+به عکس‌هامون نگاه کنیم و با خنده بگیم:
+«وای، یادته اون روزا چقدر ذوق داشتیم؟ نگاه کن حالا چقدر از رؤیاهامون رو ساختیم!» 🥹💍
+
+دخترت کلی رؤیا توی دلش داره،
+کلی عشق برای تو،
+کلی انگیزه برای ساختن آینده‌ش،
+و یه عالمه بوس که هنوز به نینیِ عزیزش بدهکاره! 😂💋
+
+پس بیا قدم‌به‌قدم رشد کنیم،
+برای چیزهایی که دوست داریم تلاش کنیم،
+هوای دل همدیگه رو داشته باشیم،
+و قصه‌مون رو با انتخاب‌های قشنگ، مهربونی و عشق بنویسیم.
+
+چون من به این قصه امید دارم...
+به رؤیاهای قشنگمون،
+به تلاش‌هامون،
+به فرداهایی که می‌تونیم براشون برنامه بریزیم،
+و به عشقی که دلم می‌خواد هر روز با رفتارهای کوچیک و واقعی نشونش بدیم. 💗
+
+و حالاااااااااااااا...
+یه جمله‌ی آخر از طرف دخترت برای نینیِ خودش:
+
+یاشارِ من، باباییِ قشنگم،
+من از ته قلبم دوستت دارم؛
+برای امروز، برای رؤیاهایی که با امید می‌سازیم،
+برای تمام قدم‌هایی که قراره با تلاش برداریم،
+و برای اون روز قشنگی که با لبخند به هم نگاه می‌کنیم و می‌گیم:
+
+«دیدی نینی؟ دیدی دخترت؟!
+ما برای رؤیاهامون تلاش کردیم...
+و بالاخره به هم می‌رسیمممممم!» 😭💗💍`;
+
+let typingTimer = null;
+let isOpened = false;
+
+function typeLetter() {
+    clearInterval(typingTimer);
+
+    letterBody.textContent = '';
+    letterBody.classList.add('type-cursor');
+    letterSignature.classList.remove('visible');
+    readAgain.classList.remove('visible');
+
+    let index = 0;
+
+    typingTimer = setInterval(() => {
+        if (index >= letterText.length) {
+            clearInterval(typingTimer);
+            letterBody.classList.remove('type-cursor');
+            letterSignature.classList.add('visible');
+            readAgain.classList.add('visible');
+            return;
+        }
+
+        letterBody.textContent += letterText[index];
+        index++;
+
+        // برای موبایل، نامه با متن بلند به‌صورت روان نمایش داده شود.
+        if (index % 30 === 0) {
+            const rect = letterBody.getBoundingClientRect();
+            if (rect.bottom < 0) {
+                letterBody.scrollIntoView({ block: 'end', behavior: 'smooth' });
+            }
+        }
+    }, 23);
+}
+
+envelopeButton.addEventListener('click', () => {
+    if (!isOpened) {
+        isOpened = true;
+        envelopeButton.classList.add('opened');
+        tapLabel.textContent = '💗 نامه‌ات داره باز می‌شه...';
+
+        setTimeout(() => {
+            letterWrap.classList.add('visible');
+            tapLabel.textContent = '💌 نامه‌ی نینی باز شد!';
+            typeLetter();
+
+            setTimeout(() => {
+                letterWrap.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }, 250);
+        }, 800);
+    } else {
+        letterWrap.classList.toggle('visible');
+
+        if (letterWrap.classList.contains('visible')) {
+            letterWrap.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    }
+});
+
+readAgain.addEventListener('click', () => {
+    typeLetter();
+    letterWrap.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+    });
+});
+
+// ستاره‌های طلایی کوچک
+const ambient = document.getElementById('ambient');
+
+for (let i = 0; i < 22; i++) {
+    const star = document.createElement('span');
+    star.className = 'sparkle';
+    star.textContent = ['✦', '✧', '♡'][i % 3];
+    star.style.left = (Math.random() * 100) + '%';
+    star.style.top = (Math.random() * 100) + '%';
+    star.style.fontSize = (10 + Math.random() * 15) + 'px';
+    star.style.animationDelay = (Math.random() * 4) + 's';
+    ambient.appendChild(star);
+}
+</script>
+
+</body>
+</html>

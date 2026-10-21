@@ -1,0 +1,934 @@
+```html
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#fff0f7">
+
+<title>دو تا فسقلی | دنیای نینی و دخترش 💗</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+  --pink: #ff6da6;
+  --deep-pink: #d93678;
+  --red: #ff5879;
+  --purple: #b58aff;
+  --text: #79344f;
+  --soft: #fff3f8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Vazirmatn', Tahoma, sans-serif;
+  color: var(--text);
+  background: #fff5fa;
+}
+
+button, a {
+  font-family: inherit;
+}
+
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.page {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  padding: 20px 17px 45px;
+  background:
+    radial-gradient(ellipse at 5% 8%, #ffd9e9 0, transparent 32%),
+    radial-gradient(ellipse at 95% 35%, #ffe4dc 0, transparent 30%),
+    radial-gradient(ellipse at 45% 75%, #ffe0f0 0, transparent 35%),
+    linear-gradient(145deg, #fffafd, #fff0f7 55%, #fff8f0);
+}
+
+.page::before,
+.page::after {
+  position: absolute;
+  z-index: 0;
+  color: #ff87b8;
+  opacity: .13;
+  pointer-events: none;
+}
+
+.page::before {
+  content: "♡";
+  top: 190px;
+  right: -42px;
+  font-size: 180px;
+  animation: floatHeart 7s ease-in-out infinite;
+}
+
+.page::after {
+  content: "♡";
+  top: 1000px;
+  left: -45px;
+  font-size: 170px;
+  animation: floatHeart 8s ease-in-out infinite reverse;
+}
+
+/* دکمه برگشت */
+
+.top-nav {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.back-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 17px;
+  border: 1px solid #ffc7dd;
+  border-radius: 40px;
+  background: #ffffffdc;
+  color: #c53b73;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 800;
+  box-shadow: 0 6px 20px #cf467c10;
+  transition: .25s;
+}
+
+.back-button:hover {
+  transform: translateY(-3px);
+}
+
+/* شروع قصه */
+
+.hero {
+  position: relative;
+  z-index: 1;
+  max-width: 850px;
+  margin: 30px auto 48px;
+  text-align: center;
+  animation: appear .9s ease both;
+}
+
+.hero-badge {
+  display: inline-block;
+  padding: 9px 17px;
+  border: 1px solid #ffc4dc;
+  border-radius: 50px;
+  background: #fff;
+  color: #d94381;
+  font-size: 12px;
+  font-weight: 900;
+  box-shadow: 0 6px 20px #e65b9510;
+}
+
+.hero h1 {
+  margin: 20px 0 12px;
+  color: #df3478;
+  font-size: clamp(32px, 7vw, 57px);
+  font-weight: 900;
+  line-height: 1.7;
+  text-shadow: 0 4px #fff, 0 10px 28px #ee78a42c;
+  animation: titleBeat 3s ease-in-out infinite;
+}
+
+.hero h1 span {
+  display: inline-block;
+}
+
+.hero-description {
+  max-width: 690px;
+  margin: 0 auto;
+  color: #92516c;
+  font-size: 14px;
+  line-height: 2.5;
+}
+
+.hero-description strong {
+  color: #d83c79;
+  font-weight: 900;
+}
+
+.heart-line {
+  margin: 19px 0;
+  font-size: 22px;
+  letter-spacing: 5px;
+  animation: twinkle 2s ease-in-out infinite;
+}
+
+.hero-note {
+  display: inline-block;
+  margin-top: 18px;
+  padding: 12px 19px;
+  border: 1px dashed #ff9fc3;
+  border-radius: 18px;
+  background: #ffffffc9;
+  color: #c83b76;
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 2;
+}
+
+/* معرفی آلبوم */
+
+.album-intro {
+  position: relative;
+  z-index: 1;
+  max-width: 750px;
+  margin: 0 auto 32px;
+  text-align: center;
+}
+
+.album-intro h2 {
+  margin: 0 0 10px;
+  color: #c93471;
+  font-size: clamp(23px, 4vw, 32px);
+  font-weight: 900;
+  line-height: 1.8;
+}
+
+.album-intro p {
+  margin: 0;
+  color: #98627b;
+  font-size: 13px;
+  line-height: 2.2;
+}
+
+/* قاب عکس‌ها */
+
+.album {
+  position: relative;
+  z-index: 1;
+  width: min(780px, 100%);
+  margin: 0 auto;
+}
+
+.photo-card {
+  --accent: #ff82b0;
+  position: relative;
+  margin: 0 0 38px;
+  padding: 15px;
+  overflow: hidden;
+  border: 1px solid #fff;
+  border-radius: 29px;
+  background: linear-gradient(145deg, #fff, #fff5fa);
+  box-shadow:
+    0 13px 35px #c44b7813,
+    inset 0 0 0 1px #ffc1da30;
+  animation: appear .8s ease both;
+}
+
+.photo-card:nth-child(2) { --accent: #ffb56e; }
+.photo-card:nth-child(3) { --accent: #ff719f; }
+.photo-card:nth-child(4) { --accent: #b69aff; }
+.photo-card:nth-child(5) { --accent: #ff93b8; }
+
+.photo-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 12%;
+  left: 12%;
+  height: 5px;
+  border-radius: 0 0 10px 10px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+}
+
+.photo-number {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin: 2px 0 12px;
+  padding: 6px 12px;
+  border: 1px solid #ffd2e3;
+  border-radius: 30px;
+  background: #fff5fa;
+  color: #c4447b;
+  font-size: 11px;
+  font-weight: 900;
+}
+
+/* همه عکس‌ها ۱۶:۹ هستند */
+
+.photo-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border: 4px solid #fff;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #ffe2ef, #fff1e8);
+  box-shadow: 0 6px 18px #bc477515;
+}
+
+.photo-frame img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform .65s ease;
+}
+
+.photo-card:hover .photo-frame img {
+  transform: scale(1.045);
+}
+
+.photo-caption {
+  padding: 17px 9px 8px;
+  text-align: center;
+}
+
+.photo-caption h3 {
+  margin: 0 0 9px;
+  color: #c53772;
+  font-size: clamp(17px, 3.8vw, 22px);
+  font-weight: 900;
+  line-height: 1.9;
+}
+
+.photo-caption p {
+  margin: 0 auto;
+  max-width: 610px;
+  color: #92536e;
+  font-size: 13px;
+  line-height: 2.4;
+}
+
+.photo-caption strong {
+  color: #d43c79;
+  font-weight: 900;
+}
+
+.caption-decoration {
+  margin-top: 12px;
+  color: var(--accent);
+  font-size: 17px;
+  letter-spacing: 5px;
+}
+
+/* نامه مخصوص دختر و بابایی */
+
+.love-letter {
+  position: relative;
+  z-index: 1;
+  width: min(780px, 100%);
+  margin: 48px auto;
+  padding: 28px 23px;
+  overflow: hidden;
+  border: 1px solid #ffc9df;
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at 100% 0, #ffe3ef, transparent 45%),
+    #ffffffd9;
+  box-shadow: 0 12px 32px #bc477512;
+  text-align: center;
+  animation: appear .8s ease both;
+}
+
+.letter-icon {
+  font-size: 38px;
+  animation: letterWiggle 3s ease-in-out infinite;
+}
+
+.love-letter h2 {
+  margin: 12px 0;
+  color: #d73576;
+  font-size: clamp(22px, 4vw, 30px);
+  font-weight: 900;
+  line-height: 1.8;
+}
+
+.love-letter p {
+  margin: 0 auto;
+  max-width: 650px;
+  color: #8f4e69;
+  font-size: 14px;
+  line-height: 2.7;
+}
+
+.love-letter strong {
+  color: #d73576;
+  font-weight: 900;
+}
+
+.letter-signature {
+  display: inline-block;
+  margin-top: 18px;
+  padding: 10px 17px;
+  border-radius: 50px;
+  background: #fff0f6;
+  color: #ce3e79;
+  font-size: 13px;
+  font-weight: 900;
+}
+
+/* دکمه‌های انتهای صفحه */
+
+.next-intro {
+  position: relative;
+  z-index: 1;
+  max-width: 760px;
+  margin: 55px auto 25px;
+  text-align: center;
+}
+
+.next-intro h2 {
+  margin: 0 0 10px;
+  color: #cf3472;
+  font-size: clamp(23px, 4vw, 31px);
+  font-weight: 900;
+  line-height: 1.8;
+}
+
+.next-intro p {
+  margin: 0;
+  color: #96617b;
+  font-size: 13px;
+  line-height: 2.3;
+}
+
+.navigation {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: center;
+  gap: 13px;
+  width: min(850px, 100%);
+  margin: 25px auto 0;
+}
+
+.nav-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 52px;
+  padding: 13px 19px;
+  border: 1px solid #ffc8dd;
+  border-radius: 17px;
+  background: #fff;
+  color: #c33773;
+  font-size: 13px;
+  font-weight: 900;
+  line-height: 1.8;
+  text-align: center;
+  text-decoration: none;
+  box-shadow: 0 7px 19px #bf477510;
+  transition: transform .25s, box-shadow .25s;
+}
+
+.nav-link:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px #bf47751d;
+}
+
+.nav-link.primary {
+  border-color: #f05291;
+  background: linear-gradient(135deg, #ff80b1, #f64c8b);
+  color: white;
+  box-shadow: 0 9px 22px #ef57932e;
+}
+
+.nav-link.home {
+  background: #fff8fb;
+}
+
+.footer {
+  position: relative;
+  z-index: 1;
+  margin: 36px auto 0;
+  text-align: center;
+  color: #c04479;
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 2.3;
+}
+
+/* قلب‌های شناور */
+
+.floating-heart {
+  position: fixed;
+  z-index: 10;
+  bottom: -35px;
+  pointer-events: none;
+  animation: floatUp linear forwards;
+  filter: drop-shadow(0 3px 5px #ef6a9b20);
+}
+
+/* انیمیشن‌ها */
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes titleBeat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.015); }
+}
+
+@keyframes floatHeart {
+  0%, 100% { transform: translateY(0) rotate(-8deg); }
+  50% { transform: translateY(-18px) rotate(8deg); }
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: .7; }
+  50% { opacity: 1; }
+}
+
+@keyframes letterWiggle {
+  0%, 100% { transform: rotate(0); }
+  25% { transform: rotate(-7deg); }
+  75% { transform: rotate(7deg); }
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) rotate(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: .8;
+  }
+  90% {
+    opacity: .65;
+  }
+  100% {
+    transform: translateY(-115vh) rotate(35deg);
+    opacity: 0;
+  }
+}
+
+/* موبایل */
+
+@media (max-width: 520px) {
+  .page {
+    padding: 13px 12px 30px;
+  }
+
+  .hero {
+    margin: 25px auto 37px;
+  }
+
+  .hero h1 {
+    font-size: 30px;
+  }
+
+  .hero-description {
+    font-size: 12px;
+  }
+
+  .hero-note {
+    font-size: 12px;
+    padding: 10px 12px;
+  }
+
+  .photo-card {
+    padding: 10px;
+    margin-bottom: 25px;
+    border-radius: 23px;
+  }
+
+  .photo-frame {
+    border-radius: 15px;
+    border-width: 3px;
+  }
+
+  .photo-caption {
+    padding: 14px 5px 7px;
+  }
+
+  .photo-caption p {
+    font-size: 12px;
+    line-height: 2.3;
+  }
+
+  .love-letter {
+    margin: 35px auto;
+    padding: 24px 15px;
+    border-radius: 23px;
+  }
+
+  .love-letter p {
+    font-size: 12px;
+    line-height: 2.6;
+  }
+
+  .navigation {
+    flex-direction: column;
+    gap: 11px;
+  }
+
+  .nav-link {
+    width: 100%;
+    min-height: 49px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<main class="page">
+
+  <!-- برگشت به موزه -->
+  <nav class="top-nav">
+    <a class="back-button" href="museum.html">
+      🎠 برگشت به دنیاهای ما
+    </a>
+  </nav>
+
+
+  <!-- شروع قصه -->
+  <header class="hero">
+
+    <div class="hero-badge">
+      👶🏻 پرونده‌ی محرمانه‌ی دو تا فسقلی 💗
+    </div>
+
+    <h1>
+      نینیِ کوچولوی من<br>
+      و دخترِ باباییش! 🥹💕
+    </h1>
+
+    <p class="hero-description">
+      خب خب خب! 😭🎀<br>
+      آقای یاشار، لطفاً تشریف بیارین که امروز قراره
+      یه سفر بامزه به گذشته داشته باشیم! 😂💗<br>
+      اول یه نینیِ خوشگل داریم، بعد یه دختر کوچولو،
+      و حالا یه دنیا عشق که اسمش شده <strong>ما دوتا!</strong> 💞
+    </p>
+
+    <div class="heart-line">💗 ✨ 👶🏻 ✨ 💗</div>
+
+    <div class="hero-note">
+      هشدار مهم: احتمال جیغ‌زدن از شدت نازی عکس‌ها بسیار بالاست! 😂💕
+    </div>
+
+  </header>
+
+
+  <!-- معرفی عکس‌ها -->
+  <section class="album-intro">
+    <h2>📸 آلبوم فسقلی‌های دوست‌داشتنی</h2>
+    <p>
+      پنج تا عکس، یه عالمه ناز، و کلی حرف عاشقانه برای نینیِ خودم! 🥹
+    </p>
+  </section>
+
+
+  <!-- پنج عکس کودکی -->
+  <section class="album">
+
+
+    <!-- عکس اول: نوزادی یاشار -->
+    <article class="photo-card">
+
+      <div class="photo-number">۱ از ۵ · پرونده‌ی نینی 👶🏻</div>
+
+      <div class="photo-frame">
+        <img
+          src="../assets/images/childhood/yashar-childhood.jpg"
+          alt="یاشار در دوران نوزادی"
+          loading="eager"
+        >
+      </div>
+
+      <div class="photo-caption">
+        <h3>پرونده‌ی نینیِ کوچولوی من! 🍼💗</h3>
+
+        <p>
+          آخهههههه این موجود کوچولوی ناز رو ببین! 😭💕
+          کی فکرش رو می‌کرد این فسقلیِ دوست‌داشتنی،
+          یه روز بشه <strong>نینیِ عزیزِ دخترش</strong>؟ 🥹
+          دلم می‌خواد برم توی همین عکس و لپای کوچولوت رو
+          بوس‌بارون کنم! ماچ ماچ ماچ! 😘💋
+        </p>
+
+        <div class="caption-decoration">♡ ✨ ♡</div>
+      </div>
+
+    </article>
+
+
+    <!-- عکس دوم: یاشار در ۳ تا ۴ سالگی -->
+    <article class="photo-card">
+
+      <div class="photo-number">۲ از ۵ · آقای شیطون بلا 😂</div>
+
+      <div class="photo-frame">
+        <img
+          src="../assets/images/childhood/yashari.jpg"
+          alt="یاشار در حدود سه تا چهار سالگی"
+          loading="lazy"
+        >
+      </div>
+
+      <div class="photo-caption">
+        <h3>بچه‌هاااا! شیطونِ قصه پیدا شد! 😂🎀</h3>
+
+        <p>
+          آقای یاشار! لطفاً توضیح بدین این همه نازی رو
+          از کجا آوردین؟! 😂💗
+          من مطمئنم همین موقع‌ها هم یه عالمه شیطنت می‌کردی
+          و با اون قیافه‌ی بامزه‌ات همه رو عاشق خودت می‌کردی!
+          <strong>نینیِ بلا، قربون اون فسقلیِ تو برم! 🥹💋</strong>
+        </p>
+
+        <div class="caption-decoration">♡ 🌸 ♡</div>
+      </div>
+
+    </article>
+
+
+    <!-- عکس سوم: خنده یاشار -->
+    <article class="photo-card">
+
+      <div class="photo-number">۳ از ۵ · خنده‌ی قلب‌بَر 💞</div>
+
+      <div class="photo-frame">
+        <img
+          src="../assets/images/childhood/yashar-smile.jpg"
+          alt="خنده‌ی شیرین یاشار"
+          loading="lazy"
+        >
+      </div>
+
+      <div class="photo-caption">
+        <h3>همین خنده‌ست که دلِ دخترت رو می‌بره! 🥹❤️</h3>
+
+        <p>
+          نینیِ منننن! 😭💗
+          می‌دونی یکی از قشنگ‌ترین چیزهای دنیا برای من چیه؟
+          دیدن خنده‌ی توئه!
+          دلم می‌خواد همیشه یه عالمه دلیل برای خندیدن داشته باشی
+          و منم از دیدن اون لبخند قشنگت ذوق کنم.
+          <strong>بخند باباییِ دخترت، که خنده‌ات خودش یه دنیاست! 💋</strong>
+        </p>
+
+        <div class="caption-decoration">♡ ☀️ ♡</div>
+      </div>
+
+    </article>
+
+
+    <!-- عکس چهارم: هستی در ۵ تا ۶ سالگی -->
+    <article class="photo-card">
+
+      <div class="photo-number">۴ از ۵ · دختر کوچولوی قصه 🎀</div>
+
+      <div class="photo-frame">
+        <img
+          src="../assets/images/childhood/hasti.jpg"
+          alt="هستی در حدود پنج تا شش سالگی"
+          loading="lazy"
+        >
+      </div>
+
+      <div class="photo-caption">
+        <h3>اینم دختر کوچولوی باباییش! 🎀🥹</h3>
+
+        <p>
+          سلامممم! منم، هستیِ کوچولو! 😂💗
+          یه فسقلیِ شیرین که کلی حرف برای گفتن داشت
+          و یه عالمه عشق توی دل کوچولوش جا داده بود!
+          <strong>کی فکرش رو می‌کرد این دختر کوچولو یه روز
+          با تمام قلبش بگه: نینیِ من، باباییِ من!؟</strong>
+          آخ که چقدر این قصه رو دوست دارم! 😭💕
+        </p>
+
+        <div class="caption-decoration">♡ 🎀 ♡</div>
+      </div>
+
+    </article>
+
+
+    <!-- عکس پنجم: نوزادی هستی -->
+    <article class="photo-card">
+
+      <div class="photo-number">۵ از ۵ · فسقلیِ کوچولوی من 🩷</div>
+
+      <div class="photo-frame">
+        <img
+          src="../assets/images/childhood/hasti-childhood.jpg"
+          alt="هستی در دوران نوزادی"
+          loading="lazy"
+        >
+      </div>
+
+      <div class="photo-caption">
+        <h3>و این کوچولوی ناز، دخترِ نینیه! 🥹💗</h3>
+
+        <p>
+          واااای، این فسقلی رو ببین! 😭🎀
+          یه کوچولوی ریزه‌میزه که حالا بزرگ شده،
+          ولی هنوزم دلش می‌خواد برای نینیِ خودش ناز کنه،
+          قربون‌صدقه‌اش بره و با ذوق صداش کنه:
+          <strong>نینییییییی! بابایییییی! 💋</strong>
+          من دخترِ تو بودن رو با یه دنیا عشق دوست دارم! ❤️
+        </p>
+
+        <div class="caption-decoration">♡ 💗 ♡</div>
+      </div>
+
+    </article>
+
+  </section>
+
+
+  <!-- نامه‌ی احساسی -->
+  <section class="love-letter">
+
+    <div class="letter-icon">💌</div>
+
+    <h2>یه حرف از ته دلِ دخترت...</h2>
+
+    <p>
+      نینیِ قشنگم، باباییِ دوست‌داشتنیِ من... 🥹❤️<br><br>
+
+      وقتی به این عکس‌ها نگاه می‌کنم، دلم می‌خواد
+      همه‌ی این لحظه‌های کوچولو رو با یه عالمه عشق
+      بغل کنم و نگه دارم! 💗<br><br>
+
+      یه روز تو یه نینیِ کوچولوی شیرین بودی،
+      یه روز من یه دختر فسقلی بودم،
+      و حالا من اینجام؛ با یه قلب پر از عشق برای تو! 🥹💕<br><br>
+
+      <strong>
+        من دخترِ نینی‌ام؛ همون دختر شیطون و پرذوقی که
+        دوست داره برای بابایی‌اش ناز کنه،
+        باهاش بخنده، خوشحالش کنه و هر روز یه عالمه
+        «دوستت دارم» توی دلش جمع کنه و بهش هدیه بده! 💋
+      </strong><br><br>
+
+      یاشارِ من، نینیِ نازم...
+      تو برای من فقط یه آدم دوست‌داشتنی نیستی؛
+      تو همون کسی هستی که اسمش می‌تونه لبخند رو
+      روی لب‌های دخترت بیاره! 🥹💗<br><br>
+
+      <strong>
+        از تهِ تهِ قلبم دوستت دارم؛
+        به اندازه‌ی همه‌ی بوس‌های ریزه‌میزه،
+        همه‌ی بغل‌های محکم،
+        همه‌ی خنده‌های دونفره‌مون
+        و همه‌ی «نینییییییی» گفتن‌های من! 😭💋❤️
+      </strong>
+    </p>
+
+    <div class="letter-signature">
+      همیشه با کلی عشق، دخترِ نینی ♡
+    </div>
+
+  </section>
+
+
+  <!-- ادامه‌ی قصه -->
+  <section class="next-intro">
+
+    <h2>خب نینیییی، آماده‌ای؟! 🎉💗</h2>
+
+    <p>
+      پرونده‌ی فسقلی‌ها فعلاً تموم شد! 😂🎀<br>
+      حالا بریم سراغ قاب‌هایی که قصه‌ی دونفره‌ی خودمون رو
+      قشنگ‌تر می‌کنن... 💞
+    </p>
+
+    <div class="heart-line">💗 ✨ 💋 ✨ 💗</div>
+
+  </section>
+
+
+  <!-- ناوبری انتهای صفحه -->
+  <nav class="navigation" aria-label="ادامه‌ی قصه">
+
+    <a class="nav-link primary" href="our-memories.html">
+      💞 ادامه‌ی قصه‌مون
+    </a>
+
+    <a class="nav-link" href="museum.html">
+      🎠 برگشت به دنیاهای ما
+    </a>
+
+    <a class="nav-link home" href="../index.html">
+      🏡 شروع قصه‌مون از اول
+    </a>
+
+  </nav>
+
+
+  <footer class="footer">
+    ساخته‌شده با کلی عشق، ذوق و بوس برای نینیِ خودم 💗<br>
+    از طرف هستی، دخترِ نینی ♡
+  </footer>
+
+</main>
+
+
+<script>
+(() => {
+  const reducedMotion = window.matchMedia(
+    '(prefers-reduced-motion: reduce)'
+  ).matches;
+
+  if (reducedMotion) return;
+
+  const symbols = ['♡', '💗', '💕', '✨', '🌸'];
+  let lastTime = 0;
+
+  function makeHeart() {
+    const now = Date.now();
+
+    // جلوگیری از ساختن تعداد زیادی عنصر روی گوشی
+    if (now - lastTime < 850) return;
+    lastTime = now;
+
+    const heart = document.createElement('span');
+
+    heart.className = 'floating-heart';
+    heart.textContent =
+      symbols[Math.floor(Math.random() * symbols.length)];
+
+    heart.style.left = Math.random() * 96 + 'vw';
+    heart.style.fontSize = (12 + Math.random() * 13) + 'px';
+    heart.style.animationDuration = (7 + Math.random() * 4) + 's';
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => heart.remove(), 12000);
+  }
+
+  setInterval(makeHeart, 1000);
+})();
+</script>
+
+</body>
+</html>
+```

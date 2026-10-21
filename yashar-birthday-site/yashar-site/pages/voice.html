@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#fff0f6">
+<title>صدای دخترت برای نینی 💗🎙️</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+    --pink: #ed6c9d;
+    --deep-pink: #cc4f83;
+    --purple: #9c7bdd;
+    --gold: #e4b966;
+    --ink: #70465e;
+    --white: #fffdfd;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    font-family: 'Vazirmatn', Tahoma, sans-serif;
+    color: var(--ink);
+    background:
+        radial-gradient(ellipse at 5% 5%, #ffe0ec, transparent 38%),
+        radial-gradient(ellipse at 95% 65%, #e8ddff, transparent 38%),
+        #fff9fc;
+}
+
+button, a {
+    font-family: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+.page {
+    width: min(100% - 28px, 790px);
+    margin: auto;
+    padding: 25px 0 42px;
+}
+
+main, header, footer {
+    position: relative;
+    z-index: 1;
+}
+
+/* پس‌زمینه‌ی قلب‌های شناور */
+
+.floating-layer {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.float-item {
+    position: absolute;
+    bottom: -45px;
+    opacity: 0;
+    animation: floatUp 10s linear infinite;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) rotate(0) scale(.7);
+        opacity: 0;
+    }
+    15% { opacity: .6; }
+    85% { opacity: .4; }
+    100% {
+        transform: translateY(-110vh) rotate(30deg) scale(1.2);
+        opacity: 0;
+    }
+}
+
+/* سربرگ */
+
+.hero {
+    position: relative;
+    overflow: hidden;
+    padding: 32px 20px 29px;
+    border-radius: 31px;
+    text-align: center;
+    background: linear-gradient(145deg, #fff 0%, #ffe6f0 50%, #eee6ff 100%);
+    border: 1px solid #fff;
+    box-shadow: 0 14px 38px #b57da51a;
+}
+
+.hero::before {
+    content: "♫";
+    position: absolute;
+    top: -17px;
+    right: 13px;
+    font-size: 115px;
+    color: #eaa2c42e;
+    transform: rotate(15deg);
+}
+
+.hero::after {
+    content: "♡";
+    position: absolute;
+    bottom: -38px;
+    left: 10px;
+    font-size: 115px;
+    color: #b59be12b;
+}
+
+.eyebrow {
+    position: relative;
+    display: inline-block;
+    padding: 7px 13px;
+    border-radius: 50px;
+    background: #ffffffd9;
+    color: #c64f83;
+    font-size: 12px;
+    font-weight: 900;
+}
+
+.hero h1 {
+    position: relative;
+    margin: 17px 0 12px;
+    color: #d65389;
+    font-size: clamp(30px, 7vw, 43px);
+    line-height: 1.65;
+    font-weight: 900;
+}
+
+.hero h1 span {
+    display: inline-block;
+    color: #9471cc;
+    animation: gentleBounce 3s ease-in-out infinite;
+}
+
+@keyframes gentleBounce {
+    0%, 100% { transform: translateY(0) rotate(-2deg); }
+    50% { transform: translateY(-5px) rotate(2deg); }
+}
+
+.hero p {
+    position: relative;
+    max-width: 570px;
+    margin: auto;
+    color: #805d77;
+    font-size: 13px;
+    line-height: 2.5;
+}
+
+/* پیام معرفی */
+
+.intro-card {
+    margin: 22px 0;
+    padding: 22px 18px;
+    border-radius: 24px;
+    background: #fff;
+    border: 1px solid #f6dce8;
+    box-shadow: 0 9px 25px #b77da51a;
+    text-align: center;
+}
+
+.intro-card .big-emoji {
+    font-size: 36px;
+    margin-bottom: 8px;
+}
+
+.intro-card h2 {
+    color: #ce5588;
+    font-size: 19px;
+    line-height: 1.9;
+    margin-bottom: 10px;
+}
+
+.intro-card p {
+    font-size: 13px;
+    line-height: 2.45;
+}
+
+.pink-text {
+    color: #ce5588;
+    font-weight: 900;
+}
+
+/* کارت صوتی */
+
+.audio-card {
+    position: relative;
+    overflow: hidden;
+    margin-top: 25px;
+    padding: 25px 18px 22px;
+    border-radius: 29px;
+    background: linear-gradient(150deg, #fff, #fff0f7 56%, #f1ebff);
+    border: 1px solid #fff;
+    box-shadow: 0 15px 40px #ad7da51f;
+    text-align: center;
+}
+
+.audio-card::before {
+    content: "";
+    position: absolute;
+    top: -90px;
+    left: -65px;
+    width: 190px;
+    height: 190px;
+    border-radius: 50%;
+    background: #f4c9df54;
+}
+
+.audio-card::after {
+    content: "";
+    position: absolute;
+    bottom: -100px;
+    right: -70px;
+    width: 210px;
+    height: 210px;
+    border-radius: 50%;
+    background: #d8c9fa4a;
+}
+
+.audio-content {
+    position: relative;
+    z-index: 1;
+}
+
+.audio-heading {
+    color: #cf5488;
+    font-size: 22px;
+    font-weight: 900;
+    line-height: 1.8;
+}
+
+.audio-subtitle {
+    margin-top: 5px;
+    color: #94738b;
+    font-size: 12px;
+    line-height: 2.2;
+}
+
+/* دیسک صوتی */
+
+.disc-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px 0 20px;
+}
+
+.disc {
+    position: relative;
+    width: 175px;
+    height: 175px;
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background:
+        repeating-radial-gradient(
+            circle,
+            #3d304b 0,
+            #3d304b 2px,
+            #594562 3px,
+            #342a40 4px,
+            #45334e 6px
+        );
+    border: 5px solid #f4c7d9;
+    box-shadow:
+        0 0 0 7px #ffffffc9,
+        0 12px 27px #76516c30;
+}
+
+.disc::before {
+    content: "";
+    position: absolute;
+    inset: 14%;
+    border-radius: 50%;
+    border: 1px solid #ffffff25;
+}
+
+.disc-center {
+    position: relative;
+    z-index: 1;
+    width: 72px;
+    height: 72px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: linear-gradient(140deg, #ffb2ce, #d58bc2);
+    border: 4px solid #ffeaf2;
+    color: white;
+    box-shadow: 0 4px 15px #00000025;
+}
+
+.disc-center span {
+    font-size: 26px;
+}
+
+.disc-center small {
+    margin-top: 1px;
+    font-size: 9px;
+    font-weight: 900;
+}
+
+.disc.playing {
+    animation: spinDisc 5s linear infinite;
+}
+
+@keyframes spinDisc {
+    to { transform: rotate(360deg); }
+}
+
+/* موج صدا */
+
+.wave-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    height: 54px;
+    margin: 0 auto 18px;
+}
+
+.wave-bar {
+    width: 4px;
+    height: var(--height);
+    min-height: 5px;
+    border-radius: 20px;
+    background: linear-gradient(to top, #d78ac2, #ed7eaa);
+    opacity: .7;
+    transform-origin: center;
+}
+
+.audio-card.is-playing .wave-bar {
+    animation: waveMove var(--speed) ease-in-out infinite alternate;
+    opacity: 1;
+}
+
+@keyframes waveMove {
+    from { transform: scaleY(.3); }
+    to { transform: scaleY(1); }
+}
+
+/* وضعیت و زمان */
+
+.audio-status {
+    min-height: 25px;
+    margin: 0 0 10px;
+    color: #b24f7d;
+    font-size: 12px;
+    font-weight: 800;
+    line-height: 2;
+}
+
+.time-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    direction: ltr;
+    color: #92738a;
+    font-size: 11px;
+    margin-bottom: 8px;
+}
+
+.progress-track {
+    width: 100%;
+    height: 7px;
+    overflow: hidden;
+    border-radius: 20px;
+    background: #e9dbe9;
+    cursor: pointer;
+}
+
+.progress-fill {
+    width: 0%;
+    height: 100%;
+    border-radius: inherit;
+    background: linear-gradient(90deg, #e96c9e, #b78ae4);
+    transition: width .1s linear;
+}
+
+/* دکمه پخش */
+
+.play-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 11px;
+    min-width: 210px;
+    min-height: 53px;
+    margin-top: 21px;
+    padding: 12px 23px;
+    border: 0;
+    border-radius: 50px;
+    color: white;
+    background: linear-gradient(110deg, #ed6e9d, #b68be2);
+    box-shadow: 0 8px 19px #d881ae40;
+    font-size: 14px;
+    font-weight: 900;
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.play-button:active {
+    transform: scale(.97);
+}
+
+.play-button .button-icon {
+    font-size: 20px;
+}
+
+.audio-hint {
+    margin-top: 14px;
+    font-size: 11px;
+    line-height: 2.2;
+    color: #997b92;
+}
+
+/* متن هم‌زمان با صدا */
+
+.listen-card {
+    margin-top: 22px;
+    padding: 21px 18px;
+    border-radius: 24px;
+    background: #fff;
+    border: 1px solid #f2d9e5;
+    box-shadow: 0 8px 23px #b57da51a;
+    text-align: center;
+}
+
+.listen-card .icon {
+    font-size: 29px;
+}
+
+.listen-card h2 {
+    margin: 8px 0;
+    color: #cc5687;
+    font-size: 18px;
+    line-height: 1.9;
+}
+
+.listen-card p {
+    color: #86657c;
+    font-size: 12px;
+    line-height: 2.5;
+}
+
+.transcript {
+    display: none;
+    margin-top: 16px;
+    padding: 15px;
+    text-align: right;
+    border-radius: 17px;
+    background: linear-gradient(135deg, #fff1f6, #f5f0ff);
+    color: #755168;
+    font-size: 13px;
+    line-height: 2.6;
+    white-space: pre-line;
+}
+
+.transcript.visible {
+    display: block;
+    animation: reveal .5s ease both;
+}
+
+@keyframes reveal {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.transcript-button {
+    margin-top: 13px;
+    padding: 10px 14px;
+    border: 1px solid #f0d0df;
+    border-radius: 50px;
+    background: #fff7fb;
+    color: #bd5784;
+    font-size: 12px;
+    font-weight: 900;
+}
+
+/* پیام بعد از صدا */
+
+.after-audio {
+    display: none;
+    position: relative;
+    overflow: hidden;
+    margin-top: 23px;
+    padding: 25px 18px;
+    border-radius: 26px;
+    background: linear-gradient(140deg, #ffe3ef, #fff6df 55%, #eee5ff);
+    border: 1px solid #fff;
+    text-align: center;
+    box-shadow: 0 12px 32px #b47ba51a;
+}
+
+.after-audio.visible {
+    display: block;
+    animation: reveal .8s ease both;
+}
+
+.after-audio .big-heart {
+    font-size: 38px;
+    animation: heartBeat 1.5s ease-in-out infinite;
+}
+
+@keyframes heartBeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.12); }
+}
+
+.after-audio h2 {
+    margin: 10px 0;
+    color: #c94f83;
+    font-size: 21px;
+    line-height: 1.8;
+}
+
+.after-audio p {
+    color: #805e75;
+    font-size: 13px;
+    line-height: 2.6;
+}
+
+/* پیام کوتاه آخر */
+
+.mini-note {
+    margin-top: 22px;
+    padding: 19px 16px;
+    border-radius: 22px;
+    background: #fff;
+    border: 1px dashed #edb6ce;
+    text-align: center;
+}
+
+.mini-note p {
+    color: #8d667f;
+    font-size: 12px;
+    line-height: 2.5;
+}
+
+.mini-note strong {
+    color: #ca5285;
+}
+
+/* مسیرهای پایین */
+
+.navigation {
+    display: grid;
+    gap: 11px;
+    margin-top: 28px;
+}
+
+.nav-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    min-height: 52px;
+    padding: 13px 14px;
+    border-radius: 16px;
+    text-decoration: none;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 900;
+    transition: transform .2s ease;
+}
+
+.nav-btn:active {
+    transform: scale(.98);
+}
+
+.primary {
+    color: white;
+    background: linear-gradient(110deg, #ec6e9e, #ad86df);
+    box-shadow: 0 8px 19px #d783b53b;
+}
+
+.secondary {
+    color: #b0527f;
+    background: white;
+    border: 1px solid #f2d1e0;
+}
+
+.third {
+    color: #9470c5;
+    background: #f4efff;
+    border: 1px solid #e8dcff;
+}
+
+.fourth {
+    color: white;
+    background: #795b83;
+}
+
+footer {
+    position: relative;
+    z-index: 1;
+    margin-top: 25px;
+    text-align: center;
+    color: #a17d97;
+    font-size: 11px;
+    line-height: 2.3;
+}
+
+footer .footer-heart {
+    font-size: 26px;
+    margin-bottom: 5px;
+}
+
+@media (min-width: 620px) {
+    .page {
+        padding-top: 35px;
+    }
+
+    .hero {
+        padding: 42px 35px;
+    }
+
+    .audio-card {
+        padding: 32px;
+    }
+
+    .disc {
+        width: 205px;
+        height: 205px;
+    }
+
+    .disc-center {
+        width: 82px;
+        height: 82px;
+    }
+
+    .navigation {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="floating-layer" id="floatingLayer" aria-hidden="true"></div>
+
+<div class="page">
+
+<header class="hero">
+    <div class="eyebrow">🎙️ یک هدیه‌ی مخصوص برای یک نینیِ مخصوص</div>
+
+    <h1>
+        صدای <span>دخترت</span><br>
+        برای نینیِ خودش 💗
+    </h1>
+
+    <p>
+        نینیییی! این بار قرار نیست فقط نوشته‌هام رو بخونی...
+        این بار می‌خوام صدای خودم رو بشنوی! 🥹
+        <br>
+        یه گوشه‌ی کوچولو از قلبم رو برات ضبط کردم؛
+        حالا هدفونتو آماده کن، آقای روباه! 😂🎧
+    </p>
+</header>
+
+<main>
+
+<section class="intro-card">
+    <div class="big-emoji">💌🎧💗</div>
+
+    <h2>یه پیام از طرف دخترِ خودت!</h2>
+
+    <p>
+        بعضی حرف‌ها وقتی با صدای خود آدم گفته می‌شن،
+        یه حس متفاوت دارن.
+        <br><br>
+        پس این قسمت رو مخصوص تو گذاشتم، نینی جانم؛
+        که هر وقت دلت خواست، بتونی صدای دخترت رو بشنوی
+        و لبخند بزنی.
+        <br><br>
+        <span class="pink-text">توجه: احتمال ذوق‌زدگی، لبخند ناخودآگاه و چند بار گوش دادن وجود دارد! 😂💋</span>
+    </p>
+</section>
+
+<section class="audio-card" id="audioCard">
+
+    <div class="audio-content">
+
+        <h2 class="audio-heading">استودیوی اختصاصی نینی 🎙️</h2>
+
+        <p class="audio-subtitle">
+            یک صدا، هزار تا حس قشنگ...<br>
+            ضبط‌شده با عشق، از طرف دخترت 💗
+        </p>
+
+        <div class="disc-area">
+            <div class="disc" id="disc">
+                <div class="disc-center">
+                    <span>💗</span>
+                    <small>HASTI ♡</small>
+                </div>
+            </div>
+        </div>
+
+        <div class="wave-box" id="waveBox" aria-hidden="true"></div>
+
+        <div class="audio-status" id="audioStatus">
+            🎀 آماده‌ای صدای دخترت رو بشنوی؟
+        </div>
+
+        <div class="time-row">
+            <span id="currentTime">00:00</span>
+            <span id="duration">00:00</span>
+        </div>
+
+        <div class="progress-track" id="progressTrack"
+             role="progressbar" aria-label="موقعیت پخش صدا"
+             aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+            <div class="progress-fill" id="progressFill"></div>
+        </div>
+
+        <button class="play-button" id="playButton" type="button">
+            <span class="button-icon" id="playIcon">▶</span>
+            <span id="playLabel">صدای دخترت رو پخش کن</span>
+        </button>
+
+        <p class="audio-hint">
+            🔊 صدا رو پخش کن و بذار این چند لحظه فقط مال خودت باشه.
+        </p>
+
+        <audio id="voiceAudio" preload="metadata">
+            <source src="../assets/audio/hastYashar.mp3" type="audio/mpeg">
+            مرورگر شما از پخش صوت پشتیبانی نمی‌کند.
+        </audio>
+
+    </div>
+</section>
+
+<section class="listen-card">
+
+    <div class="icon">💭💗</div>
+
+    <h2>می‌خوای حرف‌های دخترت رو هم ببینی؟</h2>
+
+    <p>
+        اینجا می‌تونی متن حرف‌هام رو هم باز کنی و بخونی.
+        البته صدای خودم یه چیز دیگه‌ست، نینی! 😂💋
+    </p>
+
+    <button class="transcript-button" id="transcriptButton" type="button">
+        💌 باز کردن پیام کوچولوی دخترت
+    </button>
+
+    <div class="transcript" id="transcript">
+نینیِ قشنگم، باباییِ مهربونِ دخترت... 🥹💗
+
+می‌خواستم یه چیز رو با صدای خودم بهت بگم:
+بودنت توی زندگی من یه حس قشنگ از امنیت، آرامش و بابایی بودن به قلبم داده.
+کنار تو می‌تونم همون دختر کوچولوی پرذوق و شیطون باشم؛
+همونی که دوست داره از همه‌چیز برات تعریف کنه و با کوچک‌ترین چیزها ذوق کنه! 😂💋
+
+و در کنارش، می‌خوام برای رؤیاهای خودم تلاش کنم،
+بزرگ بشم، یاد بگیرم و به چیزهایی که دوست دارم نزدیک‌تر بشم.
+دلم می‌خواد تو هم برای آرزوهات بدرخشی
+و ما از موفقیت‌های همدیگه از ته دل خوشحال بشیم. 🌱✨
+
+نینی، من به آینده امید دارم؛
+به رؤیاهایی که می‌تونیم براشون قدم برداریم،
+به خاطرات قشنگی که می‌تونیم بسازیم
+و به روزی که با لبخند به قصه‌مون نگاه کنیم و به خودمون افتخار کنیم.
+
+دوستت دارم، نینیِ من!
+از طرف دخترت، با کلی بوس و یه عالمه ذوق! 💗💋
+    </div>
+
+</section>
+
+<section class="after-audio" id="afterAudio">
+
+    <div class="big-heart">💗</div>
+
+    <h2>پیام دخترت به پایان رسید...</h2>
+
+    <p>
+        نینیییی! حالا نوبت توئه که یه لبخند گنده بزنی! 🥹💋
+        <br><br>
+        امیدوارم صدای دخترت یه گوشه از روزت رو قشنگ‌تر کرده باشه.
+        ما کلی رؤیا برای ساختن داریم، کلی چیز برای یاد گرفتن
+        و کلی خاطره‌ی بامزه که هنوز منتظر ما هستن!
+        <br><br>
+        پس با همون انرژی همیشگی بگو:
+        <strong>«بزن بریم برای ساختن آینده‌ی قشنگمون!»</strong> 🌷✨
+    </p>
+
+</section>
+
+<section class="mini-note">
+    <p>
+        <strong>یادداشت دخترت برای نینی:</strong><br>
+        این صدا یه یادگاری کوچولو از منه؛
+        یه تیکه از روزهای قشنگمون که می‌تونی نگهش داری
+        و هر وقت خواستی دوباره بشنوی. 💌
+    </p>
+</section>
+
+<nav class="navigation" aria-label="پیمایش بین بخش‌های سایت">
+
+    <a class="nav-btn primary" href="cake.html">
+        🎂 ادامه قصه ما؛ عملیات کیک و شمع
+    </a>
+
+    <a class="nav-btn secondary" href="museum.html">
+        🏡 برگشت به دنیا هامون
+    </a>
+
+    <a class="nav-btn third" href="../index.html">
+        💗 شروع قصه‌مون از اول
+    </a>
+
+    <a class="nav-btn fourth" href="letter.html">
+        💌 برگشت به دنیای قبلی؛ نامه مخصوص تو
+    </a>
+
+</nav>
+
+</main>
+
+<footer>
+    <div class="footer-heart">🎙️ 💗 🎧</div>
+    یه صدا از دخترت،<br>
+    برای یکی از عزیزترین آدم‌های دنیای خودش.
+</footer>
+
+</div>
+
+<script>
+const audio = document.getElementById('voiceAudio');
+const playButton = document.getElementById('playButton');
+const playIcon = document.getElementById('playIcon');
+const playLabel = document.getElementById('playLabel');
+const audioStatus = document.getElementById('audioStatus');
+const disc = document.getElementById('disc');
+const audioCard = document.getElementById('audioCard');
+const progressFill = document.getElementById('progressFill');
+const progressTrack = document.getElementById('progressTrack');
+const currentTimeEl = document.getElementById('currentTime');
+const durationEl = document.getElementById('duration');
+const afterAudio = document.getElementById('afterAudio');
+const transcriptButton = document.getElementById('transcriptButton');
+const transcript = document.getElementById('transcript');
+
+function formatTime(seconds) {
+    if (!Number.isFinite(seconds) || seconds < 0) return '00:00';
+
+    const minutes = Math.floor(seconds / 60);
+    const secs = Math.floor(seconds % 60);
+
+    return String(minutes).padStart(2, '0') + ':' +
+           String(secs).padStart(2, '0');
+}
+
+// ساخت موج‌های صوتی
+const waveBox = document.getElementById('waveBox');
+
+for (let i = 0; i < 37; i++) {
+    const bar = document.createElement('span');
+
+    bar.className = 'wave-bar';
+    bar.style.setProperty('--height', (8 + Math.random() * 42) + 'px');
+    bar.style.setProperty('--speed', (.35 + Math.random() * .8) + 's');
+    bar.style.animationDelay = (Math.random() * .8) + 's';
+
+    waveBox.appendChild(bar);
+}
+
+function setPlayingState(playing) {
+    disc.classList.toggle('playing', playing);
+    audioCard.classList.toggle('is-playing', playing);
+
+    playIcon.textContent = playing ? 'Ⅱ' : '▶';
+    playLabel.textContent = playing ? 'مکث کن، نینی' : 'ادامه‌ی صدای دخترت';
+
+    if (playing) {
+        audioStatus.textContent = '💗 دخترت داره باهات حرف می‌زنه...';
+    }
+}
+
+playButton.addEventListener('click', async () => {
+    if (audio.paused) {
+        try {
+            await audio.play();
+            setPlayingState(true);
+            afterAudio.classList.remove('visible');
+        } catch (error) {
+            audioStatus.textContent =
+                '🎀 فایل صوتی رو بررسی کن و دوباره امتحان کن.';
+        }
+    } else {
+        audio.pause();
+        setPlayingState(false);
+        audioStatus.textContent = '💗 هر وقت آماده بودی، ادامه بده.';
+    }
+});
+
+audio.addEventListener('loadedmetadata', () => {
+    durationEl.textContent = formatTime(audio.duration);
+});
+
+audio.addEventListener('timeupdate', () => {
+    currentTimeEl.textContent = formatTime(audio.currentTime);
+
+    if (Number.isFinite(audio.duration) && audio.duration > 0) {
+        const percentage = (audio.currentTime / audio.duration) * 100;
+
+        progressFill.style.width = percentage + '%';
+        progressTrack.setAttribute('aria-valuenow', String(Math.round(percentage)));
+    }
+});
+
+audio.addEventListener('ended', () => {
+    setPlayingState(false);
+    playIcon.textContent = '↻';
+    playLabel.textContent = 'دوباره صدای دخترت رو بشنو';
+    audioStatus.textContent = '💗 تموم شد؛ ولی می‌تونی دوباره گوش بدی!';
+    afterAudio.classList.add('visible');
+
+    afterAudio.scrollIntoView({
+        behavior: 'smooth',
+        block: 'center'
+    });
+});
+
+audio.addEventListener('pause', () => {
+    if (!audio.ended) {
+        setPlayingState(false);
+    }
+});
+
+audio.addEventListener('error', () => {
+    audioStatus.textContent =
+        '🎧 فایل صوتی پیدا نشد؛ اسم و مسیر فایل رو بررسی کن.';
+});
+
+// جابه‌جایی در صدا با لمس نوار پیشرفت
+progressTrack.addEventListener('click', (event) => {
+    if (!Number.isFinite(audio.duration) || audio.duration <= 0) return;
+
+    const rect = progressTrack.getBoundingClientRect();
+    const ratio = Math.min(1, Math.max(0, (event.clientX - rect.left) / rect.width));
+
+    audio.currentTime = ratio * audio.duration;
+});
+
+// نمایش یا پنهان‌کردن متن
+transcriptButton.addEventListener('click', () => {
+    const isVisible = transcript.classList.toggle('visible');
+
+    transcriptButton.textContent = isVisible
+        ? '💗 بستن پیام کوچولوی دخترت'
+        : '💌 باز کردن پیام کوچولوی دخترت';
+
+    if (isVisible) {
+        transcript.scrollIntoView({
+            behavior: 'smooth',
+            block: 'nearest'
+        });
+    }
+});
+
+// قلب‌های شناور
+const floatingLayer = document.getElementById('floatingLayer');
+const floatSymbols = ['♡', '💗', '💕', '♫', '✦', '🌸'];
+
+for (let i = 0; i < 17; i++) {
+    const item = document.createElement('span');
+
+    item.className = 'float-item';
+    item.textContent = floatSymbols[i % floatSymbols.length];
+    item.style.left = (Math.random() * 100) + '%';
+    item.style.animationDelay = (Math.random() * 10) + 's';
+    item.style.animationDuration = (8 + Math.random() * 6) + 's';
+    item.style.fontSize = (12 + Math.random() * 14) + 'px';
+
+    floatingLayer.appendChild(item);
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,1276 @@
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#100719">
+  <title>آخرین راز قصه‌ی ما 💍❤️</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --pink: #ff6fae;
+      --hot-pink: #ff3f92;
+      --gold: #ffd778;
+      --cream: #fff4e9;
+      --purple: #a88bff;
+      --bg: #100719;
+      --panel: rgba(255, 255, 255, .075);
+      --border: rgba(255, 255, 255, .13);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      overflow-x: hidden;
+      color: var(--cream);
+      background:
+        radial-gradient(ellipse at 15% 10%, rgba(142, 57, 143, .22), transparent 38%),
+        radial-gradient(ellipse at 85% 35%, rgba(255, 63, 146, .13), transparent 38%),
+        radial-gradient(ellipse at 50% 100%, rgba(103, 67, 190, .18), transparent 42%),
+        var(--bg);
+      font-family: "Vazirmatn", sans-serif;
+      line-height: 2;
+    }
+
+    button, a {
+      font: inherit;
+    }
+
+    button {
+      color: inherit;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button:focus-visible, a:focus-visible {
+      outline: 3px solid var(--gold);
+      outline-offset: 5px;
+    }
+
+    #sky {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .ambient {
+      position: fixed;
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      filter: blur(95px);
+      opacity: .18;
+      pointer-events: none;
+      z-index: 0;
+      animation: ambientMove 12s ease-in-out infinite alternate;
+    }
+
+    .ambient.one {
+      background: #ff3f92;
+      top: 10%;
+      left: -100px;
+    }
+
+    .ambient.two {
+      background: #9c78ff;
+      right: -100px;
+      bottom: 8%;
+      animation-delay: -5s;
+    }
+
+    @keyframes ambientMove {
+      to {
+        transform: translate(35px, -25px) scale(1.2);
+      }
+    }
+
+    .page {
+      position: relative;
+      z-index: 1;
+      width: min(100% - 30px, 850px);
+      margin: auto;
+      padding-bottom: 35px;
+    }
+
+    .top-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 15px;
+      margin-bottom: 20px;
+      border: 1px solid rgba(255, 215, 120, .28);
+      border-radius: 100px;
+      background: rgba(255, 215, 120, .07);
+      color: var(--gold);
+      font-size: .82rem;
+    }
+
+    .hero {
+      min-height: 95svh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 65px 0 45px;
+    }
+
+    .hero-badge {
+      color: var(--pink);
+      font-size: .88rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      animation: fadeIn .9s both;
+    }
+
+    .hero h1 {
+      max-width: 750px;
+      margin: 13px 0;
+      font-size: clamp(2rem, 8vw, 4.1rem);
+      line-height: 1.55;
+      font-weight: 900;
+      background: linear-gradient(115deg, #fff7e9, #ffd778 35%, #ff8fc4 72%, #d6c6ff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      animation: titleIn 1.2s both;
+    }
+
+    .hero-subtitle {
+      max-width: 600px;
+      color: #e6d6e9;
+      font-size: clamp(.95rem, 3.4vw, 1.12rem);
+      animation: fadeIn 1.4s both;
+    }
+
+    .hero-art {
+      position: relative;
+      width: 200px;
+      height: 200px;
+      display: grid;
+      place-items: center;
+      margin: 22px auto;
+    }
+
+    .orbit {
+      position: absolute;
+      inset: 7px;
+      border: 1px solid rgba(255, 215, 120, .45);
+      border-radius: 50%;
+      animation: orbit 16s linear infinite;
+    }
+
+    .orbit::before, .orbit::after {
+      content: "✦";
+      position: absolute;
+      color: var(--gold);
+      font-size: 1.3rem;
+    }
+
+    .orbit::before {
+      top: 8px;
+      left: 35px;
+    }
+
+    .orbit::after {
+      bottom: 12px;
+      right: 25px;
+      color: var(--pink);
+    }
+
+    .hero-heart {
+      position: relative;
+      font-size: 6rem;
+      filter: drop-shadow(0 0 24px rgba(255, 83, 155, .55));
+      animation: heartbeat 1.6s ease-in-out infinite;
+    }
+
+    .hero-heart::after {
+      content: "✦";
+      position: absolute;
+      top: 0;
+      right: -15px;
+      color: var(--gold);
+      font-size: 1.3rem;
+    }
+
+    @keyframes orbit {
+      to { transform: rotate(360deg); }
+    }
+
+    @keyframes heartbeat {
+      0%, 100% { transform: scale(1); }
+      15% { transform: scale(1.13); }
+      30% { transform: scale(1); }
+      45% { transform: scale(1.09); }
+    }
+
+    @keyframes titleIn {
+      from { opacity: 0; transform: translateY(22px) scale(.97); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .button {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      min-height: 48px;
+      padding: 12px 21px;
+      border: 1px solid transparent;
+      border-radius: 15px;
+      font-weight: 800;
+      text-align: center;
+      cursor: pointer;
+      transition: transform .25s, box-shadow .25s, background .25s;
+    }
+
+    .button:hover {
+      transform: translateY(-3px);
+    }
+
+    .button-primary {
+      color: #351127;
+      background: linear-gradient(115deg, #ffe8a7, #ff91c7);
+      box-shadow: 0 8px 30px rgba(255, 111, 174, .22);
+    }
+
+    .button-primary:hover {
+      box-shadow: 0 12px 35px rgba(255, 111, 174, .36);
+    }
+
+    .button-secondary {
+      color: var(--cream);
+      border-color: var(--border);
+      background: rgba(255, 255, 255, .055);
+    }
+
+    .button-secondary:hover {
+      background: rgba(255, 255, 255, .11);
+    }
+
+    .scroll-note {
+      margin-top: 24px;
+      color: #bba8c5;
+      font-size: .82rem;
+      animation: float 2s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      50% { transform: translateY(6px); }
+    }
+
+    .section {
+      margin: 28px 0;
+      padding: clamp(21px, 5vw, 39px);
+      border: 1px solid var(--border);
+      border-radius: 27px;
+      background: linear-gradient(145deg, rgba(255,255,255,.075), rgba(255,255,255,.025));
+      box-shadow: 0 20px 70px rgba(0,0,0,.12);
+      backdrop-filter: blur(12px);
+    }
+
+    .section-kicker {
+      color: var(--gold);
+      font-size: .83rem;
+      font-weight: 800;
+    }
+
+    .section h2 {
+      margin: 5px 0 13px;
+      font-size: clamp(1.45rem, 5vw, 2.2rem);
+      line-height: 1.65;
+    }
+
+    .section p {
+      margin: 13px 0;
+      color: #eee0ef;
+      font-size: .99rem;
+    }
+
+    .pink { color: #ff9ac8; }
+    .gold { color: var(--gold); }
+    .lavender { color: #cbbaff; }
+
+    .reveal-wrap {
+      text-align: center;
+      padding: 30px 0 10px;
+    }
+
+    .reveal-box {
+      position: relative;
+      width: min(100%, 380px);
+      min-height: 270px;
+      margin: 20px auto;
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(255,215,120,.35);
+      border-radius: 25px;
+      background:
+        radial-gradient(circle at 50% 0%, rgba(255,215,120,.15), transparent 55%),
+        rgba(255,255,255,.045);
+      overflow: hidden;
+    }
+
+    .reveal-box::before {
+      content: "";
+      position: absolute;
+      inset: 9px;
+      border: 1px dashed rgba(255,215,120,.23);
+      border-radius: 18px;
+      pointer-events: none;
+    }
+
+    .gift {
+      font-size: 5.3rem;
+      line-height: 1.4;
+      cursor: pointer;
+      filter: drop-shadow(0 0 20px rgba(255,111,174,.3));
+      animation: giftFloat 2.4s ease-in-out infinite;
+      transition: transform .4s;
+    }
+
+    @keyframes giftFloat {
+      0%, 100% { transform: translateY(0) rotate(-4deg); }
+      50% { transform: translateY(-12px) rotate(4deg); }
+    }
+
+    .gift.opened {
+      animation: giftOpen .65s ease forwards;
+    }
+
+    @keyframes giftOpen {
+      40% { transform: scale(1.3) rotate(12deg); }
+      100% { transform: scale(.3) rotate(30deg); opacity: 0; }
+    }
+
+    .gift-label {
+      margin: 5px 0 14px;
+      font-weight: 800;
+    }
+
+    .hidden-message {
+      display: none;
+      animation: titleIn .7s both;
+    }
+
+    .hidden-message.show {
+      display: block;
+    }
+
+    .hidden-message .big-heart {
+      display: block;
+      font-size: 3.3rem;
+      margin-bottom: 8px;
+      animation: heartbeat 1.5s infinite;
+    }
+
+    .tiny-note {
+      margin-top: 10px;
+      color: #c7b7d0;
+      font-size: .8rem;
+    }
+
+    .letter {
+      position: relative;
+      border-color: rgba(255,111,174,.28);
+      background:
+        radial-gradient(circle at 100% 0%, rgba(255,111,174,.1), transparent 40%),
+        linear-gradient(145deg, rgba(255,255,255,.075), rgba(255,255,255,.025));
+    }
+
+    .letter::before {
+      content: "♥";
+      position: absolute;
+      top: 10px;
+      left: 20px;
+      color: rgba(255,111,174,.14);
+      font-size: 4rem;
+      transform: rotate(-15deg);
+    }
+
+    .letter-content {
+      position: relative;
+    }
+
+    .letter p {
+      line-height: 2.25;
+      margin: 19px 0;
+    }
+
+    .letter-divider {
+      width: 100px;
+      height: 2px;
+      margin: 28px auto;
+      background: linear-gradient(90deg, transparent, var(--pink), var(--gold), transparent);
+    }
+
+    .future-card {
+      margin: 22px 0;
+      padding: 20px;
+      border-radius: 19px;
+      border: 1px solid rgba(255,215,120,.2);
+      background: rgba(255,215,120,.045);
+    }
+
+    .future-card .emoji {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 2rem;
+    }
+
+    .future-card h3 {
+      color: var(--gold);
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+    }
+
+    .future-card p {
+      margin-bottom: 0;
+    }
+
+    .promise {
+      text-align: center;
+      background:
+        radial-gradient(ellipse at 50% 0%, rgba(255,111,174,.14), transparent 65%),
+        rgba(255,255,255,.04);
+    }
+
+    .promise-heart {
+      display: inline-block;
+      font-size: 3rem;
+      animation: heartbeat 1.7s infinite;
+    }
+
+    .promise-line {
+      margin: 20px auto;
+      max-width: 620px;
+      padding: 18px;
+      border: 1px solid rgba(255,215,120,.27);
+      border-radius: 17px;
+      background: rgba(255,215,120,.055);
+      color: #fff0c8;
+      font-size: clamp(1.1rem, 4vw, 1.55rem);
+      font-weight: 900;
+      line-height: 1.9;
+    }
+
+    .future-count {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 23px;
+    }
+
+    .count-card {
+      padding: 15px 7px;
+      border: 1px solid var(--border);
+      border-radius: 15px;
+      background: rgba(255,255,255,.045);
+    }
+
+    .count-card strong {
+      display: block;
+      color: var(--pink);
+      font-size: 1.45rem;
+    }
+
+    .count-card span {
+      display: block;
+      margin-top: 5px;
+      color: #d5c5db;
+      font-size: .78rem;
+      line-height: 1.7;
+    }
+
+    .funny-box {
+      border-color: rgba(168,139,255,.27);
+      background: linear-gradient(145deg, rgba(168,139,255,.09), rgba(255,255,255,.025));
+    }
+
+    .funny-list {
+      list-style: none;
+      margin-top: 15px;
+    }
+
+    .funny-list li {
+      position: relative;
+      padding: 13px 35px 13px 5px;
+      margin: 7px 0;
+      border-bottom: 1px solid rgba(255,255,255,.075);
+      color: #eee2f5;
+    }
+
+    .funny-list li::before {
+      content: "✨";
+      position: absolute;
+      right: 0;
+      top: 13px;
+    }
+
+    .rubika-card {
+      text-align: center;
+      border-color: rgba(255,111,174,.3);
+      background:
+        radial-gradient(ellipse at 50% 0%, rgba(255,111,174,.16), transparent 70%),
+        rgba(255,255,255,.04);
+    }
+
+    .rubika-icon {
+      width: 90px;
+      height: 90px;
+      margin: 0 auto 17px;
+      display: grid;
+      place-items: center;
+      border-radius: 26px;
+      background: linear-gradient(135deg, #ff91c7, #c4a5ff);
+      color: #351127;
+      font-size: 2.8rem;
+      box-shadow: 0 12px 35px rgba(255,111,174,.2);
+      transform: rotate(-5deg);
+    }
+
+    .handle {
+      display: inline-block;
+      margin: 15px 0;
+      padding: 9px 17px;
+      border: 1px dashed rgba(255,215,120,.45);
+      border-radius: 12px;
+      color: var(--gold);
+      background: rgba(255,215,120,.055);
+      direction: ltr;
+      font-weight: 900;
+      font-size: 1.08rem;
+      user-select: all;
+    }
+
+    .copy-status {
+      min-height: 25px;
+      margin-top: 8px;
+      color: #baf6d7;
+      font-size: .85rem;
+    }
+
+    .finale {
+      position: relative;
+      text-align: center;
+      padding: 35px 17px 30px;
+      overflow: hidden;
+    }
+
+    .finale-stars {
+      color: var(--gold);
+      letter-spacing: 8px;
+      font-size: 1.1rem;
+    }
+
+    .finale h2 {
+      margin: 17px 0;
+      font-size: clamp(1.8rem, 7vw, 3.2rem);
+      line-height: 1.65;
+      background: linear-gradient(110deg, #fff2c9, #ff91c7, #cbbaff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .finale-heart {
+      font-size: 4rem;
+      animation: heartbeat 1.4s infinite;
+      filter: drop-shadow(0 0 20px rgba(255,111,174,.3));
+    }
+
+    .signature {
+      margin-top: 22px;
+      color: var(--gold);
+      font-weight: 900;
+      font-size: 1.08rem;
+    }
+
+    .footer-nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin: 35px 0 20px;
+    }
+
+    .footer-caption {
+      color: #a998b3;
+      font-size: .8rem;
+      text-align: center;
+    }
+
+    .confetti {
+      position: fixed;
+      top: -30px;
+      z-index: 20;
+      pointer-events: none;
+      animation: confettiFall linear forwards;
+      will-change: transform, opacity;
+    }
+
+    @keyframes confettiFall {
+      to {
+        transform: translate3d(var(--drift), 110vh, 0) rotate(700deg);
+        opacity: 0;
+      }
+    }
+
+    .pop {
+      animation: pop .45s ease;
+    }
+
+    @keyframes pop {
+      50% { transform: scale(1.035); }
+    }
+
+    @media (max-width: 520px) {
+      .page {
+        width: min(100% - 20px, 850px);
+      }
+
+      .hero {
+        min-height: 91svh;
+      }
+
+      .hero-art {
+        width: 170px;
+        height: 170px;
+      }
+
+      .hero-heart {
+        font-size: 5rem;
+      }
+
+      .section {
+        padding: 21px 17px;
+        border-radius: 22px;
+      }
+
+      .section p {
+        font-size: .94rem;
+      }
+
+      .future-count {
+        gap: 7px;
+      }
+
+      .count-card {
+        padding: 12px 5px;
+      }
+
+      .count-card strong {
+        font-size: 1.2rem;
+      }
+
+      .count-card span {
+        font-size: .7rem;
+      }
+
+      .button {
+        width: 100%;
+      }
+
+      .footer-nav {
+        flex-direction: column;
+      }
+
+      .letter p {
+        line-height: 2.1;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <canvas id="sky" aria-hidden="true"></canvas>
+  <div class="ambient one"></div>
+  <div class="ambient two"></div>
+
+  <main class="page">
+
+    <!-- شروع سینمایی -->
+    <header class="hero">
+      <div class="top-label">✦ پرونده‌ی ویژه‌ی نینی ✦</div>
+
+      <p class="hero-badge">آخرین مرحله از یک قصه‌ی پر از عشق</p>
+
+      <h1>
+        نینیییییی!<br>
+        رسیدیم به آخرین سورپرایز! ❤️‍🔥
+      </h1>
+
+      <div class="hero-art" aria-hidden="true">
+        <div class="orbit"></div>
+        <div class="hero-heart">💖</div>
+      </div>
+
+      <p class="hero-subtitle">
+        قبل از اینکه این پرونده‌ی فوق‌محرمانه رو باز کنی،
+        لطفاً کمربندتو ببند، قلبتو آماده کن و لبخندتو تحویل بده؛
+        چون اینجا قراره با حجم غیرمجاز عشق مواجه بشی! 😂💗
+      </p>
+
+      <a class="button button-primary" href="#last-secret" style="margin-top:25px">
+        بزن بریم سراغ آخرین راز! 🎁
+      </a>
+
+      <div class="scroll-note">پایین‌تر کلی عشق در انتظارته ↓</div>
+    </header>
+
+    <!-- هدیه‌ی مخفی -->
+    <section class="section reveal-wrap" id="last-secret">
+      <div class="section-kicker">🎁 مرحله‌ی اول: باز کردن هدیه</div>
+      <h2>یه چیزی اینجا قایم کردم...</h2>
+
+      <p>
+        نینی جان، روی هدیه بزن!
+        ولی اگه بعدش دیدی قلبت تندتر زد، مسئولیتش با خودته‌ها! 😂❤️
+      </p>
+
+      <div class="reveal-box">
+        <button
+          class="gift"
+          id="giftButton"
+          aria-label="باز کردن هدیه‌ی مخفی"
+          aria-expanded="false"
+          type="button"
+        >🎁</button>
+
+        <div class="gift-label" id="giftLabel">برای نینیِ دوست‌داشتنی من 💌</div>
+
+        <div class="hidden-message" id="giftMessage" aria-live="polite">
+          <span class="big-heart">💖</span>
+          <h3 class="gold">جایزه‌ی تو، خودِ قصه‌ی ماست!</h3>
+          <p>
+            یه قصه که با کلی ذوق شروع شده،
+            با خاطره‌ها قشنگ‌تر شده و با آرزوهای مشترکمون
+            قراره فصل‌های جذاب‌تری پیدا کنه! ✨
+          </p>
+          <p class="tiny-note">و البته با یک دختر که ظاهراً کارخانه‌ی سورپرایز داره! 😂</p>
+        </div>
+      </div>
+
+      <p class="tiny-note">راهنمای عملیات: فقط یک کلیک لازم داری، جناب بتمن! 🦇</p>
+    </section>
+
+    <!-- نامه -->
+    <section class="section letter">
+      <div class="letter-content">
+        <div class="section-kicker">💌 پرونده‌ی قلبی؛ فقط برای تو</div>
+        <h2>نینی من، باباییِ دوست‌داشتنیِ دخترت... 🥹❤️</h2>
+
+        <p>
+          نمی‌دونم این صفحه رو دقیقاً با چه حسی می‌خونی؛
+          شاید لبخند زده باشی، شاید وسط خوندن بگی
+          «این دختر بالاخره می‌خواد چند تا سورپرایز دیگه رو کنه؟!»
+          و شاید هم مثل همیشه یه گوشه‌ی لبت بالا رفته باشه.
+          ولی من می‌دونم برای ساختن این لحظه چقدر ذوق داشتم.
+          چون می‌خواستم برای تولدت چیزی بسازم که فقط یه تبریک ساده نباشه؛
+          یه تیکه از قلبم باشه که بتونی هر وقت خواستی دوباره بخونیش. 💗
+        </p>
+
+        <p>
+          نینی، تو برای من فقط یه اسم توی صفحه‌ی گوشی نیستی،
+          فقط یه آدم برای حرف زدن و خندیدن نیستی.
+          تو یکی از قشنگ‌ترین آدم‌های دنیای منی؛
+          کسی که بودنش بهم دلگرمی می‌ده،
+          کسی که باهاش می‌تونم از چیزهایی حرف بزنم
+          که شاید گفتنشون برای من به این راحتی‌ها نباشه.
+          کنار تو، اون دختر کوچولوی شیطونِ توی وجودم
+          دلش می‌خواد بخنده، خیال‌بافی کنه و از فرداهای قشنگ حرف بزنه. 🥹
+        </p>
+
+        <p>
+          و آره آقای نینی! 😌
+          تو رسماً سمت مهم «باباییِ دخترت» رو دریافت کردی!
+          این سمت شامل مسئولیت‌های بسیار سنگینیه؛
+          مثل تحمل کردن شیطنت‌های دخترت،
+          شنیدن حرف‌های بعضی وقت‌ها بی‌پایانش،
+          مواجهه با «نینییییییی»های کش‌دار،
+          و البته دریافت حجم زیادی از عشق و بغل‌های طلب‌نشده! 😂🫂
+        </p>
+
+        <p>
+          ولی پشت تمام این شوخی‌ها یه حس خیلی واقعی هست:
+          تو برای من عزیز و مهمی.
+          و من دوست دارم هر روز بیشتر یاد بگیرم چطور
+          عشقمو با مهربونی، احترام، توجه و رفتارهای قشنگ نشون بدم.
+          دلم می‌خواد کنار هم بزرگ‌تر بشیم،
+          تجربه کنیم، بخندیم، برای چیزهایی که می‌خوایم تلاش کنیم
+          و از قدم‌های کوچیکمون هم خوشحال بشیم. 🌱❤️
+        </p>
+
+        <div class="letter-divider"></div>
+
+        <h2 class="pink">حالا بذار درباره‌ی فرداهامون حرف بزنم... 💍</h2>
+
+        <p>
+          من برای آینده‌مون کلی تصویر قشنگ توی ذهنم دارم.
+          کلی آرزو که وقتی بهشون فکر می‌کنم، دلم گرم می‌شه.
+          روزهایی که با هم از اتفاق‌های ساده خوشحال می‌شیم،
+          روزهایی که برای هدف‌هامون تلاش می‌کنیم،
+          روزهایی که به گذشته نگاه می‌کنیم و می‌گیم:
+          «یادته از کجا شروع کردیم؟ ببین چقدر جلو اومدیم!» 🥹✨
+        </p>
+
+        <p>
+          می‌دونی یکی از قشنگ‌ترین فکرهای من چیه؟
+          اینکه تولدهای دیگه‌ای هم از راه برسن...
+          و یه روز به‌جای اینکه فقط یه پیام قشنگ برات بفرستم،
+          درِ خونه‌مون رو به روت باز کنم،
+          با یه کیک توی دستم جلوت ظاهر بشم،
+          و قبل از اینکه فرصت کنی حتی بگی «سلام دختره!»...
+          بیام محکم بغلت کنم! 😭🎂🫂
+        </p>
+
+        <p>
+          تصورش کن نینی! 😂
+          تو هنوز در حال پردازش این اتفاقی،
+          من با کیک توی دستم دارم می‌خندم،
+          شمع‌ها هم از شدت هیجان احتمالاً دارن خاموش می‌شن،
+          و تو باید تصمیم بگیری اول دخترتو بغل کنی،
+          اول کیک رو نجات بدی،
+          یا اول بپرسی این همه سورپرایز رو از کجا آورده! 😂❤️‍🔥
+        </p>
+
+        <p>
+          و من دلم می‌خواد اون روز، وسط همون خنده‌ها،
+          یاد همین سایت بیفتیم.
+          یاد روزی که من این همه جمله نوشتم،
+          با ذوق صفحه‌هاشو ساختم،
+          عکس و خاطره و حرف‌هامو کنار هم گذاشتم،
+          و از ته دلم به آینده‌ای فکر کردم که دوست دارم با هم بسازیم.
+        </p>
+
+        <p>
+          دلم می‌خواد یه روز به هم بگیم:
+          «یادته اون موقع بهم قول داده بودیم که برای رسیدن به آرزوهامون تلاش کنیم؟
+          یادته چقدر به روزهای قشنگمون امید داشتیم؟
+          نگاه کن... ما قدم‌به‌قدم جلو اومدیم!» 💖
+        </p>
+
+        <p>
+          اون روز برای من فقط یه خاطره‌ی قشنگ نیست؛
+          یادآوری تمام ذوق‌ها، امیدها و تلاش‌هاییه که
+          از همین روزهای کوچیک شروع شدن.
+          و چه حس قشنگی می‌شه اگه یه روز کنار هم بشینیم،
+          دوباره این سایت رو باز کنیم و به این دختر پرذوق بخندیم
+          که برای تولد نینی‌اش یک دنیای کامل ساخته بود! 🥹🌷
+        </p>
+
+        <div class="letter-divider"></div>
+
+        <div class="future-card">
+          <span class="emoji">🏡</span>
+          <h3>آرزوی اول: روزهای گرم و واقعی</h3>
+          <p>
+            دلمون یه آینده‌ی پر از آرامش، احترام، خنده و همراهی می‌خواد؛
+            جایی که هر دومون بتونیم خودمون باشیم،
+            از هم حمایت کنیم و برای ساختن زندگی‌ای که دوست داریم
+            با هم قدم برداریم.
+          </p>
+        </div>
+
+        <div class="future-card">
+          <span class="emoji">🎂</span>
+          <h3>آرزوی دوم: تولدهای پر از بغل!</h3>
+          <p>
+            تولدهایی که فقط با پیام و صفحه نمایش جشن گرفته نشن؛
+            تولدهایی با کیک واقعی، خنده‌های واقعی،
+            عکس‌های بامزه و بغل‌هایی که آدم دلش می‌خواد
+            چند دقیقه بیشتر طول بکشن! 🫂💗
+          </p>
+        </div>
+
+        <div class="future-card">
+          <span class="emoji">🌠</span>
+          <h3>آرزوی سوم: رسیدن به آرزوهای مشترکمون</h3>
+          <p>
+            من به آرزوهای ما امید دارم.
+            می‌دونم برای ساختن آینده باید صبور بود،
+            تلاش کرد، به هم احترام گذاشت و قدم‌به‌قدم جلو رفت.
+            دوست دارم هر کدوممون برای رشد خودش تلاش کنه
+            و در عین حال، برای چیزهایی که با هم می‌خوایم هم همراه باشیم.
+          </p>
+        </div>
+
+        <div class="future-card">
+          <span class="emoji">📸</span>
+          <h3>آرزوی چهارم: خاطره‌هایی که هنوز نساختیم!</h3>
+          <p>
+            کلی عکس که هنوز گرفته نشده،
+            کلی شوخی که هنوز نکردیم،
+            کلی روز خاص که هنوز نرسیده،
+            و کلی داستان که هنوز فرصت نکردیم تعریفشون کنیم.
+            وای که چقدر سوژه برای خندیدن داریم! 😂✨
+          </p>
+        </div>
+
+        <p>
+          نینی جان، من عاشقتم؛ با تمام وجودم.
+          و برای من، قشنگ بودن این عشق فقط به گفتن جمله‌های قشنگ نیست؛
+          به اینه که مهربونی رو حفظ کنیم،
+          به هم گوش بدیم، همدیگه رو تشویق کنیم،
+          برای خودمون و آرزوهامون ارزش قائل باشیم
+          و اجازه بدیم آینده‌مون با انتخاب‌ها و تلاش‌های هر دومون شکل بگیره. ❤️
+        </p>
+
+        <p>
+          تولدت مبارک، نینیِ من!
+          امیدوارم سال جدید زندگیت پر از سلامتی،
+          خبرهای خوب، فرصت‌های قشنگ،
+          پیشرفت‌های دوست‌داشتنی و خنده‌هایی باشه
+          که از ته دل میان.
+          امیدوارم به خودت افتخار کنی،
+          به قدم‌هایی که برمی‌داری،
+          و به آدمی که هر روز داری می‌شی. 🌟
+        </p>
+
+        <p class="gold" style="font-weight:900;font-size:1.1rem">
+          و امیدوارم یه روز، وقتی این صفحه رو دوباره باز کردیم،
+          لبخند بزنیم و بگیم:
+          «این همون قصه‌ای بود که با کلی عشق شروع کردیم...
+          و چه قشنگ که برای فصل‌های بعدیش هم تلاش کردیم!» 💍
+        </p>
+      </div>
+    </section>
+
+    <!-- قول و امید -->
+    <section class="section promise">
+      <div class="section-kicker">🌠 یه قرار قشنگ با آینده</div>
+      <span class="promise-heart">💖</span>
+      <h2>نینی، بیا برای آرزوهامون بجنگیم!</h2>
+
+      <p>
+        نه با عجله، نه با ترس از زمان؛
+        با صبر، تلاش، مهربونی و قدم‌هایی که هر روز می‌تونیم برداریم.
+        لازم نیست همه‌چیز همین امروز اتفاق بیفته؛
+        مهم اینه که برای ساختن روزهای بهتر تلاش کنیم
+        و توی مسیر، رشد و خوشحالی خودمون رو هم فراموش نکنیم. 🌱
+      </p>
+
+      <div class="promise-line">
+        قول می‌دیم به آرزوهای قشنگمون امیدوار بمونیم،
+        برای آینده‌مون قدم برداریم
+        و قصه‌مون رو با عشق، احترام و تلاش ادامه بدیم. ❤️
+      </div>
+
+      <div class="future-count">
+        <div class="count-card">
+          <strong>💗</strong>
+          <span>یه عالمه عشق برای بخشیدن</span>
+        </div>
+        <div class="count-card">
+          <strong>🌱</strong>
+          <span>قدم‌های کوچیک برای رشد کردن</span>
+        </div>
+        <div class="count-card">
+          <strong>🌠</strong>
+          <span>آرزوهای قشنگ برای ساختن</span>
+        </div>
+      </div>
+
+      <p class="tiny-note">
+        این قول، پیش‌بینی آینده نیست؛ یه یادآوری قشنگه
+        که می‌تونیم برای چیزهایی که دوست داریم، قدم برداریم. 💌
+      </p>
+    </section>
+
+    <!-- بخش بامزه -->
+    <section class="section funny-box">
+      <div class="section-kicker">🚨 گزارش محرمانه‌ی عملیات نینی</div>
+      <h2>چند نکته قبل از پایان مأموریت! 😂🦇</h2>
+
+      <p>
+        جناب یاشار، لطفاً این بخش رو با دقت مطالعه کن؛
+        این اطلاعات مستقیماً از واحد تحقیقات دخترت به دست اومده! 🕵🏻‍♀️
+      </p>
+
+      <ul class="funny-list">
+        <li>شما به‌طور رسمی نینی هستی؛ حتی اگر هزار بار بگی «من دیگه بزرگ شدم!» 😂</li>
+        <li>دخترت قابلیت تولید سورپرایز در هر ساعت از شبانه‌روز رو داره؛ لطفاً از نزدیک شدن به کارگاهش خودداری نکن!</li>
+        <li>هر بار که می‌گی «دیگه چی کار کردی؟»، احتمال باز شدن یک پرونده‌ی جدید وجود داره. 🎁</li>
+        <li>در صورت مشاهده‌ی یک دختر با لبخند شیطونی، احتمالاً نقشه‌ی بعدی در حال اجراست. 😌</li>
+        <li>اگر روزی با کیک در دست جلوت ظاهر شد، اول بغلش کن؛ بعد درباره‌ی سالم موندن کیک مذاکره کنید! 🎂😂</li>
+        <li>و مهم‌تر از همه: این نینی بودن، با هیچ مدرک و گواهی‌ای قابل لغو نیست! 😂💗</li>
+      </ul>
+
+      <p class="gold" style="font-weight:800">
+        پرونده هنوز بسته نشده، آقای بتمن! تازه بخش بعدی، روبیکاست! 🦇💌
+      </p>
+    </section>
+
+    <!-- سورپرایز روبیکا -->
+    <section class="section rubika-card">
+      <div class="rubika-icon" aria-hidden="true">🎬</div>
+      <div class="section-kicker">📢 اطلاعیه‌ی رسمی از طرف دخترت</div>
+      <h2>فکر کردی سورپرایزها تموم شدن؟! 😂❤️‍🔥</h2>
+
+      <p>
+        نینیییییییی! یه لحظه صبر کن!
+        مگه می‌شه دخترت فقط به همین سایت اکتفا کنه؟! 😭😂
+      </p>
+
+      <p>
+        <strong class="pink">دخترت هنوز سوپرایز هاش تموم نشده!</strong>
+        @Batmanyjooon
+      </p>
+
+      <p>
+        بدووووو برو تو روبیکای دخترت که کلی کلیپ برات ساخته! 🎬💗
+        کلیپ‌هایی که با ذوق درستشون کرده تا تو هم ببینیشون،
+        بخندی، ذوق کنی و بدونی پشت هر کدومشون
+        چقدر عشق و فکر و وقت گذاشته شده.
+      </p>
+
+      <div class="handle">@Batmanyjooon</div>
+
+      <button class="button button-secondary" id="copyHandle" type="button">
+        کپی آیدی دخترت 📋
+      </button>
+
+      <div class="copy-status" id="copyStatus" aria-live="polite"></div>
+
+      <p class="tiny-note">
+        مأموریت نهایی: روبیکا رو باز کن، آیدی رو جست‌وجو کن
+        و کلیپ‌های دخترت رو ببین! 🫡🦇
+      </p>
+    </section>
+
+    <!-- پایان -->
+    <section class="section finale">
+      <div class="finale-stars">✦ ✧ ✦ ✧ ✦</div>
+
+      <div class="finale-heart">❤️</div>
+
+      <h2>
+        تولدت مبارک، نینیِ قشنگم!
+      </h2>
+
+      <p>
+        ممنون که یکی از قشنگ‌ترین بخش‌های دنیای منی.
+        امیدوارم روزهای زیادی پیش رومون باشن
+        که توشون از ته دل بخندیم،
+        برای آرزوهامون تلاش کنیم
+        و با دیدن پیشرفت‌هامون به خودمون افتخار کنیم.
+      </p>
+
+      <p>
+        این سایت یه هدیه برای امروزته؛
+        ولی عشق و امیدی که توی تک‌تک صفحه‌هاش گذاشتم،
+        از ذوق من برای تمام خاطره‌های قشنگی میاد
+        که دوست دارم در آینده بسازیم. 🥹💗
+      </p>
+
+      <p class="gold" style="font-weight:900">
+        نینی جان، دوستت دارم؛ خیلی بیشتر از چیزی که
+        توی این همه صفحه و جمله جا بشه! 💍✨
+      </p>
+
+      <div class="signature">
+        از طرف دخترت؛<br>
+        همون شیطونِ پر از عشق و سورپرایز! 🥹🎀
+      </div>
+
+      <p class="tiny-note">
+        پایان این صفحه، پایان قصه‌ی ما نیست؛
+        فقط آخرین صفحه‌ی هدیه‌ی تولد امسالته. 🌷
+      </p>
+    </section>
+
+    <!-- دکمه‌های مسیر -->
+    <nav class="footer-nav" aria-label="مسیرهای سایت">
+      <a class="button button-primary" href="museum.html">
+        برگشت به دنیا‌هامون 🏛️
+      </a>
+
+      <a class="button button-secondary" href="../index.html">
+        شروع قصه‌مون از اول 💗
+      </a>
+
+      <a class="button button-secondary" href="mystery-box.html">
+        برگشت به دنیای قبلی؛ جعبه‌ی مرموز 🎁
+      </a>
+    </nav>
+
+    <p class="footer-caption">
+      با عشق ساخته شده برای نینی؛ از طرف دخترش 💌
+    </p>
+
+  </main>
+
+  <script>
+    // ستاره‌های پس‌زمینه
+    (() => {
+      const canvas = document.getElementById("sky");
+      const ctx = canvas.getContext("2d");
+
+      if (!ctx) return;
+
+      let width = 0;
+      let height = 0;
+      let stars = [];
+
+      function resize() {
+        const dpr = Math.min(window.devicePixelRatio || 1, 2);
+
+        width = window.innerWidth;
+        height = window.innerHeight;
+
+        canvas.width = width * dpr;
+        canvas.height = height * dpr;
+        canvas.style.width = width + "px";
+        canvas.style.height = height + "px";
+
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+        const count = Math.min(
+          150,
+          Math.max(45, Math.floor((width * height) / 9000))
+        );
+
+        stars = Array.from({ length: count }, () => ({
+          x: Math.random() * width,
+          y: Math.random() * height,
+          r: Math.random() * 1.5 + 0.3,
+          a: Math.random() * 0.65 + 0.15,
+          speed: Math.random() * 0.018 + 0.004,
+          phase: Math.random() * Math.PI * 2
+        }));
+      }
+
+      function draw(time) {
+        ctx.clearRect(0, 0, width, height);
+
+        for (const star of stars) {
+          const alpha = star.a *
+            (0.55 + 0.45 * Math.sin(time * star.speed + star.phase));
+
+          ctx.beginPath();
+          ctx.arc(star.x, star.y, star.r, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(255, 232, 203, ${alpha})`;
+          ctx.fill();
+        }
+
+        requestAnimationFrame(draw);
+      }
+
+      resize();
+      window.addEventListener("resize", resize);
+      requestAnimationFrame(draw);
+    })();
+
+    // باز کردن هدیه
+    const giftButton = document.getElementById("giftButton");
+    const giftMessage = document.getElementById("giftMessage");
+    const giftLabel = document.getElementById("giftLabel");
+
+    giftButton.addEventListener("click", () => {
+      if (giftButton.classList.contains("opened")) return;
+
+      giftButton.classList.add("opened");
+      giftButton.setAttribute("aria-expanded", "true");
+      giftLabel.textContent = "سورپرایزت باز شد! 💖";
+
+      setTimeout(() => {
+        giftButton.style.display = "none";
+        giftLabel.style.display = "none";
+        giftMessage.classList.add("show");
+        burstConfetti(45);
+      }, 480);
+    });
+
+    // جشن قلبی و ستاره‌ای
+    function burstConfetti(amount = 25) {
+      const pieces = ["💖", "💗", "✨", "🌟", "💕", "🎉", "🌸"];
+
+      for (let i = 0; i < amount; i++) {
+        const item = document.createElement("span");
+        item.className = "confetti";
+        item.textContent = pieces[Math.floor(Math.random() * pieces.length)];
+
+        item.style.left = Math.random() * 100 + "vw";
+        item.style.fontSize = (Math.random() * 15 + 12) + "px";
+        item.style.animationDuration = (Math.random() * 2.5 + 2.8) + "s";
+        item.style.setProperty("--drift", (Math.random() * 180 - 90) + "px");
+
+        document.body.appendChild(item);
+        item.addEventListener("animationend", () => item.remove(), { once: true });
+      }
+    }
+
+    // کپی آیدی روبیکا
+    const copyButton = document.getElementById("copyHandle");
+    const copyStatus = document.getElementById("copyStatus");
+
+    copyButton.addEventListener("click", async () => {
+      const handle = "@Batmanyjooon";
+
+      try {
+        await navigator.clipboard.writeText(handle);
+        copyStatus.textContent = "آیدی کپی شد! حالا برو نینی رو پیدا کن! 🎬💗";
+      } catch (error) {
+        copyStatus.textContent = "آیدی رو نگه دار و کپی کن: " + handle;
+      }
+    });
+
+    // کمی جشن برای صفحه‌ی آخر
+    let finaleCelebrated = false;
+
+    const finale = document.querySelector(".finale");
+
+    if ("IntersectionObserver" in window && finale) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !finaleCelebrated) {
+            finaleCelebrated = true;
+            burstConfetti(55);
+            observer.disconnect();
+          }
+        });
+      }, { threshold: 0.45 });
+
+      observer.observe(finale);
+    }
+  </script>
+</body>
+</html>

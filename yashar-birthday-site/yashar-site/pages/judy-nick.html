@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#fff0f5">
+<title>جودی و نیک؛ قصه‌ای شبیه ما 🦊🐰</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+    --pink: #ff6f9f;
+    --deep-pink: #e94d86;
+    --purple: #9570cf;
+    --cream: #fffaf5;
+    --ink: #633d5b;
+    --gold: #efbd65;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Vazirmatn', Tahoma, sans-serif;
+    background:
+        radial-gradient(ellipse at top left, #ffe1ed 0%, transparent 38%),
+        radial-gradient(ellipse at bottom right, #eae0ff 0%, transparent 35%),
+        #fff9fc;
+    color: var(--ink);
+    overflow-x: hidden;
+}
+
+button, a {
+    font-family: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+.page {
+    width: min(100% - 28px, 850px);
+    margin: auto;
+    padding: 20px 0 45px;
+}
+
+/* قلب‌های شناور */
+
+.floating-hearts {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.float-heart {
+    position: absolute;
+    bottom: -40px;
+    opacity: 0;
+    animation: rise 9s linear infinite;
+}
+
+@keyframes rise {
+    0% {
+        transform: translateY(0) rotate(0deg) scale(.7);
+        opacity: 0;
+    }
+    15% {
+        opacity: .65;
+    }
+    85% {
+        opacity: .45;
+    }
+    100% {
+        transform: translateY(-110vh) rotate(35deg) scale(1.25);
+        opacity: 0;
+    }
+}
+
+main, header, footer {
+    position: relative;
+    z-index: 1;
+}
+
+/* سربرگ */
+
+.hero {
+    position: relative;
+    overflow: hidden;
+    padding: 34px 23px 30px;
+    border-radius: 32px;
+    text-align: center;
+    background: linear-gradient(145deg, #fff 0%, #ffe4ee 48%, #eee4ff 100%);
+    border: 1px solid #fff;
+    box-shadow: 0 15px 40px #b87da31b;
+}
+
+.hero::before,
+.hero::after {
+    content: "♡";
+    position: absolute;
+    font-size: 90px;
+    color: #ff8bb52b;
+}
+
+.hero::before {
+    top: -28px;
+    right: -4px;
+    transform: rotate(-20deg);
+}
+
+.hero::after {
+    bottom: -42px;
+    left: -5px;
+    transform: rotate(15deg);
+}
+
+.eyebrow {
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    padding: 7px 14px;
+    border-radius: 50px;
+    background: #ffffffbd;
+    color: var(--deep-pink);
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.hero h1 {
+    position: relative;
+    z-index: 1;
+    margin: 18px 0 12px;
+    font-size: clamp(28px, 7vw, 43px);
+    line-height: 1.6;
+    font-weight: 900;
+    color: #d94e85;
+}
+
+.hero h1 span {
+    display: inline-block;
+    color: #9873d0;
+    animation: wiggle 3s ease-in-out infinite;
+}
+
+@keyframes wiggle {
+    0%, 100% { transform: rotate(-5deg) translateY(0); }
+    50% { transform: rotate(5deg) translateY(-5px); }
+}
+
+.hero p {
+    position: relative;
+    z-index: 1;
+    max-width: 610px;
+    margin: auto;
+    font-size: 14px;
+    line-height: 2.35;
+    color: #74526e;
+}
+
+.hero .mini-line {
+    position: relative;
+    z-index: 1;
+    margin-top: 20px;
+    color: #d34e82;
+    font-size: 13px;
+    font-weight: 800;
+}
+
+/* معرفی قصه */
+
+.story-intro {
+    margin: 23px 0;
+    padding: 23px 20px;
+    background: #fff;
+    border: 1px solid #f7d8e6;
+    border-radius: 25px;
+    box-shadow: 0 9px 24px #d99ab51b;
+}
+
+.story-intro .icon {
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 9px;
+}
+
+.story-intro h2 {
+    color: #d94e85;
+    font-size: 19px;
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.story-intro p {
+    font-size: 13.5px;
+    line-height: 2.5;
+    text-align: center;
+}
+
+.highlight {
+    color: #cf4d86;
+    font-weight: 900;
+}
+
+.quote {
+    margin-top: 16px;
+    padding: 13px;
+    border-radius: 17px;
+    text-align: center;
+    line-height: 2.2;
+    background: linear-gradient(120deg, #fff0f6, #f3edff);
+    font-size: 13px;
+    font-weight: 800;
+}
+
+/* عنوان گالری */
+
+.section-heading {
+    text-align: center;
+    padding: 18px 0 20px;
+}
+
+.section-heading .emoji {
+    font-size: 32px;
+}
+
+.section-heading h2 {
+    margin: 7px 0;
+    font-size: 24px;
+    font-weight: 900;
+    color: #d94e85;
+}
+
+.section-heading p {
+    font-size: 12px;
+    line-height: 2;
+    color: #96738d;
+}
+
+/* کارت‌های عکس */
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 15px;
+}
+
+.memory-card {
+    position: relative;
+    overflow: hidden;
+    padding: 9px 9px 16px;
+    border-radius: 23px;
+    background: #fff;
+    border: 1px solid #f9e1eb;
+    box-shadow: 0 10px 25px #b77c9b18;
+    transition: transform .25s ease, box-shadow .25s ease;
+    animation: cardAppear .7s ease both;
+}
+
+.memory-card:nth-child(2) { animation-delay: .08s; }
+.memory-card:nth-child(3) { animation-delay: .16s; }
+.memory-card:nth-child(4) { animation-delay: .24s; }
+
+@keyframes cardAppear {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.memory-card:active {
+    transform: scale(.98);
+}
+
+.photo-wrap {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 1 / 1;
+    border-radius: 16px;
+    background: linear-gradient(135deg, #ffe1ed, #e8dcff);
+}
+
+.photo-wrap img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    transition: transform .5s ease;
+}
+
+.memory-card:hover .photo-wrap img {
+    transform: scale(1.045);
+}
+
+.photo-number {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    min-width: 29px;
+    height: 29px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: #ffffffeb;
+    color: #d94e85;
+    font-size: 12px;
+    font-weight: 900;
+    box-shadow: 0 3px 9px #00000012;
+}
+
+.card-emoji {
+    display: block;
+    margin: 13px 0 5px;
+    text-align: center;
+    font-size: 23px;
+}
+
+.memory-card h3 {
+    text-align: center;
+    font-size: 14px;
+    font-weight: 900;
+    color: #cf4d86;
+    line-height: 1.9;
+    margin: 0 3px 7px;
+}
+
+.memory-card p {
+    text-align: center;
+    font-size: 11.5px;
+    line-height: 2.15;
+    color: #7d6177;
+    padding: 0 3px;
+}
+
+.card-tag {
+    display: table;
+    margin: 12px auto 0;
+    padding: 5px 10px;
+    background: #fff0f6;
+    color: #d94e85;
+    border-radius: 50px;
+    font-size: 10px;
+    font-weight: 800;
+}
+
+/* بخش آینده */
+
+.future {
+    position: relative;
+    overflow: hidden;
+    margin-top: 27px;
+    padding: 26px 19px;
+    border-radius: 28px;
+    background: linear-gradient(145deg, #f5edff, #fff0f6 60%, #fffaf0);
+    border: 1px solid #fff;
+    box-shadow: 0 12px 32px #a48ac31b;
+}
+
+.future .stars {
+    text-align: center;
+    font-size: 27px;
+    letter-spacing: 5px;
+}
+
+.future h2 {
+    margin: 12px 0;
+    text-align: center;
+    font-size: 22px;
+    line-height: 1.8;
+    color: #8e67c5;
+    font-weight: 900;
+}
+
+.future p {
+    font-size: 13px;
+    line-height: 2.55;
+    text-align: center;
+}
+
+.promise-list {
+    display: grid;
+    gap: 10px;
+    margin-top: 19px;
+}
+
+.promise {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 12px;
+    border-radius: 17px;
+    background: #ffffffc9;
+    font-size: 12px;
+    line-height: 2.1;
+}
+
+.promise span {
+    flex-shrink: 0;
+    font-size: 21px;
+}
+
+.promise strong {
+    color: #cb4d84;
+}
+
+/* نامه عاشقانه */
+
+.love-note {
+    position: relative;
+    margin-top: 24px;
+    padding: 24px 20px;
+    background: #fff;
+    border: 1px dashed #efa1c2;
+    border-radius: 25px;
+    text-align: center;
+}
+
+.love-note .stamp {
+    display: inline-grid;
+    place-items: center;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ff8fb5, #b99af1);
+    color: white;
+    font-size: 25px;
+    margin-bottom: 12px;
+    box-shadow: 0 5px 14px #db8eb533;
+}
+
+.love-note h2 {
+    color: #d94e85;
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+
+.love-note p {
+    font-size: 13px;
+    line-height: 2.65;
+}
+
+.signature {
+    margin-top: 17px;
+    color: #d94e85;
+    font-size: 15px;
+    font-weight: 900;
+    line-height: 2;
+}
+
+/* دکمه‌ها */
+
+.navigation {
+    display: grid;
+    gap: 11px;
+    margin-top: 27px;
+}
+
+.nav-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    min-height: 51px;
+    padding: 13px 15px;
+    text-decoration: none;
+    border-radius: 17px;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 900;
+    transition: transform .2s ease, filter .2s ease;
+}
+
+.nav-btn:active {
+    transform: scale(.98);
+}
+
+.primary-btn {
+    background: linear-gradient(110deg, #f16b9d, #b78be7);
+    color: #fff;
+    box-shadow: 0 8px 19px #db83b53d;
+}
+
+.secondary-btn {
+    color: #a84e80;
+    background: #fff;
+    border: 1px solid #f4ccde;
+}
+
+.third-btn {
+    color: #8764bd;
+    background: #f4efff;
+    border: 1px solid #e8dbff;
+}
+
+.fourth-btn {
+    color: #fff;
+    background: #785e89;
+}
+
+.footer {
+    padding-top: 24px;
+    text-align: center;
+    font-size: 11px;
+    line-height: 2.2;
+    color: #a17c98;
+}
+
+.footer .big-heart {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 26px;
+}
+
+@media (min-width: 650px) {
+    .page {
+        padding-top: 32px;
+    }
+
+    .hero {
+        padding: 45px 40px;
+    }
+
+    .gallery {
+        gap: 22px;
+    }
+
+    .memory-card {
+        padding: 12px 12px 20px;
+        border-radius: 27px;
+    }
+
+    .memory-card h3 {
+        font-size: 16px;
+    }
+
+    .memory-card p {
+        font-size: 13px;
+    }
+
+    .navigation {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="floating-hearts" id="floatingHearts" aria-hidden="true"></div>
+
+<div class="page">
+
+<header class="hero">
+    <div class="eyebrow">🦊🐰 یک قصه‌ی آشنا با دو قهرمان واقعی</div>
+
+    <h1>
+        جودی و نیک؛<br>
+        <span>قصه‌ای شبیه ما</span> 💗
+    </h1>
+
+    <p>
+        نینیِ من، می‌دونی یکی از بامزه‌ترین اتفاق‌های قصه‌ی ما چی بود؟
+        اینکه همون اوایل آشنایی، جودی و نیک رو برای خودمون انتخاب کردیم!
+        انگار قلب‌هامون قبل از خودمون فهمیده بودن قراره چه تیم دوست‌داشتنی‌ای بشیم. 🥹💕
+    </p>
+
+    <div class="mini-line">
+        هشدار: میزان ناز و عاشقی این صفحه از حد مجاز بیشتر است! 😂💋
+    </div>
+</header>
+
+<main>
+
+<section class="story-intro">
+    <div class="icon">🦊💞🐰</div>
+
+    <h2>از همون اول، ما یه تیم بودیم!</h2>
+
+    <p>
+        جودی یه خرگوش کوچولوی بااراده‌ست که برای رؤیاهاش تلاش می‌کنه،
+        نیک هم یه روباه باهوش و بامزه‌ست که قلبش از چیزی که نشون می‌ده
+        خیلی مهربون‌تره!
+        <br><br>
+        حالا تصور کن یه دخترِ شیطون و رؤیاپرداز با یه نینیِ دوست‌داشتنی
+        تصمیم بگیرن شخصیت‌های خودشون رو از بین این دوتا انتخاب کنن!
+        😂💗
+        <br><br>
+        آره عزیز دلم؛ <span class="highlight">جودی و نیک برای ما فقط دو تا کاراکتر نیستن؛
+        یه یادگاری قشنگ از روزهای اول قصه‌مونن.</span>
+    </p>
+
+    <div class="quote">
+        ما هم قهرمان قصه‌ی خودمونیم؛<br>
+        با کلی رؤیا، کلی تلاش، کلی خنده و یه عالمه عشق! 🌷
+    </div>
+</section>
+
+<div class="section-heading">
+    <div class="emoji">🎞️💗</div>
+    <h2>چهار قاب از قصه‌ی ما</h2>
+    <p>هر عکس یه تیکه از رؤیای قشنگیه که با هم ساختیم...</p>
+</div>
+
+<section class="gallery">
+
+    <!-- عکس اول: جودی و نیک در آغوش هم -->
+    <article class="memory-card">
+        <div class="photo-wrap">
+            <img
+                src="../assets/images/characters/judy-nick.jpg"
+                alt="جودی و نیک در آغوش هم"
+                loading="lazy"
+            >
+            <span class="photo-number">۱</span>
+        </div>
+
+        <span class="card-emoji">🫂💞</span>
+        <h3>بغلِ مخصوصِ تیم دونفره!</h3>
+        <p>
+            از اون بغل‌ها که دنیا چند ثانیه وایمیسته،
+            جودی لبخند می‌زنه و نیک یادش می‌ره اصلاً قرار بود چی بگه! 😂
+            <br>
+            نینی، منم یه عالمه بغل از این مدلی بهت بدهکارم! 💋
+        </p>
+        <span class="card-tag">آغوشِ امنِ من</span>
+    </article>
+
+    <!-- عکس دوم: جودی و نیک اوایل آشنایی -->
+    <article class="memory-card">
+        <div class="photo-wrap">
+            <img
+                src="../assets/images/characters/judy.jpg"
+                alt="جودی و نیک در روزهای اول آشنایی"
+                loading="lazy"
+            >
+            <span class="photo-number">۲</span>
+        </div>
+
+        <span class="card-emoji">🐰🦊</span>
+        <h3>روزهای اولِ یه قصه‌ی بزرگ!</h3>
+        <p>
+            یه روزی ما هم اولِ اول بودیم؛
+            با کلی حرف، کلی شناختن و یه عالمه لحظه که آروم‌آروم
+            ما رو به «ما» تبدیل کردن. 🥹
+            <br>
+            چه خوب که قصه‌مون شروع شد، نینی!
+        </p>
+        <span class="card-tag">از همون روزهای اول</span>
+    </article>
+
+    <!-- عکس سوم: عروسی جودی و نیک -->
+    <article class="memory-card">
+        <div class="photo-wrap">
+            <img
+                src="../assets/images/characters/nick.jpg"
+                alt="جودی و نیک در لباس عروس و داماد"
+                loading="lazy"
+            >
+            <span class="photo-number">۳</span>
+        </div>
+
+        <span class="card-emoji">💍👰🏻‍♀️🤵🏻</span>
+        <h3>آقای روباه، خانم خرگوش!</h3>
+        <p>
+            جودی و نیک رو ببین! 😂
+            انگار حتی توی دنیای کارتون‌ها هم عشق بلده
+            دو تا قلب رو کنار هم به یه قصه‌ی قشنگ برسونه.
+            <br>
+            چه قاب نازی برای خیال‌بافی‌های ما! 💗
+        </p>
+        <span class="card-tag">قابِ رؤیاهای قشنگ</span>
+    </article>
+
+    <!-- عکس چهارم: تصویر عروسی ساخته‌شده با هوش مصنوعی -->
+    <article class="memory-card">
+        <div class="photo-wrap">
+            <img
+                src="../assets/images/characters/weare.jpg"
+                alt="تصویر عروس و داماد هستی و یاشار ساخته‌شده با هوش مصنوعی"
+                loading="lazy"
+            >
+            <span class="photo-number">۴</span>
+        </div>
+
+        <span class="card-emoji">🥹💐💍</span>
+        <h3>حالا نوبتِ جودی و نیکِ خودمونه!</h3>
+        <p>
+            این عکس فعلاً ساخته‌ی هوش مصنوعیه،
+            ولی رؤیایی که پشتشه از قلب خودمونه! 🥹
+            <br>
+            دخترِ نینی دلش می‌خواد یه روز با لبخند کنار تو بایسته
+            و بگه: «دیدی بابایی؟ چه قصه‌ی قشنگی ساختیم!» 💗
+        </p>
+        <span class="card-tag">رؤیایی برای ساختن</span>
+    </article>
+
+</section>
+
+<section class="future">
+    <div class="stars">✨ 🌷 ✨</div>
+
+    <h2>قصه‌ی ما هنوز کلی صفحه‌ی قشنگ داره!</h2>
+
+    <p>
+        نینی جانم، من به قصه‌مون امید دارم؛
+        به رؤیاهایی که درباره‌شون حرف می‌زنیم،
+        به قدم‌هایی که برای آینده‌مون برمی‌داریم،
+        به روزهایی که بزرگ‌تر می‌شیم و چیزهای بیشتری یاد می‌گیریم.
+        <br><br>
+        قرار نیست همه‌چیز یک‌شبه ساخته بشه؛
+        قشنگیِ بعضی رؤیاها به اینه که براشون وقت می‌ذاریم،
+        تلاش می‌کنیم و هر روز یه قدم بهشون نزدیک‌تر می‌شیم. 🥹
+    </p>
+
+    <div class="promise-list">
+
+        <div class="promise">
+            <span>🌱</span>
+            <div>
+                <strong>با هم رشد می‌کنیم.</strong><br>
+                هر کدوممون برای آرزوهاش تلاش می‌کنه و موفقیت‌های همدیگه رو جشن می‌گیریم.
+            </div>
+        </div>
+
+        <div class="promise">
+            <span>🧩</span>
+            <div>
+                <strong>تیم همدیگه می‌مونیم.</strong><br>
+                حرف می‌زنیم، به هم گوش می‌دیم، همدیگه رو بهتر می‌شناسیم و برای حل مسئله‌ها کنار هم فکر می‌کنیم.
+            </div>
+        </div>
+
+        <div class="promise">
+            <span>🚀</span>
+            <div>
+                <strong>برای آینده‌مون قدم برمی‌داریم.</strong><br>
+                رؤیاهای بزرگ با قدم‌های کوچیک شروع می‌شن؛ پس بزن بریم، آقای روباه! 😂💗
+            </div>
+        </div>
+
+        <div class="promise">
+            <span>💗</span>
+            <div>
+                <strong>خنده رو از قصه‌مون حذف نمی‌کنیم!</strong><br>
+                چون یه نینیِ بامزه و یه دخترِ شیطون، به اندازه‌ی کافی سوژه برای خندیدن دارن! 😂
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section class="love-note">
+    <div class="stamp">💌</div>
+
+    <h2>یه حرف از دخترت به نینی...</h2>
+
+    <p>
+        نینیِ قشنگم، باباییِ مهربونِ دخترت... 🥹💗
+        <br><br>
+        می‌دونی چرا جودی و نیک برای من این‌قدر دوست‌داشتنی‌ان؟
+        چون یادم می‌اندازن که دو نفر می‌تونن با وجود تفاوت‌هاشون،
+        همدیگه رو بهتر بشناسن، به هم انگیزه بدن و برای چیزهای قشنگ تلاش کنن.
+        <br><br>
+        ما هم دنیای مخصوص خودمون رو داریم؛
+        با خاطره‌های خودمون، شوخی‌های خودمون، اسم‌های بامزه‌ی خودمون
+        و رؤیاهایی که وقتی ازشون حرف می‌زنیم، چشم‌هامون برق می‌زنه. ✨
+        <br><br>
+        من می‌خوام دخترِ پرامید و پرتلاشی باشم که برای آینده‌اش قدم برمی‌داره،
+        به تو عشق می‌ده و موفقیت‌هات رو از ته دل خوشحالی می‌کنه.
+        دلم می‌خواد وقتی به این روزها نگاه می‌کنیم،
+        لبخند بزنیم و بگیم: «ما برای ساختن این قصه چقدر قشنگ تلاش کردیم!» 💞
+        <br><br>
+        پس تو هم آماده باش، آقای روباه!
+        چون خانم خرگوشِ تو کلی رؤیای خوشگل توی سرش داره
+        و تازه اولِ ماجراست! 😂🐰🦊
+    </p>
+
+    <div class="signature">
+        دوستت دارم، نینیِ من! 💗<br>
+        از طرف دخترِ کوچولوی رؤیاپردازت 🌷
+    </div>
+</section>
+
+<nav class="navigation" aria-label="پیمایش بین بخش‌های سایت">
+
+    <a class="nav-btn primary-btn" href="letter.html">
+        💌 ادامه قصه ما؛ نامه مخصوص تو
+    </a>
+
+    <a class="nav-btn secondary-btn" href="museum.html">
+        🏡 برگشت به دنیا هامون
+    </a>
+
+    <a class="nav-btn third-btn" href="../index.html">
+        💗 شروع قصه‌مون از اول
+    </a>
+
+    <a class="nav-btn fourth-btn" href="our-memories.html">
+        📸 برگشت به دنیای قبلی؛ آلبوم قلب من
+    </a>
+
+</nav>
+
+</main>
+
+<footer class="footer">
+    <span class="big-heart">💗 🦊 🐰 💗</span>
+    بعضی شخصیت‌ها رو انتخاب می‌کنیم؛<br>
+    بعضی قصه‌ها رو با قلبمون می‌سازیم.
+</footer>
+
+</div>
+
+<script>
+(function () {
+    const container = document.getElementById('floatingHearts');
+
+    if (!container) return;
+
+    const symbols = ['♡', '💗', '💕', '✦', '🌸'];
+
+    for (let i = 0; i < 16; i++) {
+        const heart = document.createElement('span');
+
+        heart.className = 'float-heart';
+        heart.textContent = symbols[i % symbols.length];
+        heart.style.left = (Math.random() * 100) + '%';
+        heart.style.animationDelay = (Math.random() * 9) + 's';
+        heart.style.animationDuration = (7 + Math.random() * 6) + 's';
+        heart.style.fontSize = (13 + Math.random() * 15) + 'px';
+
+        container.appendChild(heart);
+    }
+})();
+</script>
+
+</body>
+</html>

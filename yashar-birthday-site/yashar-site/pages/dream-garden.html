@@ -1,0 +1,1295 @@
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#17182d">
+<title>باغچه‌ی آرزوهای ما 🌷</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --night: #17182d;
+  --night2: #242444;
+  --pink: #ffaccd;
+  --gold: #ffe39a;
+  --mint: #b7f2d5;
+  --lilac: #d1b9ff;
+  --cream: #fff6e8;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  color: var(--cream);
+  font-family: 'Vazirmatn', sans-serif;
+  background:
+    radial-gradient(ellipse at 50% 0%, #5b3d78 0%, transparent 48%),
+    radial-gradient(ellipse at 0% 48%, #254d59 0%, transparent 40%),
+    linear-gradient(180deg, #17182d, #202d3c 70%, #182b32);
+}
+
+button, textarea, input {
+  font-family: inherit;
+}
+
+button, a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  cursor: pointer;
+}
+
+.sky {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.sky-star {
+  position: absolute;
+  color: #fff1b7;
+  animation: twinkle var(--duration, 3s) ease-in-out infinite alternate;
+  animation-delay: var(--delay, 0s);
+}
+
+@keyframes twinkle {
+  from { opacity: .2; transform: scale(.7); }
+  to { opacity: .95; transform: scale(1.2); }
+}
+
+.moon {
+  position: fixed;
+  z-index: 0;
+  top: 35px;
+  left: 7%;
+  width: 66px;
+  height: 66px;
+  border-radius: 50%;
+  background: #fff0b7;
+  box-shadow: 0 0 35px #ffe39a70, 0 0 90px #ffe39a25;
+  pointer-events: none;
+}
+
+.moon::after {
+  content: "";
+  position: absolute;
+  width: 59px;
+  height: 59px;
+  top: -8px;
+  right: -9px;
+  background: #29213f;
+  border-radius: 50%;
+}
+
+.page {
+  position: relative;
+  z-index: 1;
+  width: min(100% - 28px, 800px);
+  margin: auto;
+  padding: 36px 0 35px;
+}
+
+.badge {
+  display: block;
+  width: fit-content;
+  margin: 0 auto 15px;
+  padding: 8px 16px;
+  border: 1px solid #ffe39a55;
+  border-radius: 50px;
+  color: var(--gold);
+  background: #ffe39a0d;
+  font-size: .8rem;
+}
+
+h1 {
+  text-align: center;
+  font-size: clamp(2.1rem, 8vw, 3.6rem);
+  font-weight: 900;
+  line-height: 1.5;
+  color: var(--pink);
+  text-shadow: 0 0 30px #ffaccd2d;
+}
+
+.subtitle {
+  max-width: 590px;
+  margin: 10px auto 25px;
+  text-align: center;
+  color: #eee4ff;
+  line-height: 2.2;
+  font-size: .94rem;
+}
+
+.glass {
+  background: #ffffff09;
+  border: 1px solid #ffffff19;
+  border-radius: 25px;
+  box-shadow: 0 15px 40px #00000012;
+  backdrop-filter: blur(8px);
+}
+
+.welcome {
+  padding: 20px;
+  text-align: center;
+  line-height: 2.25;
+  margin-bottom: 23px;
+}
+
+.welcome strong {
+  color: var(--pink);
+}
+
+.primary-button {
+  display: block;
+  margin: 18px auto 0;
+  padding: 13px 23px;
+  border: 0;
+  border-radius: 50px;
+  color: #30213c;
+  font-weight: 900;
+  font-size: .94rem;
+  background: linear-gradient(110deg, var(--gold), var(--pink));
+  box-shadow: 0 8px 25px #ffaccd20;
+  transition: transform .2s, box-shadow .2s;
+}
+
+.primary-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px #ffaccd40;
+}
+
+.primary-button:active {
+  transform: scale(.97);
+}
+
+.garden-intro {
+  text-align: center;
+  margin: 30px 0 15px;
+}
+
+.garden-intro h2 {
+  color: var(--mint);
+  font-size: 1.4rem;
+  margin-bottom: 8px;
+}
+
+.garden-intro p {
+  color: #e2e7e8;
+  line-height: 2;
+  font-size: .88rem;
+}
+
+.garden {
+  position: relative;
+  overflow: hidden;
+  padding: 23px 15px 26px;
+  border-radius: 32px;
+  border: 1px solid #b7f2d532;
+  background:
+    radial-gradient(ellipse at 50% 100%, #7ec69b25, transparent 60%),
+    linear-gradient(180deg, #1e3445b8, #203f3caa);
+}
+
+.garden::before {
+  content: "";
+  position: absolute;
+  left: -12%;
+  right: -12%;
+  bottom: -80px;
+  height: 180px;
+  border-radius: 50% 50% 0 0;
+  background: linear-gradient(180deg, #426b4d, #234737);
+}
+
+.garden::after {
+  content: "✦  ·  ✧  ·  ✦  ·  ✧  ·  ✦";
+  position: absolute;
+  top: 15px;
+  left: 0;
+  right: 0;
+  color: #ffe39a65;
+  text-align: center;
+  letter-spacing: 8px;
+  pointer-events: none;
+}
+
+.garden-content {
+  position: relative;
+  z-index: 1;
+}
+
+.garden-caption {
+  text-align: center;
+  color: var(--gold);
+  font-weight: 800;
+  margin: 5px 0 20px;
+}
+
+.flowers {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 13px;
+}
+
+.flower-card {
+  position: relative;
+  min-height: 155px;
+  padding: 16px 8px 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  border: 1px solid #ffffff1d;
+  border-radius: 24px;
+  color: var(--cream);
+  background: #ffffff0a;
+  transition: transform .25s, background .25s, border-color .25s;
+}
+
+.flower-card:hover {
+  transform: translateY(-5px);
+  background: #ffffff13;
+  border-color: #ffe39a70;
+}
+
+.flower-card:active {
+  transform: scale(.97);
+}
+
+.flower {
+  display: inline-block;
+  font-size: 3rem;
+  filter: drop-shadow(0 0 13px #ffaccd27);
+  animation: sway 3s ease-in-out infinite;
+  transition: transform .3s;
+}
+
+.flower-card:nth-child(2n) .flower {
+  animation-delay: -.8s;
+}
+
+.flower-card:nth-child(3n) .flower {
+  animation-delay: -1.4s;
+}
+
+@keyframes sway {
+  0%, 100% { transform: rotate(-5deg) translateY(0); }
+  50% { transform: rotate(5deg) translateY(-4px); }
+}
+
+.flower-card.opened .flower {
+  transform: scale(1.25);
+  filter: drop-shadow(0 0 18px #ffe39a99);
+}
+
+.flower-card strong {
+  font-size: .91rem;
+  color: var(--gold);
+}
+
+.flower-card small {
+  font-size: .74rem;
+  color: #dce5e0;
+  line-height: 1.8;
+}
+
+.flower-card .opened-label {
+  display: none;
+  font-size: .7rem;
+  color: var(--mint);
+}
+
+.flower-card.opened .opened-label {
+  display: block;
+}
+
+.progress-card {
+  margin-top: 20px;
+  padding: 17px;
+  text-align: center;
+  line-height: 2;
+}
+
+.progress-card strong {
+  color: var(--gold);
+}
+
+.progress-track {
+  height: 10px;
+  margin: 12px 0 7px;
+  background: #ffffff15;
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  width: 0;
+  height: 100%;
+  background: linear-gradient(90deg, var(--mint), var(--gold), var(--pink));
+  border-radius: inherit;
+  transition: width .5s ease;
+}
+
+.progress-card small {
+  color: #e3dce9;
+  font-size: .78rem;
+}
+
+.drops-section {
+  margin-top: 38px;
+}
+
+.section-title {
+  text-align: center;
+  color: var(--mint);
+  font-size: 1.35rem;
+  font-weight: 900;
+  margin-bottom: 9px;
+}
+
+.section-description {
+  text-align: center;
+  color: #e5e0ed;
+  line-height: 2;
+  font-size: .88rem;
+  margin-bottom: 17px;
+}
+
+.drops {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 9px;
+}
+
+.drop {
+  padding: 15px 5px;
+  border: 1px solid #ffffff1a;
+  border-radius: 19px;
+  color: var(--cream);
+  background: #ffffff09;
+  transition: .25s;
+}
+
+.drop:hover {
+  transform: translateY(-4px);
+  border-color: #b7f2d58a;
+}
+
+.drop.used {
+  background: #b7f2d51a;
+  border-color: var(--mint);
+}
+
+.drop span {
+  display: block;
+  font-size: 2rem;
+  margin-bottom: 8px;
+}
+
+.drop strong {
+  display: block;
+  font-size: .82rem;
+}
+
+.drop small {
+  display: block;
+  color: #d8d2e1;
+  font-size: .68rem;
+  margin-top: 5px;
+  line-height: 1.7;
+}
+
+.drop-message {
+  display: none;
+  padding: 17px;
+  margin-top: 14px;
+  text-align: center;
+  line-height: 2;
+  color: var(--mint);
+}
+
+.drop-message.show {
+  display: block;
+  animation: appear .5s ease both;
+}
+
+@keyframes appear {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.tree-section {
+  margin-top: 38px;
+}
+
+.tree-scene {
+  position: relative;
+  overflow: hidden;
+  padding: 24px 17px;
+  text-align: center;
+  background:
+    radial-gradient(ellipse at 50% 40%, #ffe39a12, transparent 55%),
+    #ffffff07;
+}
+
+.tree-button {
+  display: block;
+  margin: 0 auto;
+  padding: 10px;
+  width: min(100%, 320px);
+  border: 1px solid #ffe39a30;
+  border-radius: 25px;
+  color: var(--cream);
+  background: #ffffff05;
+}
+
+.tree-art {
+  display: block;
+  font-size: clamp(6rem, 27vw, 9rem);
+  line-height: 1.35;
+  filter: drop-shadow(0 0 20px #b7f2d522);
+  animation: treeGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes treeGlow {
+  from { filter: drop-shadow(0 0 8px #b7f2d515); }
+  to { filter: drop-shadow(0 0 25px #ffe39a60); }
+}
+
+.tree-button strong {
+  display: block;
+  color: var(--gold);
+  font-size: 1rem;
+  margin-bottom: 5px;
+}
+
+.tree-button small {
+  color: #ded6e7;
+  line-height: 1.8;
+}
+
+.tree-message {
+  display: none;
+  text-align: right;
+  margin-top: 18px;
+  padding: 19px;
+  border: 1px solid #b7f2d540;
+  border-radius: 22px;
+  background: #b7f2d50b;
+  line-height: 2.2;
+  color: #f4eaf5;
+}
+
+.tree-message.show {
+  display: block;
+  animation: appear .6s ease both;
+}
+
+.tree-message strong {
+  color: var(--mint);
+}
+
+.bee-section {
+  margin-top: 35px;
+}
+
+.bee-card {
+  padding: 20px;
+  text-align: center;
+}
+
+.bee-button {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 330px;
+  border: 0;
+  background: transparent;
+  color: var(--cream);
+}
+
+.bee {
+  display: block;
+  font-size: 4.5rem;
+  animation: buzz 1.5s ease-in-out infinite;
+}
+
+@keyframes buzz {
+  0%, 100% { transform: translate(0,0) rotate(-5deg); }
+  25% { transform: translate(4px,-7px) rotate(5deg); }
+  75% { transform: translate(-3px,-4px) rotate(-3deg); }
+}
+
+.bee-button strong {
+  display: block;
+  color: var(--gold);
+  font-size: 1rem;
+  margin: 7px 0;
+}
+
+.bee-button small {
+  display: block;
+  color: #e2d8e9;
+  line-height: 2;
+}
+
+.bee-message {
+  margin-top: 17px;
+  padding: 17px;
+  border-radius: 18px;
+  border: 1px dashed #ffe39a66;
+  background: #ffe39a09;
+  line-height: 2.1;
+  color: var(--pink);
+  min-height: 70px;
+}
+
+.secret-section {
+  margin-top: 38px;
+}
+
+.secret-card {
+  padding: 22px 18px;
+  text-align: center;
+}
+
+.secret-flower {
+  font-size: 3.7rem;
+  margin-bottom: 10px;
+  animation: sway 3s infinite ease-in-out;
+}
+
+.secret-card h3 {
+  color: var(--pink);
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+
+.secret-card p {
+  color: #e7ddea;
+  line-height: 2.1;
+  font-size: .88rem;
+}
+
+.secret-card textarea {
+  width: 100%;
+  min-height: 100px;
+  resize: vertical;
+  margin-top: 16px;
+  padding: 14px;
+  border-radius: 17px;
+  border: 1px solid #ffaccd50;
+  background: #ffffff08;
+  color: var(--cream);
+  font-size: .9rem;
+  line-height: 2;
+  outline: none;
+}
+
+.secret-card textarea:focus {
+  border-color: var(--gold);
+}
+
+.secret-card textarea::placeholder {
+  color: #c5b6ce;
+}
+
+.secret-result {
+  display: none;
+  margin-top: 17px;
+  padding: 18px;
+  border-radius: 19px;
+  background: #ffe39a0d;
+  border: 1px solid #ffe39a45;
+  line-height: 2.2;
+  overflow-wrap: anywhere;
+}
+
+.secret-result.show {
+  display: block;
+  animation: appear .6s ease both;
+}
+
+.secret-result strong {
+  display: block;
+  color: var(--gold);
+  margin-bottom: 8px;
+}
+
+.promise {
+  margin-top: 38px;
+  padding: 25px 19px;
+  text-align: center;
+  line-height: 2.25;
+  background: linear-gradient(145deg, #ffaccd12, #d1b9ff0d);
+  border: 1px solid #ffaccd32;
+  border-radius: 28px;
+}
+
+.promise-heart {
+  display: inline-block;
+  font-size: 2.8rem;
+  animation: heartbeat 1.5s infinite;
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  15% { transform: scale(1.15); }
+  30% { transform: scale(1); }
+  45% { transform: scale(1.1); }
+}
+
+.promise h2 {
+  color: var(--pink);
+  font-size: 1.3rem;
+  margin: 8px 0 10px;
+}
+
+.promise p {
+  font-size: .93rem;
+  color: #f1e5f2;
+}
+
+.promise strong {
+  color: var(--gold);
+}
+
+.ending {
+  text-align: center;
+  margin: 30px 0 24px;
+  color: var(--mint);
+  line-height: 2.2;
+}
+
+.navigation {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 11px;
+}
+
+.nav-button {
+  min-height: 92px;
+  padding: 12px 7px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  border-radius: 21px;
+  text-align: center;
+  text-decoration: none;
+  color: var(--cream);
+  background: #ffffff08;
+  border: 1px solid #ffffff20;
+  transition: transform .2s, background .2s;
+}
+
+.nav-button:hover {
+  transform: translateY(-4px);
+  background: #ffffff12;
+}
+
+.nav-button .nav-icon {
+  font-size: 1.4rem;
+}
+
+.nav-button strong {
+  font-size: .86rem;
+}
+
+.nav-button small {
+  font-size: .72rem;
+  color: #d9cce3;
+}
+
+.nav-prev { border-color: #ffaccd65; }
+.nav-home { border-color: #d1b9ff65; }
+.nav-museum { border-color: #b7f2d565; }
+.nav-next {
+  border-color: #ffe39a8a;
+  background: linear-gradient(135deg, #ffe39a15, #ffaccd12);
+}
+
+.footer {
+  margin-top: 25px;
+  text-align: center;
+  color: #c6b9d2;
+  font-size: .78rem;
+  line-height: 2;
+}
+
+.petal {
+  position: fixed;
+  top: -30px;
+  z-index: 10;
+  pointer-events: none;
+  animation: petalFall var(--fall, 5s) linear forwards;
+}
+
+@keyframes petalFall {
+  0% { transform: translate3d(0,0,0) rotate(0deg); opacity: 0; }
+  12% { opacity: .9; }
+  100% { transform: translate3d(var(--drift, 40px),110vh,0) rotate(480deg); opacity: 0; }
+}
+
+.garden-awake .garden {
+  box-shadow: 0 0 50px #b7f2d514, 0 15px 40px #00000015;
+  border-color: #b7f2d575;
+}
+
+@media (min-width: 600px) {
+  .page { padding-top: 48px; }
+  .flowers { grid-template-columns: repeat(3, minmax(0,1fr)); }
+  .navigation { grid-template-columns: repeat(4, minmax(0,1fr)); }
+  .nav-button { min-height: 118px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="sky" id="sky"></div>
+<div class="moon" aria-hidden="true"></div>
+
+<main class="page" id="page">
+
+  <span class="badge">🌙 یک گوشه‌ی جادویی از قصه‌ی ما</span>
+
+  <h1>باغچه‌ی آرزوهای ما 🌷</h1>
+
+  <p class="subtitle">
+    نینی جان، اینجا هر گل یه آرزوئه، هر برگ یه خاطره‌ی آینده،
+    و هر جوانه یه قدم کوچولو برای ساختن زندگی قشنگیه که با هم تصورش می‌کنیم. 💗
+  </p>
+
+  <section class="welcome glass">
+    <div style="font-size:2.6rem">🗝️🌷✨</div>
+    <p>
+      به باغچه‌ی مخفی خودمون خوش اومدی، جناب نینی! 😂👑<br>
+      اینجا مدیرعامل باغچه دخترته، مسئول رسیدگی به گل‌ها تویی،
+      و زنبور بخش نظارت هم از همین الان حقوقشو با عسل دریافت می‌کنه! 🐝
+      <br>
+      <strong>حاضری با هم چندتا آرزوی قشنگ بکاریم؟</strong>
+    </p>
+
+    <button class="primary-button" id="wakeButton">
+      🌱 بزن بریم باغچه رو بیدار کنیم!
+    </button>
+  </section>
+
+  <section class="garden" id="garden">
+    <div class="garden-content">
+      <div class="garden-caption">
+        🌿 این گل‌ها رو یکی‌یکی لمس کن...
+      </div>
+
+      <div class="flowers">
+
+        <button class="flower-card" data-flower="dreams">
+          <span class="flower">🌹</span>
+          <strong>گلِ رؤیاهای مشترکمون</strong>
+          <small>برای چیزهایی که می‌خوایم بسازیم</small>
+          <span class="opened-label">✨ شکوفه داد!</span>
+        </button>
+
+        <button class="flower-card" data-flower="home">
+          <span class="flower">🌷</span>
+          <strong>گلِ خونه‌ی رؤیایی‌مون</strong>
+          <small>برای روزهای قشنگی که می‌سازیم</small>
+          <span class="opened-label">✨ شکوفه داد!</span>
+        </button>
+
+        <button class="flower-card" data-flower="family">
+          <span class="flower">🌸</span>
+          <strong>گلِ بابایی و دخترش</strong>
+          <small>ویژه‌ی تیم نینی و شیطنت‌ها 😂</small>
+          <span class="opened-label">✨ شکوفه داد!</span>
+        </button>
+
+        <button class="flower-card" data-flower="memories">
+          <span class="flower">🌻</span>
+          <strong>گلِ خاطره‌های آینده</strong>
+          <small>برای خاطره‌هایی که قراره بسازیم</small>
+          <span class="opened-label">✨ شکوفه داد!</span>
+        </button>
+
+        <button class="flower-card" data-flower="growth">
+          <span class="flower">🪻</span>
+          <strong>گلِ رشد کردنمون</strong>
+          <small>برای یاد گرفتن و پیشرفت کردن با هم</small>
+          <span class="opened-label">✨ شکوفه داد!</span>
+        </button>
+
+        <button class="flower-card" data-flower="joy">
+          <span class="flower">🌼</span>
+          <strong>گلِ خنده‌های بی‌پایان</strong>
+          <small>برای ذوق‌ها و خنده‌های دونفره‌مون</small>
+          <span class="opened-label">✨ شکوفه داد!</span>
+        </button>
+
+      </div>
+
+      <div class="progress-card glass">
+        <strong>🌷 میزان شکوفایی باغچه‌مون</strong>
+        <div class="progress-track">
+          <div class="progress-fill" id="progressFill"></div>
+        </div>
+        <small id="progressText">هنوز گل‌هامون منتظر اولین لمس تو هستن! 🥹</small>
+      </div>
+    </div>
+  </section>
+
+  <div class="drops-section">
+    <h2 class="section-title">💧 سه قطره‌ی جادویی باغچه</h2>
+    <p class="section-description">
+      برای رشد آرزوهای مشترکمون، سه چیز رو همیشه با خودمون نگه می‌داریم...
+    </p>
+
+    <div class="drops">
+      <button class="drop" data-drop="hope">
+        <span>💧</span>
+        <strong>قطره‌ی امید</strong>
+        <small>برای باور به فردای قشنگمون</small>
+      </button>
+
+      <button class="drop" data-drop="effort">
+        <span>🌱</span>
+        <strong>قطره‌ی تلاش</strong>
+        <small>برای قدم‌هایی که با هم برمی‌داریم</small>
+      </button>
+
+      <button class="drop" data-drop="love">
+        <span>💗</span>
+        <strong>قطره‌ی عشق</strong>
+        <small>برای مهربونی توی قصه‌مون</small>
+      </button>
+    </div>
+
+    <div class="drop-message glass" id="dropMessage" aria-live="polite"></div>
+  </div>
+
+  <section class="tree-section">
+    <h2 class="section-title">🌳 درختِ آینده‌ی ما</h2>
+    <p class="section-description">
+      یه درخت جادویی که با هر لمس، یه یادآوری قشنگ درباره‌ی آینده‌مون داره.
+    </p>
+
+    <div class="tree-scene glass">
+      <button class="tree-button" id="treeButton">
+        <span class="tree-art">🌳</span>
+        <strong>برای دیدن راز درخت لمس کن!</strong>
+        <small>قول می‌دم این درخت کلی حرف قشنگ داره. 🥹</small>
+      </button>
+
+      <div class="tree-message" id="treeMessage" aria-live="polite">
+        <strong>نینی جان، بیا یه آینده‌ی قشنگ تصور کنیم... 💗</strong>
+        <br><br>
+        یه روز به تمام قدم‌هایی که برداشتیم نگاه می‌کنیم؛
+        چیزهایی که یاد گرفتیم، مهارت‌هایی که به دست آوردیم،
+        تجربه‌هایی که جمع کردیم و آرزوهایی که براشون تلاش کردیم.
+        <br><br>
+        امیدوارم به آرزوهامون با همدیگه برسیم،
+        برای چیزهایی که دوست داریم قدم برداریم،
+        و هر بار که یه اتفاق قشنگ می‌افته، با ذوق به هم بگیم:
+        <strong>«دیدی نینی؟ دیدی با هم تونستیم؟!» 😭🌷</strong>
+      </div>
+    </div>
+  </section>
+
+  <section class="bee-section">
+    <h2 class="section-title">🐝 زنبور ناقلا وارد می‌شود!</h2>
+    <p class="section-description">
+      مسئول رسمی خنده و نظارت بر آرزوهای باغچه‌مون 😂
+    </p>
+
+    <div class="bee-card glass">
+      <button class="bee-button" id="beeButton">
+        <span class="bee">🐝</span>
+        <strong>برای دریافت گزارش محرمانه کلیک کن!</strong>
+        <small>این زنبور یه چیزایی از نینی و دخترش می‌دونه... 😂</small>
+      </button>
+
+      <div class="bee-message" id="beeMessage" aria-live="polite">
+        گزارش زنبور هنوز آماده نیست! روی خودش کلیک کن. 🐝
+      </div>
+    </div>
+  </section>
+
+  <section class="secret-section">
+    <h2 class="section-title">🌟 گلِ آرزوی مخفی</h2>
+    <p class="section-description">
+      این یکی مخصوص آرزوهاییه که خودمون از ته دلمون انتخاب می‌کنیم.
+    </p>
+
+    <div class="secret-card glass">
+      <div class="secret-flower" id="secretFlower">🌷</div>
+      <h3>نینی جان، امسال با هم دنبال چه آرزویی بریم؟</h3>
+      <p>
+        یه آرزو انتخاب کن که دوست داری برای رسیدن بهش قدم برداریم.
+        می‌تونه درباره‌ی آینده‌مون، پیشرفت‌هامون یا یه تجربه‌ی قشنگ باشه.
+      </p>
+
+      <textarea
+        id="secretWish"
+        maxlength="300"
+        placeholder="آرزوی قشنگمون رو اینجا بنویس... 💗"
+        aria-label="آرزوی مشترک ما"
+      ></textarea>
+
+      <button class="primary-button" id="plantButton">
+        🌱 این آرزو رو بکاریم!
+      </button>
+
+      <div class="secret-result" id="secretResult" aria-live="polite">
+        <strong>🌷 آرزوی مشترکمون توی باغچه کاشته شد!</strong>
+        <p id="wishOutput"></p>
+        <p style="margin-top:12px;color:#b7f2d5">
+          حالا وقتشه براش قدم برداریم؛ حتی یه قدم کوچولو هم می‌تونه شروع یه مسیر قشنگ باشه. 💚
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="promise">
+    <span class="promise-heart">💗</span>
+    <h2>از طرف دخترت، برای نینیِ قشنگم</h2>
+
+    <p>
+      نینی جان، من دلم می‌خواد قصه‌مون پر از رشد کردن، یاد گرفتن،
+      تلاش کردن و رسیدن به چیزهایی باشه که با ذوق درباره‌شون حرف می‌زنیم.
+      <br><br>
+      می‌خوام یه روز با هم به آرزوهامون نگاه کنیم و ببینیم
+      چقدر براشون وقت گذاشتیم، چقدر چیزهای تازه یاد گرفتیم
+      و چقدر از قدم‌هایی که برداشتیم خوشحالیم.
+      <br><br>
+      دلم می‌خواد آینده‌مون پر از خاطره‌های تازه،
+      خنده‌های بلند و لحظه‌هایی باشه که با افتخار به یادشون میاریم.
+      <br><br>
+      <strong>
+        ما یه قصه داریم که هنوز کلی صفحه‌ی سفید برای نوشتن داره؛
+        بیا با هم قشنگ‌ترین فصل‌هاشو بسازیم! 🥹🌷
+      </strong>
+      <br><br>
+      راستی، مدیرعامل باغچه می‌گه وقت استراحته؛
+      ولی زنبور هنوز درخواست اضافه‌کاری نداده! 😂🐝
+    </p>
+  </section>
+
+  <div class="ending">
+    🌷 باغچه‌مون پر از آرزوهای قشنگ شد!<br>
+    حالا بیا سراغ یه جعبه‌ی مرموز که معلوم نیست توش چه خبره... 👀🎁
+  </div>
+
+  <nav class="navigation" aria-label="مسیرهای قصه">
+    <a class="nav-button nav-prev" href="cake.html">
+      <span class="nav-icon">🎂</span>
+      <strong>برگشت به دنیای قبلی</strong>
+      <small>عملیات کیک و شمع</small>
+    </a>
+
+    <a class="nav-button nav-home" href="../index.html">
+      <span class="nav-icon">🔄</span>
+      <strong>شروع قصه‌مون از اول</strong>
+      <small>بریم اول قصه! 💗</small>
+    </a>
+
+    <a class="nav-button nav-museum" href="museum.html">
+      <span class="nav-icon">🏛️</span>
+      <strong>برگشت به دنیاهامون</strong>
+      <small>سایت موزه ✨</small>
+    </a>
+
+    <a class="nav-button nav-next" href="mystery-box.html">
+      <span class="nav-icon">🎁</span>
+      <strong>ادامه‌ی قصه‌ی ما</strong>
+      <small>جعبه‌ی مرموز 👀</small>
+    </a>
+  </nav>
+
+  <footer class="footer">
+    کاشته‌شده با عشق، آبیاری‌شده با امید و نگهداری‌شده توسط تیم نینی و دخترش! 😂💗
+  </footer>
+
+</main>
+
+<script>
+const sky = document.getElementById('sky');
+
+for (let i = 0; i < 75; i++) {
+  const star = document.createElement('span');
+  star.className = 'sky-star';
+  star.textContent = Math.random() > .45 ? '✦' : '·';
+  star.style.left = Math.random() * 100 + '%';
+  star.style.top = Math.random() * 100 + '%';
+  star.style.fontSize = (8 + Math.random() * 15) + 'px';
+  star.style.setProperty('--duration', (1.5 + Math.random() * 3) + 's');
+  star.style.setProperty('--delay', (Math.random() * 3) + 's');
+  sky.appendChild(star);
+}
+
+// بیدار کردن باغچه
+document.getElementById('wakeButton').addEventListener('click', () => {
+  document.body.classList.add('garden-awake');
+  createPetals(30);
+  document.getElementById('garden').scrollIntoView({
+    behavior: 'smooth',
+    block: 'center'
+  });
+});
+
+// پیام‌های گل‌ها
+const flowerMessages = {
+  dreams: {
+    title: '🌹 گلِ رؤیاهای مشترکمون',
+    text: 'نینی جان، امیدوارم به آرزوهامون با همدیگه برسیم؛ برای چیزهایی که دوست داریم تلاش کنیم، مهارت‌های تازه یاد بگیریم و هر بار که یه قدم جلو می‌ریم، با ذوق جشن بگیریم. دلم می‌خواد یه روز با لبخند به مسیرمون نگاه کنیم و بگیم: «ما این همه چیز قشنگ ساختیم!» 💗'
+  },
+
+  home: {
+    title: '🏡 گلِ خونه‌ی رؤیایی‌مون',
+    text: 'تصور کن یه روز درباره‌ی چیزهایی حرف می‌زنیم که برای ساختن زندگی دلخواهمون یاد گرفتیم و انجام دادیم؛ یه گوشه‌ی امن و گرم پر از خنده، خاطره و حس خوب. امیدوارم قدم‌به‌قدم به رؤیاهای مشترکمون نزدیک‌تر بشیم و برای آینده‌ای که دوست داریم با هم تلاش کنیم. 🌷'
+  },
+
+  family: {
+    title: '👨‍👧 گلِ بابایی و دخترش!',
+    text: 'توجه توجه! این گل متعلق به تیم فوق‌حرفه‌ای نینی و دخترشه! 😂💗 شرح وظایف نینی: باباییِ نازنین، شنونده‌ی داستان‌های طولانی و دریافت‌کننده‌ی حجم زیادی از ذوق. شرح وظایف دختر: دوست داشتن نینی، رشد کردن، تلاش برای آرزوها و احتمالاً پرسیدن ۴۷ سؤال پشت سر هم! 🥹👑'
+  },
+
+  memories: {
+    title: '📸 گلِ خاطره‌های آینده',
+    text: 'برای عکس‌هایی که هنوز نگرفتیم، تجربه‌هایی که هنوز امتحان نکردیم، خنده‌هایی که هنوز قراره با هم داشته باشیم و خاطره‌هایی که می‌تونن به قصه‌مون اضافه بشن. چه قشنگه که می‌تونیم برای آینده برنامه بریزیم، چیزهای تازه کشف کنیم و از لحظه‌های کوچیک هم خاطره بسازیم! 🌈'
+  },
+
+  growth: {
+    title: '🌱 گلِ رشد کردنمون',
+    text: 'امیدوارم هر دومون هر روز چیزهای تازه‌ای یاد بگیریم، توانایی‌هامون رو بیشتر کنیم و برای هدف‌هایی که برامون مهمن قدم برداریم. قرار نیست همه‌چیز رو یک‌روزه یاد بگیریم؛ قدم‌های کوچولو هم بخشی از مسیرن. من برای رشد کردنمون و روزهایی که به خودمون افتخار می‌کنیم کلی ذوق دارم! 💚'
+  },
+
+  joy: {
+    title: '🌼 گلِ خنده‌های بی‌پایان',
+    text: 'این گل با انرژی خنده‌های تیم نینی و دخترش شکوفا می‌شه! 😂🌼 امیدوارم کلی لحظه‌ی بامزه بسازیم، با چیزهای کوچیک ذوق کنیم و هر وقت خاطره‌ای تعریف می‌کنیم، دوباره همون‌قدر بخندیم. هشدار: احتمال بروز شیطنت‌های ناگهانی دختر و خنده‌های مسری نینی بسیار بالاست! 💗'
+  }
+};
+
+const flowerCards = [...document.querySelectorAll('.flower-card')];
+const progressFill = document.getElementById('progressFill');
+const progressText = document.getElementById('progressText');
+let openedFlowers = new Set();
+
+flowerCards.forEach(card => {
+  card.addEventListener('click', () => {
+    const key = card.dataset.flower;
+    const data = flowerMessages[key];
+
+    card.classList.add('opened');
+    openedFlowers.add(key);
+
+    progressFill.style.width = (openedFlowers.size / flowerCards.length * 100) + '%';
+
+    if (openedFlowers.size === flowerCards.length) {
+      progressText.textContent = 'همه‌ی گل‌هامون شکوفه دادن! مدیرعامل باغچه از عملکرد تیم راضیه! 😂🌷';
+      createPetals(22);
+    } else {
+      progressText.textContent = `${openedFlowers.size} تا از ${flowerCards.length} گل شکوفه دادن! بریم سراغ گل بعدی. 🌱`;
+    }
+
+    showModal(data.title, data.text);
+  });
+});
+
+// پنجره‌ی ظریف برای پیام گل
+function showModal(title, text) {
+  let modal = document.getElementById('flowerModal');
+
+  if (!modal) {
+    modal = document.createElement('div');
+    modal.id = 'flowerModal';
+    modal.style.cssText = `
+      position:fixed; inset:0; z-index:100;
+      display:flex; align-items:center; justify-content:center;
+      padding:20px; background:#100f20cc; backdrop-filter:blur(8px);
+    `;
+
+    modal.innerHTML = `
+      <div style="
+        width:min(100%,480px); max-height:85vh; overflow:auto;
+        padding:24px 20px; border-radius:27px;
+        background:linear-gradient(145deg,#30304c,#222b3d);
+        border:1px solid #ffaccd66; box-shadow:0 20px 80px #0005;
+        text-align:center; animation:appear .35s ease both;
+      ">
+        <div style="font-size:2.3rem;margin-bottom:10px">🌷</div>
+        <h2 id="modalTitle" style="color:#ffaccd;font-size:1.25rem;line-height:1.8"></h2>
+        <p id="modalText" style="color:#fff4e8;line-height:2.3;margin-top:12px;font-size:.94rem"></p>
+        <button id="modalClose" class="primary-button">بغلِ مجازی برای نینی 💗</button>
+      </div>
+    `;
+
+    document.body.appendChild(modal);
+
+    modal.addEventListener('click', event => {
+      if (event.target === modal || event.target.id === 'modalClose') {
+        modal.remove();
+      }
+    });
+  }
+
+  document.getElementById('modalTitle').textContent = title;
+  document.getElementById('modalText').textContent = text;
+  modal.querySelector('#modalClose').focus();
+}
+
+// قطره‌های جادویی
+const dropMessages = {
+  hope: '💛 قطره‌ی امید اضافه شد! امید یعنی به آینده‌ی قشنگمون فکر کنیم، برای خواسته‌هامون برنامه بریزیم و با انگیزه قدم برداریم.',
+
+  effort: '🌱 قطره‌ی تلاش اضافه شد! هر قدم کوچیک، هر مهارت تازه و هر بار که چیزی یاد می‌گیریم، می‌تونه ما رو به آرزوهامون نزدیک‌تر کنه. بزن قدش نینی! ✋😂',
+
+  love: '💗 قطره‌ی عشق اضافه شد! مهربونی، حمایت و خوشحال شدن برای رشد همدیگه، باغچه‌ی رابطه‌مون رو قشنگ‌تر می‌کنه.'
+};
+
+const usedDrops = new Set();
+const dropButtons = [...document.querySelectorAll('.drop')];
+const dropMessage = document.getElementById('dropMessage');
+
+dropButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    const key = button.dataset.drop;
+    usedDrops.add(key);
+    button.classList.add('used');
+    dropMessage.textContent = dropMessages[key];
+    dropMessage.classList.add('show');
+
+    if (usedDrops.size === 3) {
+      dropMessage.textContent =
+        '🌷💧 باغچه‌مون با امید، تلاش و عشق آبیاری شد! حالا نوبت قدم‌های قشنگیه که برای آرزوهامون برمی‌داریم. مدیرعامل باغچه اعلام رضایت می‌کنه! 😂💗';
+
+      createPetals(24);
+    }
+  });
+});
+
+// درخت آینده
+document.getElementById('treeButton').addEventListener('click', () => {
+  const message = document.getElementById('treeMessage');
+  message.classList.toggle('show');
+
+  if (message.classList.contains('show')) {
+    createPetals(15);
+  }
+});
+
+// زنبور ناقلا
+const beeMessages = [
+  '🐝 +گزارش محرمانه: نینی و دخترش دارن برای آینده‌شون آرزو می‌کارن. میزان ذوق دختر: 1000000000000000000000000000000000 درصد! 😂💗',
+
+  '👑 اخطار به جناب نینی: مدیرعامل باغچه درخواست کرده روزانه حداقل یک لبخند و مقدار زیادی انگیزه تحویل داده بشه!',
+
+  '🌱 خبر فوری! یه قدم کوچولو برای آرزوهاتون برداشتین؟ زنبور می‌گه قدم‌های کوچولو هم حساب می‌شن!',
+
+  '😂 زنبور می‌گه: من مسئول گرده‌افشانی‌ام، نه حل تمام مسائل زندگی! لطفاً خودتون هم برای آرزوهاتون تلاش کنین!',
+
+  '💗 گزارش ویژه: تیم نینی و دخترش در حال ساختن خاطرات و دنبال کردن آرزوهای مشترکن. لطفاً با دست زدن تشویقشون کنین! 👏',
+
+  '🌷 خبر خوش باغچه: یه آرزوی قشنگ کاشته شد! حالا با امید و تلاش کمک کنیم رشد کنه.'
+];
+
+let beeIndex = -1;
+
+document.getElementById('beeButton').addEventListener('click', () => {
+  beeIndex = (beeIndex + 1) % beeMessages.length;
+  document.getElementById('beeMessage').textContent = beeMessages[beeIndex];
+  createPetals(5);
+});
+
+// ذخیره‌ی آرزوی مخفی روی همین مرورگر
+const secretWish = document.getElementById('secretWish');
+const secretResult = document.getElementById('secretResult');
+const wishOutput = document.getElementById('wishOutput');
+const secretFlower = document.getElementById('secretFlower');
+
+try {
+  const savedWish = localStorage.getItem('ourGardenWish');
+
+  if (savedWish) {
+    secretWish.value = savedWish;
+    wishOutput.textContent = savedWish;
+    secretResult.classList.add('show');
+    secretFlower.textContent = '🌺';
+  }
+} catch (error) {
+  // اگر ذخیره‌سازی مرورگر در دسترس نبود، صفحه همچنان کار می‌کند.
+}
+
+document.getElementById('plantButton').addEventListener('click', () => {
+  const wish = secretWish.value.trim();
+
+  if (!wish) {
+    secretWish.focus();
+    secretWish.placeholder = 'اول آرزوی مشترکمون رو بنویس نینی! 🥹💗';
+    return;
+  }
+
+  wishOutput.textContent = wish;
+  secretResult.classList.add('show');
+  secretFlower.textContent = '🌺';
+
+  try {
+    localStorage.setItem('ourGardenWish', wish);
+  } catch (error) {
+    // نمایش آرزو بدون ذخیره‌سازی هم امکان‌پذیر است.
+  }
+
+  createPetals(35);
+  secretResult.scrollIntoView({ behavior: 'smooth', block: 'center' });
+});
+
+// بارش گلبرگ‌ها
+function createPetals(amount) {
+  const symbols = ['🌸', '🌷', '💗', '✦', '✨'];
+
+  for (let i = 0; i < amount; i++) {
+    const petal = document.createElement('span');
+    petal.className = 'petal';
+    petal.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+
+    petal.style.left = Math.random() * 100 + 'vw';
+    petal.style.fontSize = (12 + Math.random() * 18) + 'px';
+    petal.style.setProperty('--fall', (3 + Math.random() * 3) + 's');
+    petal.style.setProperty('--drift', (-90 + Math.random() * 180) + 'px');
+    petal.style.animationDelay = (Math.random() * .8) + 's';
+
+    document.body.appendChild(petal);
+    setTimeout(() => petal.remove(), 7500);
+  }
+}
+
+// چند ستاره‌ی کوچولو هر چند ثانیه می‌درخشن؛ گلبرگ‌ها فقط با تعامل کاربر می‌بارن.
+</script>
+
+</body>
+</html>

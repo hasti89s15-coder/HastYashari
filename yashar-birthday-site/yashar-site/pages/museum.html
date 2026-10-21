@@ -1,0 +1,592 @@
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ffedf5">
+<title>دنیای ما   تولد نینی 💗</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+  --pink: #ff5795;
+  --deep: #dc286b;
+  --red: #ff506c;
+  --text: #77324f;
+  --white: #fff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Vazirmatn', Tahoma, sans-serif;
+  color: var(--text);
+  background: #fff5fa;
+}
+
+button, a {
+  font-family: inherit;
+}
+
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.page {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  padding: 22px 18px 45px;
+  background:
+    radial-gradient(ellipse at 10% 5%, #ffd5e7 0, transparent 32%),
+    radial-gradient(ellipse at 95% 30%, #ffe1d9 0, transparent 30%),
+    radial-gradient(ellipse at 50% 90%, #ffe0ef 0, transparent 35%),
+    linear-gradient(140deg, #fff9fc, #ffedf5 55%, #fff8f2);
+}
+
+.page::before {
+  content: "♡";
+  position: absolute;
+  top: 170px;
+  right: -45px;
+  font-size: 190px;
+  color: #ff85b5;
+  opacity: .12;
+  pointer-events: none;
+  animation: float 6s ease-in-out infinite;
+}
+
+.page::after {
+  content: "♡";
+  position: absolute;
+  top: 640px;
+  left: -45px;
+  font-size: 170px;
+  color: #ff85b5;
+  opacity: .12;
+  pointer-events: none;
+  animation: float 8s ease-in-out infinite reverse;
+}
+
+.back {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  position: relative;
+  z-index: 2;
+  padding: 11px 17px;
+  background: #ffffffd9;
+  border: 1px solid #ffc6dc;
+  border-radius: 50px;
+  color: #c93470;
+  font-weight: 800;
+  font-size: 13px;
+  text-decoration: none;
+  box-shadow: 0 6px 18px #d83e7812;
+  transition: .25s;
+}
+
+.back:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px #d83e7822;
+}
+
+.hero {
+  position: relative;
+  z-index: 1;
+  max-width: 850px;
+  margin: 22px auto 36px;
+  text-align: center;
+  animation: enter .8s ease both;
+}
+
+.badge {
+  display: inline-block;
+  padding: 9px 17px;
+  border: 1px solid #ffc7dd;
+  border-radius: 50px;
+  background: #ffffffd9;
+  color: #d83d7b;
+  font-size: 12px;
+  font-weight: 800;
+  box-shadow: 0 5px 20px #e65b9510;
+}
+
+.hero h1 {
+  margin: 18px 0 12px;
+  font-size: clamp(29px, 6vw, 53px);
+  font-weight: 900;
+  line-height: 1.8;
+  color: #df3378;
+  text-shadow: 0 3px #fff, 0 9px 25px #f36c9c35;
+  animation: titlePulse 3s ease-in-out infinite;
+}
+
+.hero p {
+  max-width: 650px;
+  margin: 0 auto;
+  font-size: 14px;
+  line-height: 2.5;
+  color: #97506e;
+}
+
+.sparkles {
+  margin: 15px 0;
+  font-size: 21px;
+  letter-spacing: 5px;
+  animation: sparkle 2s ease-in-out infinite;
+}
+
+.instruction {
+  display: inline-block;
+  margin-top: 19px;
+  padding: 12px 17px;
+  border-radius: 18px;
+  border: 1px dashed #ff9ec3;
+  background: #ffffffa8;
+  color: #c93873;
+  font-weight: 800;
+  font-size: 13px;
+  line-height: 2;
+}
+
+.section-heading {
+  position: relative;
+  z-index: 1;
+  margin: 0 auto 24px;
+  text-align: center;
+}
+
+.section-heading h2 {
+  margin: 0 0 8px;
+  font-size: clamp(21px, 4vw, 30px);
+  font-weight: 900;
+  color: #cf3471;
+}
+
+.section-heading p {
+  margin: 0;
+  color: #a46681;
+  font-size: 13px;
+  line-height: 2;
+}
+
+.grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.card {
+  --accent: #ff77a9;
+  --pale: #fff0f6;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  min-height: 250px;
+  padding: 24px 16px 20px;
+  overflow: hidden;
+  text-align: center;
+  text-decoration: none;
+  color: var(--text);
+  background: linear-gradient(145deg, #fff, var(--pale));
+  border: 1px solid #ffffff;
+  border-radius: 28px;
+  box-shadow: 0 9px 25px #b8427110, inset 0 0 0 1px #ffb4d022;
+  transition: transform .3s ease, box-shadow .3s ease;
+  animation: enter .7s ease both;
+}
+
+.card:nth-child(1) { --accent:#ff8fb5; --pale:#ffeaf2; }
+.card:nth-child(2) { --accent:#ff6199; --pale:#ffe5f0; }
+.card:nth-child(3) { --accent:#ffb36b; --pale:#fff0db; }
+.card:nth-child(4) { --accent:#d39aff; --pale:#f4e8ff; }
+.card:nth-child(5) { --accent:#83baff; --pale:#e8f3ff; }
+.card:nth-child(6) { --accent:#ff8086; --pale:#ffe9e9; }
+.card:nth-child(7) { --accent:#76d6a3; --pale:#e5fff0; }
+.card:nth-child(8) { --accent:#aa98ff; --pale:#efebff; }
+.card:nth-child(9) { --accent:#ffc85b; --pale:#fff6dc; }
+
+.card:nth-child(2) { animation-delay:.05s; }
+.card:nth-child(3) { animation-delay:.1s; }
+.card:nth-child(4) { animation-delay:.15s; }
+.card:nth-child(5) { animation-delay:.2s; }
+.card:nth-child(6) { animation-delay:.25s; }
+.card:nth-child(7) { animation-delay:.3s; }
+.card:nth-child(8) { animation-delay:.35s; }
+.card:nth-child(9) { animation-delay:.4s; }
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 12%;
+  right: 12%;
+  height: 5px;
+  background: var(--accent);
+  border-radius: 0 0 10px 10px;
+}
+
+.card::after {
+  content: "♡";
+  position: absolute;
+  right: -12px;
+  bottom: -38px;
+  font-size: 115px;
+  color: var(--accent);
+  opacity: .12;
+  transition: transform .4s;
+  pointer-events: none;
+}
+
+.card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 18px 36px #bd47751f;
+}
+
+.card:hover::after {
+  transform: rotate(-15deg) scale(1.2);
+}
+
+.card:active {
+  transform: scale(.97);
+}
+
+.icon {
+  display: grid;
+  place-items: center;
+  width: 75px;
+  height: 75px;
+  margin-bottom: 13px;
+  border-radius: 23px;
+  background: linear-gradient(145deg, #fff, var(--pale));
+  border: 1px solid #ffffff;
+  box-shadow: 0 7px 17px #b8427114;
+  font-size: 38px;
+  transition: transform .3s;
+}
+
+.card:hover .icon {
+  transform: translateY(-4px) rotate(-6deg) scale(1.08);
+}
+
+.card h3 {
+  margin: 0 0 7px;
+  font-size: 17px;
+  font-weight: 900;
+  color: #b83269;
+  line-height: 1.8;
+}
+
+.card p {
+  margin: 0 0 15px;
+  font-size: 12px;
+  color: #98617a;
+  line-height: 2.1;
+}
+
+.action {
+  display: inline-block;
+  margin-top: auto;
+  padding: 8px 13px;
+  background: #ffffffc9;
+  border: 1px solid var(--accent);
+  border-radius: 30px;
+  color: #a83265;
+  font-size: 11px;
+  font-weight: 800;
+  transition: .25s;
+}
+
+.card:hover .action {
+  background: var(--accent);
+  color: white;
+}
+
+.footer {
+  position: relative;
+  z-index: 1;
+  max-width: 750px;
+  margin: 38px auto 0;
+  padding: 24px 17px;
+  border: 1px solid #ffd0e2;
+  border-radius: 24px;
+  background: #ffffffbd;
+  text-align: center;
+  box-shadow: 0 8px 25px #bd477510;
+}
+
+.footer p {
+  margin: 0 0 9px;
+  color: #bd3973;
+  font-weight: 800;
+  line-height: 2.2;
+  font-size: 14px;
+}
+
+.footer span {
+  color: #e15b94;
+  font-weight: 800;
+  font-size: 12px;
+}
+
+.confetti {
+  position: fixed;
+  top: -30px;
+  z-index: 10;
+  pointer-events: none;
+  animation: fall linear forwards;
+}
+
+@keyframes enter {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(-8deg); }
+  50% { transform: translateY(-18px) rotate(7deg); }
+}
+
+@keyframes titlePulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.015); }
+}
+
+@keyframes sparkle {
+  0%, 100% { opacity: .65; }
+  50% { opacity: 1; }
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(110vh) rotate(540deg);
+    opacity: 0;
+  }
+}
+
+@media (max-width: 800px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .card {
+    min-height: 230px;
+    padding: 20px 12px;
+  }
+}
+
+@media (max-width: 420px) {
+  .page {
+    padding: 14px 11px 30px;
+  }
+
+  .hero {
+    margin-top: 19px;
+  }
+
+  .hero h1 {
+    font-size: 27px;
+  }
+
+  .hero p {
+    font-size: 12px;
+  }
+
+  .grid {
+    gap: 11px;
+  }
+
+  .card {
+    min-height: 220px;
+    padding: 17px 8px;
+    border-radius: 22px;
+  }
+
+  .icon {
+    width: 61px;
+    height: 61px;
+    border-radius: 19px;
+    font-size: 31px;
+  }
+
+  .card h3 {
+    font-size: 14px;
+  }
+
+  .card p {
+    font-size: 11px;
+  }
+
+  .action {
+    padding: 7px 9px;
+    font-size: 10px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+</style>
+</head>
+
+<body>
+<main class="page">
+
+  <a href="../index.html" class="back">🏡 برگشت پیش هستی</a>
+
+  <header class="hero">
+    <div class="badge">🎀 یه دنیای کوچولو، مخصوص نینیِ من 🎀</div>
+
+    <h1>به دنیای خودمون خوش اومدی، نینی! 💗</h1>
+
+    <p>
+      آقای یاشاررررییییییممم! 🥳<br>
+      آماده باش که قراره کلی خاطره‌بازی کنیم،
+      بخندیم، ذوق کنیم و درهای دنیای دونفره‌مون رو باز کنیم! 🥹💕
+    </p>
+
+    <div class="sparkles">💗 ✨ 💕 ✨ 💗</div>
+
+    <div class="instruction">
+      خب نینییییمممم! آماده‌ای؟ 🎠<br>
+      هرکدوم از این دنیاها یه سورپرایز مخصوص خودت داره!
+    </div>
+  </header>
+
+  <section class="section-heading">
+    <h2>🎠 از کدوم دنیا شروع کنیم؟ 🎠</h2>
+    <p>انتخاب با آقای یاشاره! فقط یکی رو لمس کن تا ماجراجویی شروع بشه. 💋</p>
+  </section>
+
+  <section class="grid">
+
+    <a class="card" href="childhood.html">
+      <span class="icon">👶🏻</span>
+      <h3>دو تا فسقلی</h3>
+      <p>پرونده‌ی دو تا کوچولوی شیطون! 😂💗</p>
+      <span class="action">بریم ببینیم! ✨</span>
+    </a>
+
+    <a class="card" href="our-memories.html">
+      <span class="icon">💞</span>
+      <h3>آلبوم قلب من</h3>
+      <p>قاب‌هایی از دنیای دونفره‌مون. 🥹</p>
+      <span class="action">خاطره‌بازی کنیم! 📸</span>
+    </a>
+
+    <a class="card" href="judy-nick.html">
+      <span class="icon">🦊</span>
+      <h3>جودی و نیک</h3>
+      <p>ماجرای دو تا شخصیت محبوب ما! 🦊🐰</p>
+      <span class="action">شروع ماجراجویی! 🎬</span>
+    </a>
+
+    <a class="card" href="letter.html">
+      <span class="icon">💌</span>
+      <h3>نامه‌ی مخصوص تو</h3>
+      <p>چندتا حرف که از ته قلبم میان. 💗</p>
+      <span class="action">بازش کن نینی! 💌</span>
+    </a>
+
+    <a class="card" href="voice.html">
+      <span class="icon">🎧</span>
+      <h3>صدای دخترت</h3>
+      <p>یه تیکه از قلبم، با صدای خودم. 🥹</p>
+      <span class="action">گوش کنیم؟ 🎶</span>
+    </a>
+
+    <a class="card" href="cake.html">
+      <span class="icon">🎂</span>
+      <h3>عملیات کیک و شمع</h3>
+      <p>توجه! تولد نینی رسماً شروع شده! 🎉</p>
+      <span class="action">بزن بریم! 🥳</span>
+    </a>
+
+    <a class="card" href="dream-garden.html">
+      <span class="icon">🌷</span>
+      <h3>باغچه‌ی آرزوهای ما</h3>
+      <p>برای قشنگی‌هایی که با هم می‌سازیم. 🌱</p>
+      <span class="action">بریم توی باغچه! 🌸</span>
+    </a>
+
+    <a class="card" href="mystery-box.html">
+      <span class="icon">🔐</span>
+      <h3>جعبه‌ی مرموز</h3>
+      <p>یه سورپرایز مخفی برای نینی کنجکاو! 👀</p>
+      <span class="action">جرئت داری؟ 😏</span>
+    </a>
+
+    <a class="card" href="final-surprise.html">
+      <span class="icon">🎁</span>
+      <h3>راز آخر قصه</h3>
+      <p>هنوز یه سورپرایز دیگه مونده! ❤️‍🔥</p>
+      <span class="action">کشفش کن نینی! 🎁</span>
+    </a>
+
+  </section>
+
+  <footer class="footer">
+    <p>
+      نینی جانم، این دنیای کوچولو با کلی ذوق و عشق ساخته شده؛
+      چون خودت یکی از قشنگ‌ترین قسمت‌های دنیای منی! 💗
+    </p>
+    <span>با عشق و کلی شیطنت، از طرف هستیِ خودت ♡</span>
+  </footer>
+
+</main>
+
+<script>
+(() => {
+  const reduceMotion = window.matchMedia(
+    '(prefers-reduced-motion: reduce)'
+  ).matches;
+
+  if (reduceMotion) return;
+
+  const symbols = ['💗', '💕', '✨', '🌸', '♡'];
+
+  function createConfetti() {
+    const item = document.createElement('span');
+    item.className = 'confetti';
+    item.textContent = symbols[
+      Math.floor(Math.random() * symbols.length)
+    ];
+
+    item.style.left = Math.random() * 100 + 'vw';
+    item.style.fontSize = (12 + Math.random() * 15) + 'px';
+    item.style.opacity = (0.45 + Math.random() * 0.5).toString();
+    item.style.animationDuration = (6 + Math.random() * 5) + 's';
+
+    document.body.appendChild(item);
+
+    setTimeout(() => item.remove(), 12000);
+  }
+
+  setInterval(createConfetti, 1100);
+})();
+</script>
+
+</body>
+</html>
